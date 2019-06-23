@@ -1,0 +1,98 @@
+.error_page h1{
+    font-size:24px;
+    text-align:left;
+}
+.error_page ul li{
+    list-style:none;
+    text-align:left;
+    float:left;
+    margin-right:30px;
+    margin-top:1em;
+
+}
+.error_page ul li a{
+    color:#666;
+}
+.error_page ul li a:focus{
+    color:#fb383b;
+    border-bottom:3px solid #fb383b;
+}
+.contentorder{
+    text-align:left;
+    margin-top:80px;
+}
+#headorder{
+    width:100%;
+    margin-bottom:20px;
+}
+#headorder p{
+    float:left;
+    top:0px;
+    font-size:1.2em;
+    margin-bottom:10px;
+}
+#headorder #fdata{
+    float:right;
+    top:0px;
+    margin-bottom:10px;
+    margin-right:10px;
+}
+.contentorder table{
+    width:100%;
+    border:1px solid #CDCDCD;
+    border-spacing:0;
+    border-collapse: collapse;
+}
+.contentorder table thead{
+    background:#000;
+    margin-bottom:20px;
+}
+.contentorder table thead tr td{
+    color:#fff;
+    padding-left:10px;
+    padding-right:10px;
+    text-align:center;
+    border: 1px solid #CDCDCD
+}
+.contentorder table thead tr {
+    height:34px;
+    text-align:center;
+}
+.contentorder table tfoot tr {
+    height:50px;
+    text-align:center;
+}
+.contentorder table tbody tr td{
+    height:34px;
+    text-align:center;
+    border: 1px solid #CDCDCD
+}
+.contentorder table tr{
+    padding:10px auto;
+}
+#tddata{
+    text-align:right;
+}
+.imgorder{
+    width: 30%;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+#footorder{
+    text-align:right;
+}
+.contentorder table tfoot tr{
+    width:100%;
+}
+.paymenta{
+    height:50px;
+    width:70%;
+    background:#000;
+    color:#fff;
+    padding:5px 40px;
+    margin:0 10px;
+
+}
+.paymenta:hover{
+    background:#fb383b;
+}

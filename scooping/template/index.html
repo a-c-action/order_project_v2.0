@@ -1,0 +1,612 @@
+
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+	<title>勺品-品出精彩</title>
+	<!-- custom-theme -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="" />
+	<script type="application/x-javascript">
+		addEventListener("load", function () {
+			setTimeout(hideURLbar, 0);
+		}, false);
+
+		function hideURLbar() {
+			window.scrollTo(0, 1);
+		}
+	</script>
+	<!-- //custom-theme -->
+	{% load static %}
+	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'css/shop.css' %}" type="text/css" media="screen" property="" />
+	<link href="{% static 'css/style7.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/book_text.css' %}" rel="stylesheet" type="text/css"  />
+	<!-- font-awesome-icons -->
+	<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+	<!-- //font-awesome-icons -->
+	<link href="http://fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
+	    rel="stylesheet">
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+	<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css">
+	<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
+	<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
+	<script src="http://webapi.amap.com/maps?v=1.3&key=c93e1e293e5b1c3dc581f3ff633144d3&plugin=AMap.Autocomplete,AMap.PlaceSearch,AMap.Walking,AMap.Riding"></script>
+	<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
+	<link rel="stylesheet" href="{% static 'css/style8.css' %}">
+</head>
+
+<body>
+	<!-- banner -->
+	<div class="banner_top" id="home">
+		<div class="wrapper_top_w3layouts">
+
+			<div class="header_agileits">
+				<div class="logo">
+					<a class="navbar-brand" href="index.html"><img src="{% static 'images/index/logo.png' %}"></a>
+				</div>
+				<div class="overlay overlay-contentpush">
+					<button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+
+					<nav>
+						<ul>
+							<li><a href="index.html" class="active">首页</a></li>
+							<li><a href="about.html">关于我们</a></li>
+							<li><a href="shop.html">点餐</a></li>
+							<li><a href="login.html">登录</a></li>
+							<li><a href="register.html">注册</a></li>
+						</ul>
+					</nav>
+				</div>
+				<div class="mobile-nav-button">
+					<button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+				</div>
+				<div class="mobile-nav-button1">
+					<button id="trigger-overlay1" type="button">
+						<a href="order.html"><img id="imgorder" src="{% static 'images/index/order.png' %}"></a>
+					</button>
+				</div>
+				<!-- cart details -->
+				<div class="top_nav_right">
+					<div class="shoecart shoecart2 cart cart box_1">
+						<form action="#" method="post" class="last">
+							<input type="hidden" name="cmd" value="_cart">
+							<input type="hidden" name="display" value="1">
+							<button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+						</form>
+					</div>
+
+				</div>
+				<!-- //cart details -->
+				<!-- search -->
+				<div class="search_w3ls_agileinfo">
+					<div class="cd-main-header">
+						<ul class="cd-header-buttons">
+							<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+						</ul>
+					</div>
+					<div id="cd-search" class="cd-search">
+						<form action="#" method="post">
+							<input name="Search" type="search" placeholder="Click enter after typing...">
+						</form>
+					</div>
+				</div>
+				<!-- //search -->
+
+				<div class="clearfix"></div>
+			</div>
+			<!-- /slider -->
+			<div class="slider">
+				<div class="callbacks_container">
+					<ul class="rslides callbacks callbacks1" id="slider4">
+
+						<li>
+							<div class="banner-top2">
+
+								<div class="banner-info-wthree">
+
+									<h3>nourishing</h3>
+									<p>欲罢不能的美味</p>
+
+								</div>
+
+							</div>
+						</li>
+						<li>
+							<div class="banner-top3">
+
+								<div class="banner-info-wthree">
+									<h3>delicious</h3>
+									<p>款款而起的香气</p>
+
+								</div>
+
+							</div>
+						</li>
+						<li>
+							<div class="banner-top">
+								<div class="banner-info-wthree">
+									<h3>tasty</h3>
+									<p>扑面而来的细腻</p>
+
+								</div>
+
+							</div>
+						</li>
+						<li>
+							<div class="banner-top1">
+								<div class="banner-info-wthree">
+									<h3>sweet</h3>
+									<p>未见其物而闻其香</p>
+
+								</div>
+
+							</div>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+			<!-- //slider -->
+			<ul class="top_icons">
+			</ul>
+		</div>
+	</div>
+	<!-- //banner -->
+	<div class="banner-text container" style="width:100%">
+			<h2>最实惠的价格,最美味的食物!</h2>
+			<div class="book-form">
+			<p id="bp">预定一张桌子</p>
+			   <form action="#" method="post" class="book-form1">
+					<div class="col-md-2 form-time-w3layouts">
+							<label><i class="fa fa-clock-o" aria-hidden="true"></i> Time :</label>
+							<input type="time">
+					</div>
+					<div class="col-md-2 form-date-w3-agileits">
+						        <label><i class="fa fa-calendar" aria-hidden="true"></i> Date :</label>
+									<input  id="datepicker1" name="Text" type="date" value="2018-07-02">
+								</div>
+					<div class="col-md-2 form-left-agileits-w3layouts ">
+							<label><i class="fa fa-users" aria-hidden="true"></i> No.of People :</label>
+							<select class="book-select">
+								<option></option>
+								<option>1 Person</option>
+								<option>2 People</option>
+								<option>3 People</option>
+								<option>4 People</option>
+								<option>5 People</option>
+								<option>More</option>
+							</select>
+					</div>
+				   	<div class="col-md-2 form-left-agileits-w3layouts ">
+							<label><i class="fa fa-users" aria-hidden="true"></i> No.of Table :</label>
+							<select class="book-select">
+								<option></option>
+								<option>桌号 1</option>
+								<option>桌号 2</option>
+								<option>桌号 3</option>
+								<option>桌号 5</option>
+								<option>桌号 6</option>
+								<option>桌号 8</option>
+								<option>桌号 9</option>
+								<option>桌号 10</option>
+
+							</select>
+					</div>
+                    <div class="col-md-2 form-date-w3-agileits">
+						        <label> 预留手机号:</label>
+									<input  id="phone" name="phone" type="text" placeholder="请输入手机号">
+								</div>
+					<div class="col-md-2 form-left-agileits-submit">
+						  <input type="submit" value="预定">
+					</div>
+				</form>
+			</div>
+	</div>
+	<!-- /girds_bottom-->
+	<div class="grids_bottom">
+		<div class="col-md-9 style-grid style-grid-2">
+			<div class="style-image-1_info">
+				<div class="style-grid-2-text_info">
+					<h3>每一段故事都是从“你好”开始</h3>
+					<p>“你好，可以请你吃饭吗？”</p>
+					<p>“你好，可以请你喝一杯酒吗？”</p>
+					<p>勺品在2019年，成为了这个故事里的一部分，于西安这个历史性的中心地区创建</p>
+					<p>带动高端餐饮行业的一路蓬勃</p>
+					<p>不变的是，最初那份对创造的热情，以及对高度的执着。</p>
+					<div class="shop-button">
+						<a href="shop.html">Shop Now</a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	<!-- //grids_bottom-->
+	<!-- /girds_bottom2-->
+
+	<div class="grids_sec_2">
+		<div class="style-grids_main">
+			<div class="col-md-6 grids_sec_2_left">
+				<div class="grid_sec_info">
+					<div class="style-grid-2-text_info">
+						<h3 id="h31">关于我们</h3>
+						<p id="p1">生活不止眼前的苟且，还有诗和远方，
+							勺品品牌餐厅极具西安十三朝古都的传统文化气息，更是站在时代潮流的前
+							沿注入了时尚、休闲、浪漫、绿色的理念。走进简约爱美食餐厅，您可以品尝
+							各地口味独特的风味小吃，也可以喝喝茶、品品咖啡、打打牌、聊聊天，是您休
+							闲、约会的浪漫之地</p>
+
+					</div>
+				</div>
+				<div class="style-image-2">
+					<img src="{% static 'images/index/a1.jpg' %}" alt="food">
+					<img src="{% static 'images/index/a2.jpg' %}" alt="food">
+				</div>
+			</div>
+			<div class="col-md-6 grids_sec_2_right">
+				<img src="{% static 'images/index/a3.jpg' %}" alt="food">
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<div class="grids_sec_3">
+		<h1>热门食谱</h1>
+		<div class="style-grids_main1">
+			<div class="col-md-6 grids_sec_2_left2">
+				<img src="{% static 'images/index/ab1.jpg' %}" >
+			</div>
+			<div class="col-md-6 grids_sec_2_right2">
+				<h3>酥椒掌中宝美食</h3>
+				<p>香辣掌中宝是一道美食，主要食材是鸡脆骨。咸鲜香辣，外酥里嫩。
+将鸡脆骨用盐、味精码入味，青、红辣椒切成小圈，干椒切成小粒，花生米炒香去皮待用。
+入味鸡脆骨加鸡蛋加生粉，入烧至七成热的油中炸至外酥里嫩，出锅滗油；
+；锅内留油，下青、红辣椒圈，盐、味精、鸡脆骨、干椒粒，撒上去皮花生、芝麻，淋香油，起锅装碟即成</p>
+			</div>
+		</div>
+		<div class="style-grids_main1">
+			<div class="col-md-6 grids_sec_2_left3">
+				<h3>夏草龙须菜美食菜肴</h3>
+				<p>龙须菜中的主要营养成分，是多糖和粗纤维，这些营养元素在龙须菜中的含量是比较高的，除此之外蛋白质氨基酸等营养元素的含量也是不低的，而且这些营养元素对于人们的身体健康来说是非常必要的。
+龙须菜脂肪的含量是比较低的，所以人们不用担心吃龙须菜会变胖的问题，而且龙须菜中的矿物质含量也是比较丰富的，人们身体健康所需要的一些特别的元素，在龙须菜中的含量都是很高的</p>
+
+			</div>
+			<div class="col-md-6 grids_sec_2_right3">
+				<img src="{% static 'images/index/ab2.jpg' %}" >
+				<h1></h1>
+			</div>
+		</div>
+		<h1>地图导览</h1>
+		<div class="mapapi" >
+			<div class="pageShow">
+				<h3>搜索地址</h3>
+				<input id="tipinput" placeholder="模糊地址搜索">
+				<h3>搜索行车路径nanxiaoxiang</h3>
+				<input id="star" placeholder="行车开始地址">
+				<span>—&nbsp;—</span>
+				<input id="end" placeholder="行车结束地址">
+				<span>—&nbsp;—</span>
+				<a id="car" href="javascript:void(0);">
+					点击搜索
+				</a>
+
+				<h3>搜索骑行路径</h3>
+				<input id="cStar" placeholder="骑行开始地址">
+				<span>—&nbsp;—</span>
+				<input id="cEnd" placeholder="骑行结束地址">
+				<span>—&nbsp;—</span>
+				<a id="riding" href="javascript:void(0);">
+					点击搜索
+				</a>
+
+				<h3>搜索步行路径</h3>
+				<input id="wStar" placeholder="步行开始地址">
+				<span>—&nbsp;—</span>
+				<input id="wEnd" placeholder="步行结束地址">
+				<span>—&nbsp;—</span>
+				<a id="walk" href="javascript:void(0);">
+					点击搜索
+				</a>
+				<div style="margin:20px 0;">
+					<a id="box" href="javascript:void(0);">
+						鼠标右键拖取选框放大地图
+					</a>nanxiaoxiang
+					<a id="meter" href="javascript:void(0);">
+						测量距离
+					</a>
+				</div>
+			</div>
+			<div id="container"></div>
+			<div id="panel"></div>
+		</div>		
+	<div class="clearfix"></div>
+	</div>
+	<!-- //grids_bottom2-->
+	<!-- /Properties -->
+	<div class="mid_slider_w3lsagile">
+		<div class="col-md-3 mid_slider_text">
+			<h5>更多菜品</h5>
+		</div>
+		<div class="col-md-9 mid_slider_info">
+			<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				<!-- Indicators -->
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+					<li data-target="#myCarousel" data-slide-to="2" class=""></li>
+					<li data-target="#myCarousel" data-slide-to="3" class=""></li>
+				</ol>
+				<div class="carousel-inner" role="listbox">
+					<div class="item active">
+						<div class="row">
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g1.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g2.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g3.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g4.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="row">
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g5.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g6.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g2.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g1.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="row">
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g1.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g2.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g3.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g4.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="row">
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g1.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g2.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g3.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
+								<div class="thumbnail"><img src="{% static 'images/index/g4.jpg' %}" alt="Image" style="max-width:100%;"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+			<span class="fa fa-chevron-left" aria-hidden="true"></span>
+			<span class="sr-only">Previous</span>
+		</a>
+				<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+			<span class="fa fa-chevron-right" aria-hidden="true"></span>
+			<span class="sr-only">Next</span>
+		</a>
+				<!-- The Modal -->
+
+			</div>
+		</div>
+
+		<div class="clearfix"> </div>
+	</div>
+	<!--//banner -->
+
+	<!-- /newsletter-->
+	<div class="newsletter_w3layouts_agile">
+		<div class="col-sm-6 newsleft">
+			<h3>轻生活 轻饮食</h3>
+		</div>
+		<div class="col-sm-6 newsright">
+			<form action="#" method="post">
+				<input type="email" placeholder="Enter your email..." name="email" required="">
+				<input type="submit" value="Submit">
+			</form>
+		</div>
+
+		<div class="clearfix"></div>
+	</div>
+	<!-- //newsletter-->
+	<!-- footer -->
+	<div class="footer_agileinfo_w3">
+		<div class="footer_inner_info_w3ls_agileits">
+			<div class="col-md-3 footer-left">
+				<h2><a href="index.html">欢迎来到勺品 </a></h2>
+				<p>勺品品牌餐厅极具西安十三朝古都的传统文化气息，更是站在时代潮流的前 沿注入了时尚、休闲、浪漫、绿色的理念</p>
+				<ul class="social-nav model-3d-0 footer-social social two">
+					<li>
+						<a href="#" class="facebook">
+							<div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+							<div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="twitter">
+							<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+							<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="instagram">
+							<div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+							<div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="pinterest">
+							<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+							<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<div class="col-md-9 footer-right">
+				<div class="sign-grds">
+					<div class="col-md-4 sign-gd">
+						<h4>页面信息</h4>
+						<ul>
+							<li><a href="index.html">主页</a></li>
+							<li><a href="about.html">关于我们</a></li>
+							<li><a href="shop.html">点餐</a></li>
+							<li><a href="login.html">登录</a></li>
+							<li><a href="register.html">注册</a></li>
+						</ul>
+					</div>
+
+					<div class="col-md-5 sign-gd-two">
+						<h4>餐厅信息</h4>
+						<div class="address">
+							<div class="address-grid">
+								<div class="address-left">
+									<i class="fa fa-phone" aria-hidden="true"></i>
+								</div>
+								<div class="address-right">
+									<h6>电话号码</h6>
+									<p>13488888888</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="address-grid">
+								<div class="address-left">
+									<i class="fa fa-envelope" aria-hidden="true"></i>
+								</div>
+								<div class="address-right">
+									<h6>邮箱地址</h6>
+									<p>Email :<a href="mailto:example@email.com"> 1773298741@.com</a></p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+							<div class="address-grid">
+								<div class="address-left">
+									<i class="fa fa-map-marker" aria-hidden="true"></i>
+								</div>
+								<div class="address-right">
+									<h6>餐厅地址</h6>
+									<p>西安市碑林区中铁第一国际1903-02
+
+									</p>
+								</div>
+								<div class="clearfix"> </div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 sign-gd flickr-post">
+						<h4>特色餐品</h4>
+						<ul>
+							<li><a href="shop.html"><img src="{% static 'images/index/g1.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="shop.html"><img src="{% static 'images/index/g2.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="shop.html"><img src="{% static 'images/index/g3.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="shop.html"><img src="{% static 'images/index/g4.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="shop.html"><img src="{% static 'images/index/g4.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="shop.html"><img src="{% static 'images/index/g6.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="shop.html"><img src="{% static 'images/index/g1.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="shop.html"><img src="{% static 'images/index/g2.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="shop.html"><img src="{% static 'images/index/g3.jpg' %}" alt=" " class="img-responsive" /></a></li>
+						</ul>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			<div class="clearfix"></div>
+
+			<p class="copy-right-w3ls-agileits">Copyright &copy; 2018.Company name aid1903-02 ac-team</p>
+		</div>
+	</div>
+	<!-- //footer -->
+    <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+	<!-- js -->
+	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	<!-- //js -->
+	<!-- /nav -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<script src="{% static 'js/classie.js' %}"></script>
+	<script src="{% static 'js/demo1.js' %}"></script>
+	<!-- //nav -->
+	<!-- cart-js -->
+	<script src="{% static 'js/minicart.js' %}"></script>
+	<script>
+		shoe.render();
+
+		shoe.cart.on('shoe_checkout', function (evt) {
+			var items, len, i;
+
+			if (this.subtotal() > 0) {
+				items = this.items();
+
+				for (i = 0, len = items.length; i < len; i++) {}
+			}
+		});
+	</script>
+	<!-- //cart-js -->
+	<!--search-bar-->
+	<script src="{% static 'js/search.js' %}"></script>
+	<!--//search-bar-->
+	<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+	<script>
+		$(function () {
+			$("#slider4").responsiveSlides({
+				auto: true,
+				pager: true,
+				nav: true,
+				speed: 1000,
+				namespace: "callbacks",
+				before: function () {
+					$('.events').append("<li>before event fired.</li>");
+				},
+				after: function () {
+					$('.events').append("<li>after event fired.</li>");
+				}
+			});
+		});
+	</script>
+	<!-- js for portfolio lightbox -->
+	<!-- start-smoth-scrolling -->
+	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+	<script type="text/javascript">
+		jQuery(document).ready(function ($) {
+			$(".scroll").click(function (event) {
+				event.preventDefault();
+				$('html,body').animate({
+					scrollTop: $(this.hash).offset().top
+				}, 1000);
+			});
+		});
+	</script>
+	<!-- //end-smoth-scrolling -->
+
+	<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
+	<script src="{% static './js/main.js' %}"></script>
+</body>
+
+</html>

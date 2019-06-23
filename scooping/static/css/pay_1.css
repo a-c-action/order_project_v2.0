@@ -1,0 +1,134 @@
+/*payment*/
+
+.ads-grid_shop div.pay_1,div.pay_2{
+    width:200px;
+    height:88px;
+    float:left;
+    margin-right:30px;
+
+}
+.privacy_about{
+    margin:0 auto;
+    width:1400px;
+    height:88px;
+}
+div.responsive_tabs{
+    width:1400px;
+    height:95px;
+    margin-top:30px;
+    border-bottom:1px solid gray;
+}
+
+/*订单信息*/
+
+.goods_info{
+    margin:0 auto;
+    width:1400px;
+}
+.type{
+    width:1400px;
+	margin-top:25px;
+	margin-bottom:20px;
+	height:36px;
+	border-top:1px solid gray;
+	background:#000;
+	box-shadow:0 2px 3px gray;
+	color:#808080;
+	text-align:center;
+	color:#fff;
+
+}
+
+
+.type div{
+	float:left;
+	text-align:center;
+	line-height:36px;
+}
+.gatter{
+	width:480px;
+}
+.gprice{
+	width:262px;
+}
+.gcount{
+	width:250px;
+}
+.address{
+	width:300px
+}
+
+/*settlement*/
+.settlement{
+    float:right;
+    background:#000;
+    width:100px;
+    height:30px;
+    text-align:center;
+    margin-top:5px;
+}
+.settlement .settle{
+    line-height:30px;
+    font-size:20px;
+    color:#eaf2ec;
+
+}
+
+.goods_items img.item1{
+    width:50px;
+    height:50px;
+}
+
+.goods_items{
+    border-bottom:1px solid gray;
+    overflow:hidden;
+    margin-bottom:50px;
+}
+.goods_items div{
+	float:left;
+	text-align:center;
+	line-height:36px;
+}
+.goods_items p{
+    /*line-height:79px;*/
+}
+
+/*Qr_code*/
+#qr_code1 .qr_code1{
+    width:400px;
+    height:400px;
+    text-align:center;
+}
+
+#qr_code2 .qr_code2{
+    width:450px;
+    height:400px;
+    text-align:center;
+}
+#qr_code1{
+    display:none;
+    /*display: block;*/
+    position: fixed;
+    /* z-index: 100; */
+    width: 400px;
+    height: 400px;
+    background: #fff0;
+    right: 750px;
+    bottom: 350px;
+    text-align: center;
+}
+#qr_code2{
+    display:none;
+    /*display: block;*/
+    position: fixed;
+    /* z-index: 100; */
+    width: 400px;
+    height: 400px;
+    background: #fff0;
+    right: 750px;
+    bottom: 350px;
+    text-align: center;
+}
+/*.qr_codeNone{
+    display:none;
+}*/

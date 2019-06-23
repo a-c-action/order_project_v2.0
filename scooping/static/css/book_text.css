@@ -1,0 +1,101 @@
+.banner-text {
+    width:50%
+    text-align: center;
+    padding: 2em 0 0 0;
+    margin:0 auto;
+    background:#000;
+}
+.banner-text h2{
+    color:#efefef;
+    text-align:center;
+    margin-top:10px;
+}
+.banner-text #bp{
+    text-align:center;
+    color:#efefef;
+    margin-top:10px;
+}
+.book-form{
+    height:20%;
+    margin:0 auto;
+    height:100px;
+}
+
+.book-form1{
+    height:100%;
+    width:80%;
+    margin:0 auto;
+    margin-top:20px;
+
+}
+#datepicker1{
+    width:100%;
+    height:27px;
+    border:1px solid #f3f3f3;
+}
+
+
+.form-time-w3layouts{
+    width:17%;
+    float:left;
+    min-height:1px;
+    padding-right:15px;
+    padding-left:15px;
+}
+.form-left-agileits-submit{
+    width:16%;
+    float:right;
+    position:relative;
+    min-height:1px;
+    padding-left:15px;
+}
+
+
+.form-time-w3layouts label{
+    display:inline-block;
+    max-width:100%;
+    margin-bottom:5px;
+    font-weight:700;
+    cursor:default;
+    font-size:#333;
+    line-height:1.4;
+    color:#fb383b;
+}
+.form-date-w3-agileits label{
+    color:#fb383b;
+}
+.form-date-w3-agileits #phone{
+    width:100%;
+}
+
+.form-left-agileits-w3layouts label{
+    color:#fb383b;
+}
+.form-time-w3layouts .fa{
+    display:inline-block;
+    text-rendering: auto;
+    cursor:default;
+}
+.form-time-w3layouts input{
+    width:100%;
+    line-height:22px;
+}
+
+.form-control:focus{
+    display:none;
+}
+.book-select{
+    width:100%;
+    line-height:25px;
+    height:26px;
+    background:#fff;
+}
+.form-left-agileits-submit input{
+    margin-top:26px;
+    margin-bottom:5px;
+    background:#f8383b;
+    border:none;
+    height:25px;
+    padding:0 60px;
+    width:100%
+}
