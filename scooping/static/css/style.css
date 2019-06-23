@@ -616,18 +616,18 @@ li.dropdown.act a.w3_icons_act {
 	text-decoration: none;
 	height: 34px;
 	width: 34px;
-	background: url(../images/left.png) no-repeat 0px 0px;
+	background: url(../images/index/left.png) no-repeat 0px 0px;
 }
 
 .callbacks_nav.next {
 	left: auto;
-	background: url(../images/right.png) no-repeat 0px 0px;
+	background: url(../images/index/right.png) no-repeat 0px 0px;
 	right: 0;
 }
 
 .callbacks_nav.prev {
 	left: auto;
-	background: url(../images/left.png) no-repeat 0px 0px;
+	background: url(../images/index/left.png) no-repeat 0px 0px;
 	left: 0px;
 }
 
