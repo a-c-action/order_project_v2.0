@@ -170,14 +170,14 @@ a.hvr-shutter-in-horizontal:before {/*1165*/
 }
 .reg ul {/*1235*/
     padding:0;
-    margin:0 0 22px 0;
+    margin:0 0 30px 0;
 }
 .reg ul li {/*1239*/
     display: inline-block;
-    width: 30%;
+    width: 25%;
 }
 .reg ul li.text-info{/*1243*/
-    width: 15%;
+    width: 10%;
     color: #204056;
     font-size: 16px;
     text-transform: uppercase;
@@ -248,7 +248,7 @@ p.click a{/*1268*/
     display: none;
 } 
 .TeamServices textarea{
-    font-size: 12;
+    font-size:1em;
 }
 .TeamServices h3{
     text-align: center;
@@ -260,13 +260,18 @@ p.click a{/*1268*/
     width: 100px;
     height: 38px;
     float: right;
-    margin-right: 250px;
+    margin-right: 48%;
 }
 .aVer{
-    float: left;
+    background: blue;
+    width: 100px;
+    height: 38px;
+    float: right;
     position: relative;
-    margin-top: -30px;
-    margin-left: 450px;
+    margin-top: -5%;
+    margin-right: 35%;
+    color: white;
+    border: 0;
 }
 .inputVer{
     color: white;
@@ -278,4 +283,69 @@ p.click a{/*1268*/
 .col-md-6 input{
     margin-top: -80px;
     margin-left: 80px;
+}
+.pass-item-error1{
+    display: none;
+    float: left;
+    position: relative;
+    width: 500px;
+    top:8px;
+    color: #fc4343;
+    height: 16px;
+    line-height: 14px;
+    padding-left: 20px;
+    margin-left: 110px;
+    background: url(../images/register/err_small.png) 0 0 no-repeat;
+}
+.pass-item-error2{
+    display: none;
+    float: left;
+    position: relative;
+    width: 500px;
+    top:8px;
+    color: #fc4343;
+    height: 16px;
+    line-height: 14px;
+    padding-left: 20px;
+    margin-left: 110px;
+    background: url(../images/register/err_small.png) 0 0 no-repeat;
+}
+.pass-item-error3{
+    display: none;
+    float: left;
+    position: relative;
+    width: 600px;
+    top:8px;
+    color: #fc4343;
+    height: 16px;
+    line-height: 14px;
+    padding-left: 20px;
+    margin-left: 110px;
+    background: url(../images/register/err_small.png) 0 0 no-repeat;
+}
+.pass-item-error4{
+    display: none;
+    float: left;
+    position: relative;
+    width: 500px;
+    top:8px;
+    color: #fc4343;
+    height: 16px;
+    line-height: 14px;
+    padding-left: 20px;
+    margin-left: 110px;
+    background: url(../images/register/err_small.png) 0 0 no-repeat;
+}
+.pass-item-error5{
+    display: none;
+    float: left;
+    position: relative;
+    width: 500px;
+    top:8px;
+    color: #fc4343;
+    height: 16px;
+    line-height: 14px;
+    padding-left: 20px;
+    margin-left: 110px;
+    background: url(../images/register/err_small.png) 0 0 no-repeat;
 }
