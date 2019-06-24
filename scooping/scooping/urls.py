@@ -21,14 +21,14 @@ from django.conf.urls import include
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r"^scooping/",views.index),
-    url(r"^about/",include("about.urls")),
-    url(r"^checkout/",include("checkout.urls")),
-    url(r"^login/",include("login.urls")),
-    url(r"^payment/",include("payment.urls")),
-    url(r"^register/",include("register.urls")),
-    url(r"^RetrievePassword/",include("RetrievePassword.urls")),
-    url(r"^shop/",include("shop.urls")),
-    url(r"^single/",include("single.urls")),
-    url(r"^order/",include("order.urls")),
+    # url(r"^about/",include("about.urls")),
+    # url(r"^checkout/",include("checkout.urls")),
+    # url(r"^login/",include("login.urls")),
+    # url(r"^payment/",include("payment.urls")),
+    # url(r"^register/",include("register.urls")),
+    # url(r"^RetrievePassword/",include("RetrievePassword.urls")),
+    # url(r"^shop/",include("shop.urls")),
+    # url(r"^single/",include("single.urls")),
+    # url(r"^order/",include("order.urls")),
 
 ]
