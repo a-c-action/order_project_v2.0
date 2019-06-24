@@ -79,7 +79,7 @@ DATABASES = {
                 'NAME': 'shaopin',
                 'USER': 'root',
                 'PASSWORD': '123456',
-                'HOST': '127.0.0.1',
+                'HOST': '176.234.8.25',
                 'PORT': 3306,
     }
 }
