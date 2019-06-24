@@ -77,7 +77,7 @@ DATABASES = {
     'default': {
                 'ENGINE': 'django.db.backends.mysql',
                 'NAME': 'shaopin',
-                'USER': 'root',
+                'USER': 'scooping',
                 'PASSWORD': '123456',
                 'HOST': '176.234.8.25',
                 'PORT': 3306,

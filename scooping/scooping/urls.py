@@ -20,7 +20,7 @@ from django.conf.urls import include
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r"^scooping",views.index),
+    url(r"^scooping/",views.index),
     url(r"^about/",include("about.urls")),
     url(r"^checkout/",include("checkout.urls")),
     url(r"^login/",include("login.urls")),
