@@ -1389,7 +1389,7 @@ color: #2fdab8;
 }
 /*-- //footer --*/
 .banner_top.innerpage {
-    background: url(../images/index/banner3.jpg) no-repeat 0px -221px;
+    background: url(../images/shop/banner3.jpg) no-repeat 0px -221px;
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -1823,7 +1823,7 @@ p.head_para {
         padding: 2em 1em;
     }
     .banner_top.innerpage {
-        background: url(../images/register/banner3.jpg) no-repeat 0px -21px;
+        background: url(../images/shop/banner3.jpg) no-repeat 0px -21px;
         background-size: cover;
         -webkit-background-size: cover;
         -moz-background-size: cover;
