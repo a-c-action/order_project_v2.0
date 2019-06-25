@@ -14,12 +14,10 @@ def book_table(request):
         person = request.POST.get("person")
         table = request.POST.get("table")
         phone = request.POST.get("phone")
-        # html="time:"+time+"date:"+date+"person:"+person+"table:"+table+"phone:"+phone
-        data="""
-        '预定成功'
-        """
+        html="time:"+time+"date:"+date+"person:"+person+"table:"+table+"phone:"+phone
 
-        return HttpResponse(data)
+
+        return HttpResponse(html)
 
 
 
