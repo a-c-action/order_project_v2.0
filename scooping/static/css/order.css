@@ -1,6 +1,7 @@
 .error_page h1{
     font-size:24px;
     text-align:left;
+    margin-bottom:5px;
 }
 .error_page ul li{
     list-style:none;
@@ -13,10 +14,7 @@
 .error_page ul li a{
     color:#666;
 }
-.error_page ul li a:focus{
-    color:#fb383b;
-    border-bottom:3px solid #fb383b;
-}
+
 .contentorder{
     text-align:left;
     margin-top:80px;
@@ -95,4 +93,21 @@
 }
 .paymenta:hover{
     background:#fb383b;
+}
+.error_page .formsubmit{
+    float:left;
+    width:3%;
+    margin-right:50px;
+}
+.error_page .formsubmit input{
+    font-size:1.2em;
+    background:#fff;
+    border:0;
+    outline:none;
+
+
+}
+.error_page .formsubmit input:hover{
+    color:#fb383b;
+    border-bottom:3px solid #fb383b;
 }

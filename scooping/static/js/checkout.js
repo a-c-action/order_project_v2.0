@@ -5,15 +5,15 @@ $(function () {
         if ($(this).attr("checked")) {
             //修改为取消选中
             $(this).removeAttr("checked")
-                .attr("src", "images/product_normal.png");
+                .attr("src", "../static/images/checkout/product_normal.png");
             $(".checkItem").removeAttr("checked")
-                .attr("src", "images/product_normal.png")
+                .attr("src", "../static/images/checkout/product_normal.png")
 
         } else {
             $(this).attr("checked", "true")
-                .attr("src", "images/product_true.png");
+                .attr("src", "../static/images/checkout/product_true.png");
             $(".checkItem").attr("checked", "true")
-                .attr("src", "images/product_true.png")
+                .attr("src", "../static/images/checkout/product_true.png")
         }
         /*
             1.为全选按钮添加点击事件，事件函数中，判断当前按钮是否是选中状态（查看是否存在checked属性值）
@@ -27,21 +27,21 @@ $(function () {
     $(".checkItem").click(function () {
         if ($(this).attr("checked")) {
             $(this).removeAttr("checked")
-                .attr("src", "images/product_normal.png");
+                .attr("src", "../static/images/checkout/product_normal.png");
         } else {
             $(this).attr("checked", "true")
-                .attr("src", "images/product_true.png")
+                .attr("src", "../static/images/checkout/product_true.png")
         }
         //被选中的商品数量等于商品元素的个数，视为全选
         //console.log($(".checkItem[checked]"));
         if ($(".checkItem[checked]").length == $(".checkItem").length) {
             //视为全选
             $(".checkAll").attr("checked", "true")
-                .attr("src", "images/product_true.png")
+                .attr("src", "../static/images/checkout/product_true.png")
         } else {
             //取消全选
             $(".checkAll").removeAttr("checked")
-                .attr("src", "images/product_normal.png");
+                .attr("src", "../static/images/checkout/product_normal.png");
         }
         sum();
     });

@@ -21,6 +21,7 @@ from django.conf.urls import include
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r"^$",views.index),
+    url(r"^scoping/",include("scoping.urls")),
     url(r"^about/",include("about.urls")),
     url(r"^checkout/",include("checkout.urls")),
     url(r"^login/",include("login.urls")),

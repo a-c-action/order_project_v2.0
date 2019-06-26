@@ -104,13 +104,25 @@
 			<div class="error_page">
 				<!--主订单页面-->
 				<h1>我的订单</h1>
-				<ul>
-					<li><a href="#">全部订单</a></li>
-					<li><a href="#">待支付</a></li>
-					<li><a href="#">已完成</a></li>
-				</ul>
+				<!--<ul>-->
+					<!--<li><a href="#">全部订单</a></li>-->
+					<!--<li><a href="#">待支付</a></li>-->
+					<!--<li><a href="#">已完成</a></li>-->
+				<!--</ul>-->
+				<form class="formsubmit" action="/order/all" method="post">
+					<input type="submit" value="全部订单">
+				</form>
+				<form class="formsubmit " action="/order/payend" method="post">
+					<input type="submit" value="已付款">
+				</form>
+
+				<form class="formsubmit" action="/order/nopay" method="post">
+					<input type="submit" value="未付款">
+				</form>
+
 
 			</div>
+			{% for order in order_list %}
 			<div class="contentorder">
 				<div id="headorder">
 					<p>订单编号:130118164229054</p>
@@ -149,6 +161,7 @@
 					</tfoot>
 				</table>
 			</div>
+			{% endfor %}
 		</div>
 	</div>
 	<!-- footer -->
