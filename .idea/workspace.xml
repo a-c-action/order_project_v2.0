@@ -13,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scooping/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="6901">
-              <caret line="336" column="12" lean-forward="true" selection-start-line="336" selection-start-column="12" selection-end-line="336" selection-end-column="12" />
+            <state relative-caret-position="451">
+              <caret line="347" column="34" lean-forward="true" selection-start-line="347" selection-start-column="34" selection-end-line="347" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -67,7 +67,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="754" />
     <option name="y" value="27" />
     <option name="width" value="1166" />
@@ -91,12 +91,6 @@
               <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="order_project_v2.0" type="462c0819:PsiDirectoryNode" />
               <item name="scooping" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="order_project_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="scooping" type="462c0819:PsiDirectoryNode" />
-              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -138,7 +132,7 @@
       <workItem from="1561352751132" duration="307000" />
       <workItem from="1561353061151" duration="41168000" />
       <workItem from="1561550222553" duration="3422000" />
-      <workItem from="1561554188224" duration="2527000" />
+      <workItem from="1561554188224" duration="3524000" />
     </task>
     <task id="LOCAL-00001" summary="修改register路径">
       <created>1561381118433</created>
@@ -172,14 +166,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="55728000" />
+    <option name="totallyTimeSpent" value="56725000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1004" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1980728" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.1980728" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -391,10 +385,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scooping/scoping/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scooping/scoping/admin.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scooping/scoping/apps.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scooping/scoping/models.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scooping/scoping/urls.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/scooping/templates/login.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6901">
-          <caret line="336" column="12" lean-forward="true" selection-start-line="336" selection-start-column="12" selection-end-line="336" selection-end-column="12" />
+        <state relative-caret-position="451">
+          <caret line="347" column="34" lean-forward="true" selection-start-line="347" selection-start-column="34" selection-end-line="347" selection-end-column="34" />
         </state>
       </provider>
     </entry>
