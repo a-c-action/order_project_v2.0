@@ -45,11 +45,11 @@
 					<button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
 					<nav>
 						<ul>
-							<li><a href="index.html" class="active">首页</a></li>
-							<li><a href="about.html">关于我们</a></li>
-							<li><a href="shop.html">Shop Now</a></li>
-							<li><a href="login.html">登录</a></li>
-							<li><a href="register.html">注册</a></li>
+							<li><a href="/" class="active">首页</a></li>
+							<li><a href="/about">关于我们</a></li>
+							<li><a href="/shop">Shop Now</a></li>
+							<li><a href="/login">登录</a></li>
+							<li><a href="/register">注册</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -104,24 +104,45 @@
 			<div class="login-grids">
 				<div class="col-md-6 log">
 						<h3>登录</h3>
+                        {% csrf_token %}
 						<div class="strip"></div>
 						<p>欢迎您，请输入以下内容继续。</p>
-						<p>如果您之前已登录过我们，<a href="index.html">请单击此处</a></p>
+						<p>如果您之前已登录过我们，<a href="/">请单击此处</a></p>
 						<form>
-							<h5>账户登录：</h5>	
-							<input type="text" value="" placeholder="用户名/邮箱/手机号">
-							<h5>密码：</h5>
-							<input type="password" value="" placeholder="密码">					
-							<input type="submit" value="登录">
-							
+                            <div class="loginInput">
+                                <div>
+                                    <h5>账户登录：</h5>
+                                    <input type="text" value="" placeholder="用户名/邮箱/手机号">
+                                </div>
+                                <div>
+                                    <h5>密码：</h5>
+                                    <input type="password" value="" placeholder="密码">
+                                </div>
+                                <div id="verifyInput" width="300px">
+                                    <h5>验证码：</h5>
+                                    <input type="text" value="" name="" placeholder="请输入验证码">
+                                </div>
+                                <div id="verifyimageInput" width="300px">
+                                    <img src="/verify_code" alt="正在加载" class="limVer" title="刷新一下">
+                                    <button type="button" class="laVer">刷新一下</button>
+                                </div>
+                                <div id="loginSubmit" width="300px" hight="50px">
+                                    <div>
+                                        <input type="checkbox" id="loginbox"><label for="loginbox">自动登录</label>
+                                    </div>
+                                    <input type="submit" value="登录">
+                                    <a href="/RetrievePassword">忘记密码 ？</a>
+                                </div>
+                            </div>
 						</form>
-						<a href="RetrievePassword.html">忘记密码 ？</a>
+
 				</div>
+
 				<div class="col-md-6 login-right">
 						<h3>注册新用户</h3>
 						<div class="strip"></div>
 						<p>通过创建帐户，您可以更快地完成结帐流程，查看和跟踪您帐户中的订单等。</p>
-						<a href="register.html" class="hvr-shutter-in-horizontal button">创建一个新用户</a>
+						<a href="/register" class="hvr-shutter-in-horizontal button">创建一个新用户</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -180,11 +201,11 @@
 					<div class="col-md-4 sign-gd">
 						<h4>页面信息</h4>
 						<ul>
-							<li><a href="index.html">主页</a></li>
-							<li><a href="about.html">关于我们</a></li>
-							<li><a href="shop.html">点餐</a></li>
-							<li><a href="login.html">登录</a></li>
-							<li><a href="register.html">注册</a></li>
+							<li><a href="/">主页</a></li>
+							<li><a href="/about/">关于我们</a></li>
+							<li><a href="/shop/">点餐</a></li>
+							<li><a href="/login/">登录</a></li>
+							<li><a href="/register/">注册</a></li>
 						</ul>
 					</div>
 
@@ -228,15 +249,15 @@
 					<div class="col-md-3 sign-gd flickr-post">
 						<h4>特色餐品</h4>
 						<ul>
-							<li><a href="shop.html"><img src="{% static 'images/register/g1.jpg' %}" alt=" " class="img-responsive" /></a></li>
-							<li><a href="shop.html"><img src="{% static 'images/register/g2.jpg' %}" alt=" " class="img-responsive" /></a></li>
-							<li><a href="shop.html"><img src="{% static 'images/register/g3.jpg' %}" alt=" " class="img-responsive" /></a></li>
-							<li><a href="shop.html"><img src="{% static 'images/register/g4.jpg' %}" alt=" " class="img-responsive" /></a></li>
-							<li><a href="shop.html"><img src="{% static 'images/register/g5.jpg' %}" alt=" " class="img-responsive" /></a></li>
-							<li><a href="shop.html"><img src="{% static 'images/register/g6.jpg' %}" alt=" " class="img-responsive" /></a></li>
-							<li><a href="shop.html"><img src="{% static 'images/register/g1.jpg' %}" alt=" " class="img-responsive" /></a></li>
-							<li><a href="shop.html"><img src="{% static 'images/register/g2.jpg' %}" alt=" " class="img-responsive" /></a></li>
-							<li><a href="shop.html"><img src="{% static 'images/register/g3.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="/shop"><img src="{% static 'images/register/g1.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="/shop"><img src="{% static 'images/register/g2.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="/shop"><img src="{% static 'images/register/g3.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="/shop"><img src="{% static 'images/register/g4.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="/shop"><img src="{% static 'images/register/g5.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="/shop"><img src="{% static 'images/register/g6.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="/shop"><img src="{% static 'images/register/g1.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="/shop"><img src="{% static 'images/register/g2.jpg' %}" alt=" " class="img-responsive" /></a></li>
+							<li><a href="/shop"><img src="{% static 'images/register/g3.jpg' %}" alt=" " class="img-responsive" /></a></li>
 						</ul>
 					</div>
 					<div class="clearfix"></div>
@@ -313,6 +334,17 @@
 			});
 		});
 	</script>
+    <script>
+        $(function () {
+           $(".limVer").click(function () {
+               this.src += "?";
+               {#src后面加问号会自动刷新验证码img的src#}
+               {#$(this).attr('src',"/verify_code"+Math.random())#}
+
+            });
+        })
+
+    </script>
 	<!-- //end-smoth-scrolling -->
 	<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
 

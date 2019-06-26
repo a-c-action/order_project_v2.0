@@ -46,7 +46,7 @@ padding:100px 0;
     margin-top:32px;
 }
 .log form input[type="text"],.log form input[type="password"] {/*1061*/
-    width: 35%;
+    /*width: 35%;*/
     padding: 8px;
     font-size: 14px;
     font-weight: 400;
@@ -348,4 +348,44 @@ p.click a{/*1268*/
     padding-left: 20px;
     margin-left: 110px;
     background: url(../images/register/err_small.png) 0 0 no-repeat;
+}
+#verifyInput{
+    float: left;
+    width: 300px;
+}
+#verifyimageInput{
+    float: right;
+    width: 300px;
+    height: 76px;
+}
+#loginSubmit{
+    float: left;
+    width: 300px;
+}
+.limVer{
+    width: 100px;
+    height: 38px;
+    float: left;
+    margin-left: -55%;
+}
+.laVer{
+    background: blue;
+    width: 100px;
+    height: 38px;
+    float: left;
+    position: relative;
+    margin-top: -5%;
+    margin-left: -25%;
+    color: white;
+    border: 0;
+}
+.linputVer{
+    color: white;
+    background-color:#2020f9e6;
+    width: 150px;
+    height: 38px;
+    border: none;
+}
+#loginbox{
+    margin: 0;
 }
