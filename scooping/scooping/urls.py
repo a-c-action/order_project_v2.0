@@ -24,12 +24,9 @@ urlpatterns = [
     url(r"^scoping/",include("scoping.urls")),
     url(r"^about/",include("about.urls")),
     url(r"^checkout/",include("checkout.urls")),
-    url(r"^login/",include("login.urls")),
+    url(r"^userinfo/",include("userinfo.urls")),
     url(r"^payment/",include("payment.urls")),
-    url(r"^register/",include("register.urls")),
-    url(r"^RetrievePassword/",include("RetrievePassword.urls")),
     url(r"^shop/",include("shop.urls")),
     url(r"^single/",include("single.urls")),
     url(r"^order/",include("order.urls")),
-
 ]

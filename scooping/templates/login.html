@@ -112,15 +112,15 @@
                             <div class="loginInput">
                                 <div>
                                     <h5>账户登录：</h5>
-                                    <input type="text" value="" placeholder="用户名/邮箱/手机号">
+                                    <input type="text" value="" name="uname" placeholder="用户名/邮箱/手机号" required>
                                 </div>
                                 <div>
                                     <h5>密码：</h5>
-                                    <input type="password" value="" placeholder="密码">
+                                    <input type="password" value="" name="credential" placeholder="密码" required>
                                 </div>
                                 <div id="verifyInput" width="300px">
                                     <h5>验证码：</h5>
-                                    <input type="text" value="" name="" placeholder="请输入验证码">
+                                    <input type="text" value="" name="verify_code" placeholder="请输入验证码" required>
                                 </div>
                                 <div id="verifyimageInput" width="300px">
                                     <img src="/verify_code" alt="正在加载" class="limVer" title="刷新一下">
@@ -128,7 +128,7 @@
                                 </div>
                                 <div id="loginSubmit" width="300px" hight="50px">
                                     <div>
-                                        <input type="checkbox" id="loginbox"><label for="loginbox">自动登录</label>
+                                        <input type="checkbox" id="loginbox" name="remember" value="1"><label for="loginbox">自动登录</label>
                                     </div>
                                     <input type="submit" value="登录">
                                     <a href="/RetrievePassword">忘记密码 ？</a>
@@ -340,10 +340,8 @@
                this.src += "?";
                {#src后面加问号会自动刷新验证码img的src#}
                {#$(this).attr('src',"/verify_code"+Math.random())#}
-
             });
         })
-
     </script>
 	<!-- //end-smoth-scrolling -->
 	<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>

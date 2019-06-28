@@ -39,20 +39,18 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'about',
     'checkout',
-    'login',
     'order',
     'payment',
-    'register',
     'shop',
     'single',
-    'RetrievePassword',
+    'userinfo',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
-    # 'django.middleware.csrf.CsrfViewMiddleware',
+    'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
@@ -135,5 +133,14 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"static")
 ]
 
-SESSION_COOKIE_AGE = 60*2
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+# SESSION_COOKIE_AGE = 60*2
+# SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Application definition
+# AUTHENTICATION_BACKENDS = (
+#     'register.views.CustomBackend',
+# )
+
+# AUTH_USER_MODEL = "register.UserProfile"
+
+# UPLOAD_DIRS=os.path.join(BASE_DIR,'static/images/register')
