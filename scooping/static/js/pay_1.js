@@ -5,18 +5,18 @@ $(function (){
 		if($(".check_1").attr("checked")){
 			//修改为取消选中
 			$(".check_1").removeAttr("checked")
-				.attr("src","images_pay/pay_1.png");
+				.attr("src",'/static/images/payment/pay_1.png');
             console.log(1)
             //如果不是选中状态，则判断2是否为选中状态，如果是，则控制1选中，控制2取消选中
 		}else if($(".check_2").attr("checked")){
 
 			$(".check_1").attr("checked","true")
-				.attr("src","images_pay/pay_2.png");
+				.attr("src",'/static/images/payment/pay_2.png');
 			$(".check_2").removeAttr("checked",'true')
-				.attr("src","images_pay/pay_3.png")
+				.attr("src",'/static/images/payment/pay_3.png')
 		}else{
 		    $(".check_1").attr("checked","true")
-				.attr("src","images_pay/pay_2.png");
+				.attr("src",'/static/images/payment/pay_2.png');
 		}
 	})
 
@@ -27,18 +27,18 @@ $(function (){
 		if($(".check_2").attr("checked")){
 			//修改为取消选中
 			$(".check_2").removeAttr("checked")
-				.attr("src","images_pay/pay_3.png");
+				.attr("src","/static/images/payment/pay_3.png");
             console.log(1)
             //如果不是选中状态，则判断2是否为选中状态，如果是，则控制1选中，控制2取消选中
 		}else if($(".check_1").attr("checked")){
 
 			$(".check_2").attr("checked","true")
-				.attr("src","images_pay/pay_4.png");
+				.attr("src","/static/images/payment/pay_4.png");
 			$(".check_1").removeAttr("checked",'true')
-				.attr("src","images_pay/pay_1.png")
+				.attr("src","/static/images/payment/pay_1.png")
 		}else{
 		    $(".check_2").attr("checked","true")
-				.attr("src","images_pay/pay_4.png");
+				.attr("src","/static/images/payment/pay_4.png");
 		}
 
 
