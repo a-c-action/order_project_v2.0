@@ -133,6 +133,15 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"static")
 ]
 
+
+AUTH_USER_MODEL = 'userinfo.Users_auths'
+
+
+
+
+
+
+
 # SESSION_COOKIE_AGE = 60*2
 # SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
