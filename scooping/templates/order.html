@@ -125,8 +125,8 @@
 			{% for order in order_list %}
 			<div class="contentorder">
 				<div id="headorder">
-					<p>订单编号:130118164229054</p>
-					<p id="fdata">订单日期:2019-08-25 08:25:78</p>
+					<p>订单编号:{{order.check_id.orderid}}</p>
+					<p id="fdata">订单日期:{{order.check_id.data}}</p>
 				</div>
 				<table>
 					<thead>
@@ -142,21 +142,30 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td>蓝莓马蹄</td>
+							<td>{{order.cid.cname}}</td>
 							<td>
-								<img class="imgorder" src="{% static 'images/order/s3.jpg' %}">
+								<img class="imgorder" src="{% static order.cid.cimg %}">
 							</td>
-							<td>375元</td>
-							<td>2</td>
-							<td>750</td>
-							<td>已配餐</td>
+							<td>{{order.cid.cprice}}</td>
+							<td>{{order.lcount}}</td>
+							<td>{{order.lmoney}}</td>
+							{% if order.check_id.odish %}
+								<td>已配餐</td>
+							{% else %}
+								<td>未配餐</td>
+							{% endif %}
 
 						</tr>
 
 					</tbody>
 					<tfoot>
 						<tr>
-							<td colspan="6" id="footorder">总价：¥780 <a class="paymenta ordera" >取消订单</a><a class="paymenta" href="payment.html">去付款</a></td>
+							<td colspan="6" id="footorder">总价：¥{{order.check_id.allmoney}}
+								{% if  order.check_id.otype %}
+								<a class="paymenta ordera" >删除订单</a><a class="paymenta" href="payment.html">已完成</a></td>
+								{% else %}
+								<a class="paymenta ordera" >取消订单</a><a class="paymenta" href="payment.html">去付款</a></td>
+								{% endif %}
 						</tr>
 					</tfoot>
 				</table>
