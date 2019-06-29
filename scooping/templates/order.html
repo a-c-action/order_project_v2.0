@@ -109,14 +109,18 @@
 					<!--<li><a href="#">待支付</a></li>-->
 					<!--<li><a href="#">已完成</a></li>-->
 				<!--</ul>-->
+
 				<form class="formsubmit" action="/order/all" method="post">
+					{% csrf_token %}
 					<input type="submit" value="全部订单">
 				</form>
 				<form class="formsubmit " action="/order/payend" method="post">
+					{% csrf_token %}
 					<input type="submit" value="已付款">
 				</form>
 
 				<form class="formsubmit" action="/order/nopay" method="post">
+					{% csrf_token %}
 					<input type="submit" value="未付款">
 				</form>
 
