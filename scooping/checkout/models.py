@@ -29,7 +29,7 @@ class Orderlist(models.Model):
     lcount=models.IntegerField("菜品数量")
     lmoney=models.DecimalField("菜品金额",max_digits=7,decimal_places=2)
     #一个订单编号可以对应多个明细
-    check_id=models.ForeignKey(Ordertable)
+    check_id=models.ForeignKey(Ordertable,on_delete=models.CASCADE)
     #一个明细对应一个菜品
     cid=models.OneToOneField(Menu)
     class Meta:

@@ -134,23 +134,7 @@ STATICFILES_DIRS=[
     os.path.join(BASE_DIR,"static")
 ]
 
-
-AUTH_USER_MODEL = 'userinfo.Users_auths'
-
-
-
-
-
-
-
 # SESSION_COOKIE_AGE = 60*2
 # SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
-# Application definition
-# AUTHENTICATION_BACKENDS = (
-#     'register.views.CustomBackend',
-# )
-
-# AUTH_USER_MODEL = "register.UserProfile"
 
 # UPLOAD_DIRS=os.path.join(BASE_DIR,'static/images/register')

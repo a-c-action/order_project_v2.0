@@ -49,8 +49,8 @@
 							<li><a href="/" class="active">首页</a></li>
 							<li><a href="/about">关于我们</a></li>
 							<li><a href="/shop">Shop Now</a></li>
-							<li><a href="/userinfo/login">登录</a></li>
-							<li><a href="/userinfo/register">注册</a></li>
+							<li><a href="/login">登录</a></li>
+							<li><a href="/register">注册</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -96,7 +96,7 @@
 		</div>
 		<!-- //banner_inner -->
 	</div>
-	
+
 	<!-- registration-form -->
 	<div class="registration-form">
 		<div class="container">
@@ -107,13 +107,14 @@
 					<div class="reg">
 						<p>欢迎您，请输入以下详细信息以继续。</p>
 						<p>如果您之前已在我们这里注册，<a href="/login">请单击此处</a></p>
-						<form action="/register_input" method="post">
-							<ul>
+						<form action="/userinfo/register" method="post">
+							{% csrf_token %}
+                            <ul>
 								<li class="text-info">用户名: </li>
 								<li><input type="text" value="" name="uname" placeholder="请输入用户名" minlength="2" maxlength="16" class="userInput" autocomplete="off"></li>
 								<span class="span-info"><b>*</b>4-16位，不能以数字或特殊字符开头，一经注册不能修改。</span>
 								<span class="pass-item-error1">用户名为空或错误,不能以数字或特殊字符开头,特殊字符只允许_-存在。</span>
-							</ul>				 
+							</ul>
 							<ul>
 								<li class="text-info">邮箱: </li>
 								<li><input type="text" value="" name="uemail" placeholder="请输入邮箱" class="emailInput"></li>
@@ -122,13 +123,13 @@
 							</ul>
 							<ul>
 								<li class="text-info">密码: </li>
-								<li><input type="password" value="" name="upswd" placeholder="请输入密码" minlength="6" maxlength="16" class="passwordInput"></li>
+								<li><input type="password" value="" name="upassword" placeholder="请输入密码" minlength="6" maxlength="16" class="passwordInput"></li>
 								<span><b>*</b>长度为6-16位，建议由字母、数字或符号组合，区分大小写。</span>
 								<span class="pass-item-error3">密码为空或强度不够(必须包含大小写字母和数字的组合，可以使用特殊字符)。</span>
 							</ul>
 							<ul>
 								<li class="text-info">确认密码:</li>
-								<li><input type="password" value="" name="rupswd" placeholder="请确认密码" class="restartpasswordInput"></li>
+								<li><input type="password" value="" name="upassword2" placeholder="请确认密码" class="restartpasswordInput"></li>
 								<span><b>*</b>请再次输入密码。</span>
 								<span class="pass-item-error4">两次密码输入不一致</span>
 							</ul>
@@ -140,13 +141,13 @@
 							</ul>
 							<ul>
 								<li class="text-info">验证码:</li>
-								<li><input type="text" value="" name="" placeholder="请输入验证码"></li>
+								<li><input type="text" value="" name="verification_code" placeholder="请输入验证码"></li>
 								<img src="../static/images/register/paypal.png" alt="正在加载" class="imVer">
 								<button type="button" class="aVer">刷新一下</button>
 							</ul>
 							<ul>
 								<li class="text-info">激活码:</li>
-								<li><input type="text" value="" name="" placeholder="请输入激活码"></li>
+								<li><input type="text" value="" name="activation_code" placeholder="请输入激活码"></li>
 								<button type="button" class="inputVer" value="获取激活码">获取激活码</button>
 							</ul>
 							<p class="click">点击此按钮查看<a href="javascript:void(0)" class="togg">服务条款</a></p>
@@ -157,7 +158,7 @@
 										已阅读及同意服务条款
 									</div>
 								</div>
-							</div>			
+							</div>
 							<input type="submit" value="注册">
 						</form>
 					</div>
@@ -182,11 +183,11 @@
 	一、用户名和密码
 	当您在注册页面按照提示填写登录名、密码等信息，阅读并同意《勺品服务协议》、《勺品用户信息保密协议》时，您即成为勺品,品出精彩会员。您只能通过您的密码来使用您的帐号。您须自行负责对您的会员登录名和密码保密，如果您泄漏了密码，您可能会丢失您的个人识别信息，并且可能出现对您不利的后果。
 	二、注册
-	当您在注册为勺品,品出精彩会员时，我们要求您填写一张注册表。注册表要求提供您的用户名，手机号，电子邮箱等相关信息。前述信息如有变更，应立即修正。如因用户提供的信息不实或不准确，给用户自身或他人造成任何性质的损失，均由用户自行承担。我们将会收集这些信息，并用这些信息来给我们的会员分类，以便有针对性地为您提供及时、优质的服务，以便潜在的合作伙伴或者我们的工作人员能够及时与您取得联系，促成合作机会的达成，或解决可能存在的问题，我们也会通过你的邮件地址来通知你这些新的服务和合作机会。	
+	当您在注册为勺品,品出精彩会员时，我们要求您填写一张注册表。注册表要求提供您的用户名，手机号，电子邮箱等相关信息。前述信息如有变更，应立即修正。如因用户提供的信息不实或不准确，给用户自身或他人造成任何性质的损失，均由用户自行承担。我们将会收集这些信息，并用这些信息来给我们的会员分类，以便有针对性地为您提供及时、优质的服务，以便潜在的合作伙伴或者我们的工作人员能够及时与您取得联系，促成合作机会的达成，或解决可能存在的问题，我们也会通过你的邮件地址来通知你这些新的服务和合作机会。
 	三、资料修改
-	您凭用户名和密码登录会员中心，可以对您发布的信息进行修改和更新，您提供有效真实的证明后，有权要求勺品,品出精彩对您发布的信息进行注销或删除。	
+	您凭用户名和密码登录会员中心，可以对您发布的信息进行修改和更新，您提供有效真实的证明后，有权要求勺品,品出精彩对您发布的信息进行注销或删除。
 	四、信息的收集、使用和披露
-	尊重个人隐私、保护网络信息安全是勺品,品出精彩的责任，勺品,品出精彩在未经用户授权时不得向第三方公开、编辑或透露用户个人资料的内容，但由于政府要求、法律政策需要等原因除外。在用户发送信息的过程中和本网站收到信息后，本网站将遵守《网络安全法》、《******关于审理利用信息网络侵害人身权益民事纠纷案件适用法律若干问题的规定》、《******、最高人民检察院关于办理侵犯公民个人信息刑事案件适用法律若干问题的解释》来保护用户的私人信息。承诺在本网站中收集到的您个人身份及加盟意向的电子信息，将严格遵循合法、正当、必要的原则。	
+	尊重个人隐私、保护网络信息安全是勺品,品出精彩的责任，勺品,品出精彩在未经用户授权时不得向第三方公开、编辑或透露用户个人资料的内容，但由于政府要求、法律政策需要等原因除外。在用户发送信息的过程中和本网站收到信息后，本网站将遵守《网络安全法》、《******关于审理利用信息网络侵害人身权益民事纠纷案件适用法律若干问题的规定》、《******、最高人民检察院关于办理侵犯公民个人信息刑事案件适用法律若干问题的解释》来保护用户的私人信息。承诺在本网站中收集到的您个人身份及加盟意向的电子信息，将严格遵循合法、正当、必要的原则。
 	五、特别提示
 	勺品,品出精彩有权在必要时修改服务规则。勺品,品出精彩的服务规则一旦发生变动，将会在勺品,品出精彩的重要页面上提示修改内容，用户如不同意新的修改内容，须立即停止使用本协议约定的服务，否则视为用户完全同意并接受新的修改内容。根据客观情况及经营方针的变化，勺品,品出精彩有中断或停止服务的权利，用户对此表示理解并完全认同。本协议仅适用于勺品,品出精彩用户，若与其它相关约定不一致的，以本协议约定为准。
 					</textarea>
@@ -253,8 +254,8 @@
 							<li><a href="/">主页</a></li>
 							<li><a href="/about/">关于我们</a></li>
 							<li><a href="/shop/">点餐</a></li>
-							<li><a href="/userinfo/login">登录</a></li>
-							<li><a href="/userinfo/register">注册</a></li>
+							<li><a href="/login/">登录</a></li>
+							<li><a href="/register/">注册</a></li>
 						</ul>
 					</div>
 
