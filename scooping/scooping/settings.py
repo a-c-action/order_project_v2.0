@@ -135,7 +135,7 @@ STATICFILES_DIRS=[
 ]
 
 
-AUTH_USER_MODEL = 'userinfo.Users_auths'
+# AUTH_USER_MODEL = 'userinfo.Users_auths'
 
 
 
