@@ -24,3 +24,10 @@ def nopay_list(request):
     order=models.Ordertable.objects.filter(otype=1)
     order_list = models.Orderlist.objects.filter(check_id=order)
     return render(request,"order.html",locals())
+
+def deleteit(request):
+    oderid=request.GET.get("id")
+    pass
+
+def cancelit(request):
+    pass

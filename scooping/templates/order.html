@@ -166,9 +166,9 @@
 						<tr>
 							<td colspan="6" id="footorder">总价：¥{{order.check_id.allmoney}}
 								{% if  order.check_id.otype %}
-								<a class="paymenta ordera" >删除订单</a><a class="paymenta" href="payment.html">已完成</a></td>
+								<a class="paymenta ordera" href="/order?id={{order.check_id.orderid}}">删除订单</a><a class="paymenta" href="payment.html">已完成</a></td>
 								{% else %}
-								<a class="paymenta ordera" >取消订单</a><a class="paymenta" href="payment.html">去付款</a></td>
+								<a class="paymenta ordera" href="/order/cancel?id={{order.check_id.orderid}}">取消订单</a><a class="paymenta" href="payment.html">去付款</a></td>
 								{% endif %}
 						</tr>
 					</tfoot>
