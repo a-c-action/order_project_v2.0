@@ -34,3 +34,13 @@ class Orderlist(models.Model):
     cid=models.OneToOneField(Menu)
     class Meta:
         db_table='Orderlist'
+
+#外卖表
+class Takeout(models.Model):
+    name=models.CharField("姓名",max_length=50)
+    phone=models.CharField("手机号",max_length=50)
+    addr=models.CharField("地址 ",max_length=500)
+    number=models.CharField("门牌号",max_length=20)
+    oid = models.OneToOneField(Ordertable)
+    class Meta:
+        db_table='Takeout'
