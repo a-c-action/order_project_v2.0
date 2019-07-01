@@ -5,9 +5,10 @@ from io import BytesIO
 from . import verify_code
 from django.conf import settings
 import os,re
-
-# Create your views here.
 from . import models
+from django.contrib.auth.hashers import make_password,check_password
+from django.db.models import Q
+# Create your views here.
 
 def login(request):
     if request.method=='GET':
@@ -17,26 +18,19 @@ def login(request):
         remember = request.POST.get('remember','')
         uaccount = request.POST.get('uaccount','')
         password = request.POST.get('password','')
-
         try:
-            identity_type = models.Users_auths.objects.filter(identifier = uaccount).identity_type
-            print(identity_type)
-            user = models.Users_auths.objects.get(identity_type=identity_type,identifier=uaccount,credential=credential)
-            print(user)
+            user = models.Users_auths.objects.get(Q(uname=uaccount) | Q(uemail=uaccount) | Q(uphone=uaccount))
             request.session['user'] = {
-                'uname': user.name,
+                'uaccount': user.uname,
                 'id': user.id
             }
-            if user.check_password(password):
-                login(request,user)
-            # user = models.Users_auths.objects.get()
+            if check_password(password,user.password):
                 resp = HttpResponse("登陆成功")
                 if remember:
-                    # uname = models.UserProfile.objects.filter()
-                    resp.set_cookie('username', uaccount, 7 * 24 * 60 * 60)
+                    resp.set_cookie('uaccount', user.uname, 7 * 24 * 60 * 60)
                 else:
                     resp.delete_cookie('username')
-                return resp
+                return render(request,"index.html")
             else:
                 return HttpResponse("登陆失败,密码不正确")
         except:
@@ -68,6 +62,8 @@ def register(request):
         uemail = request.POST.get('uemail', '')
         password = request.POST.get('upassword', '')
         password2 = request.POST.get('upassword2', '')
+        password = make_password(password,"a",'pbkdf2_sha1')
+        password2 = make_password(password2,"a",'pbkdf2_sha1')
         uphone = request.POST.get('uphone','')
         # verification_code = request.POST.get('verification_code','')
         # activation_code = request.POST.get('activation_code','')
