@@ -49,14 +49,13 @@
 				</div>
 				<div id="welcome">
 					{# 判断是否已经登录 #}
-					{% if request.session.userinfo %}
-					<label >欢迎:{{request.session.userinfo.username}}</label>
+					{% if request.session.user %}
+					<label >欢迎:{{ request.session.user.uaccount }}</label>
+					<a href="/userinfo/logout"><img id="imgback" src="{% static 'images/index/back.png' %}" width="30px"></a>
 					{% endif %}
-					<label>欢迎</label>
 				</div>
 				<div class="overlay overlay-contentpush">
 					<button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
-
 					<nav>
 						<ul>
 							<li><a href="/" class="active">首页</a></li>

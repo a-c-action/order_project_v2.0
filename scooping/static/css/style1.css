@@ -389,3 +389,7 @@ p.click a{/*1268*/
 #loginbox{
     margin: 0;
 }
+#imgback{
+    width: 10px;
+    height: 10px;
+}

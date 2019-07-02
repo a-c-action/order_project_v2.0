@@ -29,7 +29,7 @@ def login(request):
                 if remember:
                     resp.set_cookie('uaccount', user.uname, 7 * 24 * 60 * 60)
                 else:
-                    resp.delete_cookie('username')
+                    resp.delete_cookie('uaccount')
                 return render(request,"index.html")
             else:
                 return HttpResponse("登陆失败,密码不正确")
