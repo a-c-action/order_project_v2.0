@@ -1,6 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from userinfo.models import UserProfile
 from checkout import models
+from django.db.models import Q
+
 
 # Create your views here.
 
@@ -9,10 +12,12 @@ def order1(request):
 
 def all_order_list(request):
     # Order_from为订单模型类名
-    # userid=request.session['user']["id"]
-    # user=models.UserProfile.objects.get(id=userid)
+    username=request.session["user"]["uaccount"]
+    users=UserProfile.objects.filter(uname=username)
+    print(users)
+
     # order_list=user.ordertable_set.all()
-    order_list=models.Ordertable.objects.all()
+    order_list=models.Ordertable.objects.filter(uid=users)
     print(order_list)
     orderdic={}
     for order in order_list:
@@ -22,8 +27,11 @@ def all_order_list(request):
     return render(request,"order.html",locals())
 
 def payend_list(request):
+    username = request.session["user"]["uaccount"]
+    users = UserProfile.objects.filter(uname=username)
+    print(users)
     # Pay_order为已付款订单模型类名
-    order_list = models.Ordertable.objects.filter(otype=0)
+    order_list = models.Ordertable.objects.filter(Q(otype=0)&Q(uid=users))
     orderdic = {}
     for order in order_list:
         orderinfo= order.orderlist_set.all()
@@ -31,8 +39,11 @@ def payend_list(request):
     return render(request,"order.html",locals())
 
 def nopay_list(request):
+    username = request.session["user"]["uaccount"]
+    users = UserProfile.objects.filter(uname=username)
+    print(users)
     # Pay_order未付款订单模型类名
-    order_list = models.Ordertable.objects.filter(otype=1)
+    order_list = models.Ordertable.objects.filter(Q(otype=1)&Q(uid=users))
     orderdic = {}
     for order in order_list:
         orderinfo = order.orderlist_set.all()
