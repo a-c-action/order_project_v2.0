@@ -2358,4 +2358,19 @@ p.head_para {
 
 }
 
+.wrapper_top_w3layouts .header_agileits #welcome{
+    position: absolute;
+    top:50px;
+    right:300px;
+    z-index:99;
+    margin:20px;
+}
+
+.wrapper_top_w3layouts .header_agileits #welcome label{
+ font-size:1em;
+ color:#fb383b;
+}
+
+
+
 
