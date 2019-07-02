@@ -126,11 +126,11 @@
 
 
 			</div>
-			{% for order in order_list %}
+			{% for key,value in orderdic.items %}
 			<div class="contentorder">
 				<div id="headorder">
-					<p>订单编号:{{order.check_id.orderid}}</p>
-					<p id="fdata">订单日期:{{order.check_id.data}}</p>
+					<p>订单编号:{{key.data}}</p>
+					<p id="fdata">订单日期:{{key.orderid}}</p>
 				</div>
 				<table>
 					<thead>
@@ -141,34 +141,37 @@
 							<td>商品数量</td>
 							<td>商品金额</td>
 							<td>商品状态</td>
-
 						</tr>
 					</thead>
+					{% for val in value %}
+
 					<tbody>
 						<tr>
-							<td>{{order.cid.cname}}</td>
+							<td>{{val.cid.cname}}</td>
 							<td>
-								<img class="imgorder" src="{% static order.cid.cimg %}">
+								<img class="imgorder" src="{% static val.cid.pic %}">
 							</td>
-							<td>{{order.cid.cprice}}</td>
-							<td>{{order.lcount}}</td>
-							<td>{{order.lmoney}}</td>
-							{% if order.check_id.odish %}
+							<td>{{val.cid.cprice}}</td>
+
+							<td>{{val.lcount}}</td>
+							<td>{{val.lmoney}}</td>
+							{% if val.odish %}
 								<td>已配餐</td>
 							{% else %}
 								<td>未配餐</td>
-							{% endif %}
+							{%  endif %}
 
 						</tr>
 
 					</tbody>
+					{% endfor %}
 					<tfoot>
 						<tr>
-							<td colspan="6" id="footorder">总价：¥{{order.check_id.allmoney}}
-								{% if  order.check_id.otype %}
-								<a class="paymenta ordera" href="/order?id={{order.check_id.orderid}}">删除订单</a><a class="paymenta" href="payment.html">已完成</a></td>
+							<td colspan="6" id="footorder">总价：¥{{key.allmoney}}
+								{% if  key.otype %}
+								<button class="paymenta ordera" >删除订单</button><a class="paymenta" href="/order">已完成</a></td>
 								{% else %}
-								<a class="paymenta ordera" href="/order/cancel?id={{order.check_id.orderid}}">取消订单</a><a class="paymenta" href="payment.html">去付款</a></td>
+								<button class="paymenta ordera" >取消订单</button><a class="paymenta" href="/payment">去付款</a></td>
 								{% endif %}
 						</tr>
 					</tfoot>
@@ -313,7 +316,7 @@
 	<script>
 		$(document).ready(function () {
 			$('#horizontalTab').easyResponsiveTabs({
-				type: 'default', //Types: default, vertical, accordion           
+				type: 'default', //Types: default, vertical, accordion
 				width: 'auto', //auto or any width like 600px
 				fit: true, // 100% fit in a container
 				closed: 'accordion', // Start closed if in accordion view

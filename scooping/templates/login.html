@@ -104,15 +104,15 @@
 			<div class="login-grids">
 				<div class="col-md-6 log">
 						<h3>登录</h3>
-                        {% csrf_token %}
 						<div class="strip"></div>
 						<p>欢迎您，请输入以下内容继续。</p>
 						<p>如果您之前已登录过我们，<a href="/">请单击此处</a></p>
-						<form>
+						<form action="/userinfo/login" method="post">
+                            {% csrf_token %}
                             <div class="loginInput">
                                 <div>
                                     <h5>账户登录：</h5>
-                                    <input type="text" value="" name="uaccount" placeholder="用户名/邮箱/手机号" required>
+                                    <input type="text" value="{{ uaccount }}" name="uaccount" placeholder="用户名/邮箱/手机号" required>
                                 </div>
                                 <div>
                                     <h5>密码：</h5>
@@ -204,8 +204,8 @@
 							<li><a href="/">主页</a></li>
 							<li><a href="/about/">关于我们</a></li>
 							<li><a href="/shop/">点餐</a></li>
-							<li><a href="/userinfo/login">登录</a></li>
-							<li><a href="/userinfo/register">注册</a></li>
+							<li><a href="/userinfo/login/">登录</a></li>
+							<li><a href="/userinfo/register/">注册</a></li>
 						</ul>
 					</div>
 
