@@ -1,5 +1,7 @@
 from django.conf.urls import url
 from . import views
 urlpatterns = [
-    url(r"^$",views.shop)
+    url(r"^food/",views.food_page,name="food"),
+    url(r"^query/",views.query),
+
 ]
