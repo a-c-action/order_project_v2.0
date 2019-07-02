@@ -2360,10 +2360,10 @@ p.head_para {
 
 .wrapper_top_w3layouts .header_agileits #welcome{
     position: absolute;
-    top:50px;
+    top:40px;
     right:300px;
     z-index:99;
-    margin:20px;
+    margin:13px;
 }
 
 .wrapper_top_w3layouts .header_agileits #welcome label{

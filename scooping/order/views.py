@@ -9,14 +9,25 @@ def order1(request):
 
 def all_order_list(request):
     # Order_from为订单模型类名
-    order_list=models.Orderlist.objects.all()
+    # userid=request.session['user']["id"]
+    # user=models.UserProfile.objects.get(id=userid)
+    # order_list=user.ordertable_set.all()
+    order_list=models.Ordertable.objects.all()
     print(order_list)
+    orderdic={}
+    for order in order_list:
+        orderinfo=order.orderlist_set.all()
+        orderdic[order]=orderinfo
+    print(orderdic)
     return render(request,"order.html",locals())
 
 def payend_list(request):
     # Pay_order为已付款订单模型类名
-    order = models.Ordertable.objects.filter(otype=0)
-    order_list = models.Orderlist.objects.filter(check_id=order)
+    order_list = models.Ordertable.objects.filter(otype=0)
+    orderdic = {}
+    for order in order_list:
+        orderinfo= order.orderlist_set.all()
+        orderdic[order] = orderinfo
     return render(request,"order.html",locals())
 
 def nopay_list(request):
