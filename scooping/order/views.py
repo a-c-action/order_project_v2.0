@@ -32,9 +32,12 @@ def payend_list(request):
 
 def nopay_list(request):
     # Pay_order未付款订单模型类名
-    order=models.Ordertable.objects.filter(otype=1)
-    order_list = models.Orderlist.objects.filter(check_id=order)
-    return render(request,"order.html",locals())
+    order_list = models.Ordertable.objects.filter(otype=1)
+    orderdic = {}
+    for order in order_list:
+        orderinfo = order.orderlist_set.all()
+        orderdic[order] = orderinfo
+    return render(request, "order.html", locals())
 
 def deleteit(request):
     oderid=request.GET.get("id")
