@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from single.models import Menu
+from django.core import serializers
 
 from . import models
 # Create your views here.
@@ -19,7 +20,12 @@ def food_page(request):
     page = paginator.page(cur_page)
     return render(request, 'shop.html', locals())
 
-def category(request):
-    data=request.GET["ctype"]
-    foodf=Menu.objects.filter(ctype=data).all()
-    return render(request,'shop.html',locals())
+def query(request):
+    name = request.GET['name']
+    foods=Menu.objects.filter(cname=name).all()
+    msg=""
+    for food in foods:
+        msg += "%s_%s_%s_%s_%s_%s|" % (food.id, food.ctype,
+                                       food.cname,food.cprice,food.cmarket_price,food.pic)
+    msg = msg[0:-1]
+    return HttpResponse(msg)

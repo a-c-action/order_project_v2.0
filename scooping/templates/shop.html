@@ -43,7 +43,7 @@
 
 
 				<div class="logo inner_page_log">
-					<a class="navbar-brand" href="index.html"><img src="{% static 'images/shop/logo1.png' %}"></a>
+					<a class="navbar-brand" href="/scoping/booktable"><img src="{% static 'images/shop/logo1.png' %}"></a>
 				</div>
 
 
@@ -52,11 +52,11 @@
 
 					<nav>
 						<ul>
-							<li><a href="/scoping" class="active">首页</a></li>
+							<li><a href="/scoping/booktable" class="active">首页</a></li>
 							<li><a href="/about">关于我们</a></li>
 							<li><a href="/shop/food">点餐</a></li>
-							<li><a href="/login">登录</a></li>
-							<li><a href="/register">注册</a></li>
+							<li><a href="/userinfo/login">登录</a></li>
+							<li><a href="/userinfo/register">注册</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -106,7 +106,7 @@
 			<div class="inner_breadcrumb_agileits_w3">
 
 				<ul class="short">
-					<li><a href="index.html">首页</a><i>|</i></li>
+					<li><a href="/scoping/booktable">首页</a><i>|</i></li>
 					<li>点餐</li>
 				</ul>
 			</div>
@@ -156,27 +156,27 @@
 					<ul>
 						<li>
 							<button class="size" id="d1" name="ctype" value="简餐"></button>
-							<span class="span">简餐</span>
+							<span class="uname">简餐</span>
 						</li>
 						<li>
 							<button class="size" name="ctype" value="海鲜"></button>
-							<span class="span">海鲜</span>
+							<span class="uname">海鲜</span>
 						</li>
 						<li>
 							<button class="size" name="ctype" value="披萨"></button>
-							<span class="span">披萨</span>
+							<span class="uname">披萨</span>
 						</li>
 						<li>
 							<button class="size" name="ctype" value="汤"></button>
-							<span class="span">汤</span>
+							<span class="uname">汤</span>
 						</li>
 						<li>
 							<button class="size" name="ctype" value="甜点"></button>
-							<span class="span">甜点</span>
+							<span class="uname">甜点</span>
 						</li>
 						<li>
 							<button class="size" name="ctype" value="牛排意面"></button>
-							<span class="span">牛排意面</span>
+							<span class="uname">牛排意面</span>
 						</li>
 					</ul>
 				</div>
@@ -305,8 +305,8 @@
 													<form action="#" method="post">
 														<input type="hidden" name="cmd" value="_cart">
 														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="shoe_item" value="{{afood.cname}}" id="">
-														<input type="hidden" name="amount" value="{{afood.cprice}}" id="">
+														<input type="hidden" name="shoe_item" value="{{afood.cname}}" id="cname">
+														<input type="hidden" name="amount" value="{{afood.cprice}}" id="cprice">
 														<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
 														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
@@ -663,7 +663,6 @@
 		$(window).load(function () {
 
 			var range=$("#slider-range")
-			console.log(range)
 			$("#slider-range").slider({
 
 				range: true,
@@ -698,21 +697,30 @@
 	<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
 
 	<script src="{% static 'js/common.js' %}"></script>
+	<!--<script src="{% static 'js/jquery-1.11.3.js' %}"></script>-->
 	<script>
-		$("d1").onclick=function (){
-			var xhr=createXhr();
-			var ctype=document.getElementById("d1").value;
-            var url="/shop/category?ctype="+ctype+"&page="+{{ p }};
-            xhr.open("get",url,true);
-            xhr.onreadystatechange = function(){
-            if(xhr.readyState==4 && xhr.status==200){
-				document.getElementById("img").innerHTML =xhr.responseText;
-				document.getElementById("name").innerHTML =xhr.responseText;
-				document.getElementById("price").innerHTML =xhr.responseText;
-				}
-			  }
-            xhr.send(null);
-		};
+		$(function(){
+			$('.size').click(function(){
+				console.log($(this).html())
+				var xhr=createXhr();
+				var url="/shop/query?name="+$(this).html();
+				xhr.open("get",url,true);
+                xhr.onreadystatechange=function(){
+                    if(xhr.readyState==4 && xhr.status==200){
+                    	var msg=xhr.responseText;
+                    	var foodes=msg.split("|");
+                    	for(var i=0;i<users.length;i++){
+                    		var info=foodes[i].split("_");
+							$("#img").html(info[5]);
+							$("#name").html(info[2]);
+							$("#price").html(info[3]);
+							$("#cname").html(info[2]);
+							$("#cprice").html(info[3]);
+                    	}
+                    }
+                xhr.send(null);
+			});
+		})
 	</script>
 </body>
 
