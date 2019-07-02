@@ -47,6 +47,13 @@
 				<div class="logo">
 					<a class="navbar-brand" href="/"><img src="{% static 'images/index/logo.png' %}"></a>
 				</div>
+				<div id="welcome">
+					{# 判断是否已经登录 #}
+					{% if request.session.userinfo %}
+					<label >欢迎:{{request.session.userinfo.username}}</label>
+					{% endif %}
+					<label>欢迎</label>
+				</div>
 				<div class="overlay overlay-contentpush">
 					<button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
 
@@ -68,9 +75,12 @@
 						<a href="/order"><img id="imgorder" src="{% static 'images/index/order.png' %}"></a>
 					</button>
 				</div>
+
 				<!-- cart details -->
 				<div class="top_nav_right">
+
 					<div class="shoecart shoecart2 cart cart box_1">
+
 						<form action="#" method="post" class="last">
 							<input type="hidden" name="cmd" value="_cart">
 							<input type="hidden" name="display" value="1">
