@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="3438dc27-7bb5-477f-bb91-51c4592afb9f" name="Default Changelist" comment="modify">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/userinfo/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/userinfo/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/userinfo/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/userinfo/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/userinfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/userinfo/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/templates/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scooping/scooping/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/scooping/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,12 +12,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/scooping/templates/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
+            <state relative-caret-position="11280">
               <caret line="376" column="51" selection-start-line="376" selection-start-column="51" selection-end-line="376" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scooping/templates/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
             </state>
           </provider>
         </entry>
@@ -94,11 +99,11 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="499" />
-    <option name="y" value="207" />
-    <option name="width" value="1258" />
-    <option name="height" value="709" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="953" />
+    <option name="y" value="27" />
+    <option name="width" value="967" />
+    <option name="height" value="1002" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -117,12 +122,6 @@
               <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="order_project_v2.0" type="462c0819:PsiDirectoryNode" />
               <item name="scooping" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="order_project_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="scooping" type="462c0819:PsiDirectoryNode" />
-              <item name="about" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
@@ -150,6 +149,12 @@
               <item name="order_project_v2.0" type="462c0819:PsiDirectoryNode" />
               <item name="scooping" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
+              <item name="order_project_v2.0" type="462c0819:PsiDirectoryNode" />
+              <item name="scooping" type="462c0819:PsiDirectoryNode" />
+              <item name="userinfo" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
@@ -271,6 +276,8 @@
       <workItem from="1561554188224" duration="3524000" />
       <workItem from="1561944917119" duration="1903000" />
       <workItem from="1561975188131" duration="244000" />
+      <workItem from="1561988223981" duration="1660000" />
+      <workItem from="1562026986845" duration="341000" />
     </task>
     <task id="LOCAL-00001" summary="修改register路径">
       <created>1561381118433</created>
@@ -402,14 +409,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="58872000" />
+    <option name="totallyTimeSpent" value="60873000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="738" y="27" width="1182" height="1002" extended-state="0" />
+    <frame x="953" y="27" width="967" height="1002" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.1604664" />
+      <window_info content_ui="combo" id="Project" order="1" weight="0.33406836" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -639,26 +646,6 @@
     <entry file="file://$PROJECT_DIR$/scooping/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/scooping/scoping/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding>
-            <element signature="e#1#33#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scooping/scoping/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="16" column="7" selection-start-line="16" selection-start-column="3" selection-end-line="16" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#35#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scooping/scoping/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -816,17 +803,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scooping/templates/index.html">
+    <entry file="file://$PROJECT_DIR$/scooping/templates/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="58" column="59" lean-forward="true" selection-start-line="58" selection-start-column="41" selection-end-line="58" selection-end-column="59" />
+        <state relative-caret-position="11280">
+          <caret line="376" column="51" selection-start-line="376" selection-start-column="51" selection-end-line="376" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scooping/templates/about.html">
+    <entry file="file://$PROJECT_DIR$/scooping/templates/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="376" column="51" selection-start-line="376" selection-start-column="51" selection-end-line="376" selection-end-column="51" />
+        <state relative-caret-position="420">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
