@@ -10,7 +10,7 @@ $(function(){
             "timetable":timetable,
             "datatable":datatable
         }
-        $.get("/scoping/checktable",msg,
+        $.post("/scoping/checktable",msg,
         function(data){
                console.log(data,typeof(data));
                data=JSON.parse(data);
@@ -34,7 +34,7 @@ $(function(){
             "timetable":timetable,
             "datatable":datatable
         }
-        $.get("/scoping/checktable",msg,
+        $.post("/scoping/checktable",msg,
         function(data){
                console.log(data,typeof(data));
                data=JSON.parse(data);

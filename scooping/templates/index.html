@@ -170,8 +170,10 @@
 			<h2>最实惠的价格,最美味的食物!</h2>
 			<div class="book-form">
 			<p id="bp">预定一张桌子</p>
+
 			   <form action="/scoping/booktable" method="post" class="book-form1">
-					<div class="col-md-2 form-time-w3layouts">
+					{% csrf_token %}
+				   <div class="col-md-2 form-time-w3layouts">
 							<label><i class="fa fa-clock-o" aria-hidden="true"></i> Time :</label>
 							<select class="book-select" name="time" id="timepickerit">
 								<option></option>
