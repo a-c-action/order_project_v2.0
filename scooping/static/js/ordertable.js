@@ -1,43 +1,51 @@
 //订餐js
 $(function(){
+    //时间监控
     $("#timepickerit").blur(function(){
-        var xhr=createXhr();
-        var time=$('#timepickerit').val();
-        var data=$('#datepicker1').val();
-        var url="/scoping/checktable?time='+time+'&data='+data;
-        xhr.open("get",url,false);
-        xhr.oneadystatechange=function(){
-                if(xhr.readyState==4 && xhr.status==200){
-                    var ordertable=JSON.parse(xhr.responseText)
-                    html="";
-                    for(i=0;i<ordertable.length;i++){
-                            html+="<option>"+ordertable[i]+"</option>"
-                    }
-                    $(#tablenum).html(html);
-
-                }
-            }
-            xhr.send(null);
+        var timetable=$('#timepickerit').val();
+        var datatable=$('#datepicker1').val();
+//        var url="/scoping/checktable?time='+time+'&data='+data;
+        console.log(timetable,datatable)
+        var msg={
+            "timetable":timetable,
+            "datatable":datatable
+        }
+        $.get("/scoping/checktable",msg,
+        function(data){
+               console.log(data,typeof(data));
+               data=JSON.parse(data);
+               console.log(data,typeof(data));
+               var html="";
+               for(i=0;i<data.length;i++){
+                    html+="<option>"+data[i]+"</option>"
+               }
+               $("#tablenum").html(html)
+               console.log(html);
+        })
 
     })
-     $("#datepicker1").blur(function(){
-        var xhr=createXhr();
-        var time=$('#timepickerit').val();
-        var data=$('#datepicker1').val();
-        var url="/scoping/checktable?time='+time+'&data='+data;
-        xhr.open("get",url,false);
-        xhr.oneadystatechange=function(){
-                if(xhr.readyState==4 && xhr.status==200){
-                    var ordertable=JSON.parse(xhr.responseText)
-                    html="";
-                    for(i=0;i<ordertable.length;i++){
-                            html+="<option>"+ordertable[i]+"</option>"
-                    }
-                    $(#tablenum).html(html);
-
-                }
-            }
-            xhr.send(null);
+    //日期监控
+    $("#datepicker1").blur(function(){
+        var timetable=$('#timepickerit').val();
+        var datatable=$('#datepicker1').val();
+//        var url="/scoping/checktable?time='+time+'&data='+data;
+        console.log(timetable,datatable)
+        var msg={
+            "timetable":timetable,
+            "datatable":datatable
+        }
+        $.get("/scoping/checktable",msg,
+        function(data){
+               console.log(data,typeof(data));
+               data=JSON.parse(data);
+               console.log(data,typeof(data));
+               var html="";
+               for(i=0;i<data.length;i++){
+                    html+="<option>"+data[i]+"</option>"
+               }
+               $("#tablenum").html(html)
+               console.log(html);
+        })
 
     })
 })

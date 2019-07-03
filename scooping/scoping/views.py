@@ -4,6 +4,7 @@ from django.http import response
 from django.contrib import messages
 from . import models
 from django.core import serializers
+import json
 
 
 # Create your views here
@@ -34,7 +35,7 @@ def checktable(request):
     tables=models.Order_from.objects.filter(check_data=data,check_time=time)
     for table in tables:
         tableall.remove(table.check_table)
-    str = serializers.serialize('json', tableall)
+    str=json.dumps(tableall)
     return HttpResponse(str)
 
 
