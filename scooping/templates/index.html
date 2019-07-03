@@ -577,6 +577,7 @@
 	<!-- //nav -->
 	<!-- cart-js -->
 	<script src="{% static 'js/minicart.js' %}"></script>
+	{% csrf_token %}
 	<script>
 		shoe.render();
 
