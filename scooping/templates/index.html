@@ -171,7 +171,7 @@
 			<div class="book-form">
 			<p id="bp">预定一张桌子</p>
 
-			   <form action="/scoping/booktable" method="post" class="book-form1">
+			   <div  class="book-form1">
 					{% csrf_token %}
 				   <div class="col-md-2 form-time-w3layouts">
 							<label><i class="fa fa-clock-o" aria-hidden="true"></i> Time :</label>
@@ -194,7 +194,7 @@
 								</div>
 					<div class="col-md-2 form-left-agileits-w3layouts ">
 							<label><i class="fa fa-users" aria-hidden="true"></i> No.of People :</label>
-							<select class="book-select" name="person">
+							<select class="book-select" name="person" id="personnum">
 								<option ></option>
 								<option>1 Person</option>
 								<option>2 People</option>
@@ -225,9 +225,9 @@
 									<input  id="phone" name="phone" type="text" placeholder="请输入手机号">
 								</div>
 					<div class="col-md-2 form-left-agileits-submit">
-						  <input type="submit" value="预定">
+						  <input type="submit" value="预定" id="tablesubmit">
 					</div>
-				</form>
+				</div>
 			</div>
 	</div>
 	<!-- /girds_bottom-->
