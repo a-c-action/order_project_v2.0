@@ -1,6 +1,28 @@
 $(function(){
-    $(".ordera").click(function (){
+    $("#orderconsel").click(function (){
 		//移除整个商品记录
-		$(this).parents(".contentorder").remove();
+
+        orderid=$("#orderid").html()
+        console.log(orderid)
+        var msg={
+            "orderid":orderid
+        }
+		$.get("/order/cancel",msg,function(data){
+		    alert(data)
+		})
+		//$(this).parents(".contentorder").remove();
+	})
+	$("#orderdelete").click(function (){
+		//移除整个商品记录
+
+        orderid=$("#orderid").html()
+        console.log(orderid)
+        var msg={
+            "orderid":orderid
+        }
+		$.get("/order/delete",msg,function(data){
+		    alert(data)
+		})
+		//$(this).parents(".contentorder").remove();
 	})
 })

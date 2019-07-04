@@ -51,8 +51,37 @@ def nopay_list(request):
     return render(request, "order.html", locals())
 
 def deleteit(request):
-    oderid=request.GET.get("id")
-    pass
+    orderid = request.GET["orderid"]
+    print(orderid)
+    if hasattr(request, 'session') and 'user' in request.session:
+        user_name = request.session['user']['uaccount']
+        print(user_name)
+        user = UserProfile.objects.get(uname=user_name)
+        print(user)
+        try:
+            order = models.Ordertable.objects.get(orderid=orderid, uid=user)
+            print(order)
+            # order.delete()
+            return HttpResponse("您的订单已删除")
+        except:
+            return HttpResponse("您的订单删除失败")
+
+    return HttpResponse("您的订单删除失败")
 
 def cancelit(request):
-    pass
+    orderid=request.GET["orderid"]
+    print(orderid)
+    if hasattr(request, 'session') and 'user' in request.session:
+        user_name = request.session['user']['uaccount']
+        print(user_name)
+        user = UserProfile.objects.get(uname=user_name)
+        print(user)
+        try:
+            order=models.Ordertable.objects.get(orderid=orderid,uid=user)
+            print(order)
+            # order.otype=2
+            return HttpResponse("您的订单已取消")
+        except:
+            return HttpResponse("您的订单取消失败")
+
+    return HttpResponse("您的订单取消失败")

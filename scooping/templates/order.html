@@ -129,7 +129,7 @@
 			{% for key,value in orderdic.items %}
 			<div class="contentorder">
 				<div id="headorder">
-					<p>订单编号:{{key.orderid}}</p>
+					<p>订单编号:<label id="orderid">{{key.orderid}}</label></p>
 					<p id="fdata">订单日期:{{key.data}}</p>
 				</div>
 				<table>
@@ -169,9 +169,9 @@
 						<tr>
 							<td colspan="6" id="footorder">总价：¥{{key.allmoney}}
 								{% if  key.otype %}
-								<button class="paymenta ordera" >取消订单</button><a class="paymenta" href="/payment?orderid={{key.orderid}}">去付款</a></td>
+								<button class="paymenta" id="orderconsel">取消订单</button><a class="paymenta" href="/payment?orderid={{key.orderid}}">去付款</a></td>
 								{% else %}
-								<button class="paymenta ordera" >删除订单</button><a class="paymenta" href="/order">已完成</a></td>
+								<button class="paymenta" id="orderdelect">删除订单</button><a class="paymenta" href="/order">已完成</a></td>
 								{% endif %}
 						</tr>
 					</tfoot>

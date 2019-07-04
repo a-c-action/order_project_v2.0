@@ -1903,7 +1903,7 @@ var defaults = module.exports = {
 
     parent: (typeof document !== 'undefined') ? document.body : null,
 
-    action: '/checkout/',
+    action: 'checkout.html',
 
     target: '',
 
@@ -1914,8 +1914,8 @@ var defaults = module.exports = {
     styles: '',
 
     strings: {
-        button: '结账',
-        subtotal: '总计:',
+        button: 'Check Out',
+        subtotal: 'Subtotal:',
         discount: 'Discount:',
         empty: 'Your shopping cart is empty'
     }

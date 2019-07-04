@@ -19,6 +19,7 @@ class Ordertable(models.Model):
     allmoney=models.DecimalField("订单金额",max_digits=7,decimal_places=2)
     otype=models.IntegerField("订单状态")
     odish=models.IntegerField("配餐状态")
+    # otakeout=models.IntegerField("是否外卖")
     #一个用户可以有多个订单
     uid = models.ForeignKey(UserProfile)
     class Meta:
