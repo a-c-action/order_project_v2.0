@@ -36,7 +36,8 @@ def checktable(request):
     print(tables)
     if tables:
         for table in tables:
-            tableall.remove(table.check_table)
+            if table.check_table in tableall:
+                tableall.remove(table.check_table)
     str=json.dumps(tableall)
     return HttpResponse(str)
 
