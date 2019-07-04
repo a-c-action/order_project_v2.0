@@ -10,7 +10,7 @@ $(function(){
 		$.get("/order/cancel",msg,function(data){
 		    alert(data)
 		})
-		//$(this).parents(".contentorder").remove();
+		$(this).parents(".contentorder").remove();
 	})
 	$("#orderdelete").click(function (){
 		//移除整个商品记录
@@ -23,6 +23,6 @@ $(function(){
 		$.get("/order/delete",msg,function(data){
 		    alert(data)
 		})
-		//$(this).parents(".contentorder").remove();
+		$(this).parents(".contentorder").remove();
 	})
 })
