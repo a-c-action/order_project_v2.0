@@ -565,7 +565,7 @@ ul.stars li a:hover {
     letter-spacing: 1px;
 }
 
-.search-hotel form input[type="submit"] {
+.search-hotel p input[type="submit"] {
     background: url(../images/index/search.png) no-repeat 7px 6px #151414;
     width: 44px;
     height: 39px;
