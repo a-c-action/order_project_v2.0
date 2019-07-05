@@ -129,23 +129,23 @@
 			<div class="side-bar col-md-3">
 				<div class="search-hotel">
 					<h3 class="agileits-sear-head">搜索</h3>
-					<form action="#" method="post">
-						<input type="search" placeholder="请输入..." name="search" required="">
-						<input type="submit" value=" ">
-					</form>
+					<p>
+						<input type="search" placeholder="请输入..." name="search" required="" id="content">
+						<input type="submit" value=" " id="btnSub">
+					</p>
 				</div>
 
 				<!-- price range -->
-				<div class="range">
-					<h3 class="agileits-sear-head">价格范围</h3>
-					<ul class="dropdown-menu6">
-						<li>
-							<div id="slider-range"></div>
-							<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />
+				<!--<div class="range">-->
+					<!--<h3 class="agileits-sear-head">价格范围</h3>-->
+					<!--<ul class="dropdown-menu6">-->
+						<!--<li>-->
+							<!--<div id="slider-range"></div>-->
+							<!--<input type="text" id="amount" style="border: 0; color: #ffffff; font-weight: normal;" />-->
 
-						</li>
-					</ul>
-				</div>
+						<!--</li>-->
+					<!--</ul>-->
+				<!--</div>-->
 				<!-- //price range -->
 
 
@@ -154,30 +154,12 @@
 				<div class="left-side">
 					<h3 class="agileits-sear-head">菜单</h3>
 					<ul>
-						<li>
-							<button class="size" id="d1" name="ctype" value="简餐"></button>
-							<span class="uname">简餐</span>
-						</li>
-						<li>
-							<button class="size" name="ctype" value="海鲜"></button>
-							<span class="uname">海鲜</span>
-						</li>
-						<li>
-							<button class="size" name="ctype" value="披萨"></button>
-							<span class="uname">披萨</span>
-						</li>
-						<li>
-							<button class="size" name="ctype" value="汤"></button>
-							<span class="uname">汤</span>
-						</li>
-						<li>
-							<button class="size" name="ctype" value="甜点"></button>
-							<span class="uname">甜点</span>
-						</li>
-						<li>
-							<button class="size" name="ctype" value="牛排意面"></button>
-							<span class="uname">牛排意面</span>
-						</li>
+						<li class="text" id="简餐">简餐</li>
+						<li class="text" id="海鲜">海鲜</li>
+						<li class="text" id="披萨">披萨</li>
+						<li class="text" id="汤">汤</li>
+						<li class="text" id="甜点">甜点</li>
+						<li class="text" id="牛排意面">牛排意面</li>
 					</ul>
 				</div>
 
@@ -263,16 +245,16 @@
 						<!-- product-sec1 -->
 						<div class="product-sec1">
 							<!--/mens-->
-						{% for afood in page %}
+							{% for afood in page %}
 							<div class="col-md-4 product-men">
 								<div class="product-shoe-info shoe">
 									<div class="men-pro-item">
 										<div class="men-thumb-item">
-											<img src="{% static afood.pic %}" alt="" id="img">
+											<img src="{% static afood.pic %}" alt="">
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													<!--<a href="single.html" class="link-product-add-cart">快速浏览</a>-->
-													<a href="/single?id={{ afood.id }}" class="link-product-add-cart">快速浏览</a>
+													<a href="/single/new/{{ afood.id }}" class="link-product-add-cart">快速浏览</a>
 
 												</div>
 											</div>
@@ -322,8 +304,7 @@
 							</div>
 						{% endfor %}
 
-
-							<div class="clearfix"></div>
+							<!--<div class="clearfix"></div>-->
 						</div>
 
 					</div>
@@ -346,7 +327,6 @@
 							<a href="{% url 'food' %}?page={{ p }}">{{p}}</a>
 							{% endif %}
 						{% endfor %}
-
 
 						{#下一页功能#}
 						{% if page.has_next %}
@@ -378,19 +358,12 @@
 
 
 
-
-
-
 	<!-- //top products -->
 	<div class="mid_slider_w3lsagile">
 
 		<div class="col-md-3 mid_slider_text">
 			<h5>更多的美食...</h5>
 		</div>
-
-
-
-
 
 
 
@@ -496,10 +469,6 @@
 		<div class="clearfix"> </div>
 	</div>
 
-
-
-
-
 	<!-- /newsletter-->
 	<div class="newsletter_w3layouts_agile">
 		<div class="col-sm-6 newsleft">
@@ -514,12 +483,6 @@
 
 		<div class="clearfix"></div>
 	</div>
-
-
-
-
-
-
 
 	<!-- //newsletter-->
 	<!-- footer -->
@@ -658,25 +621,25 @@
 	<!--//search-bar-->
 	<!-- price range (top products) -->
 	<script src="{% static 'js/jquery-ui.js' %}"></script>
-	<script>
-		//<![CDATA[
-		$(window).load(function () {
+	<!--<script>-->
+		<!--//<![CDATA[-->
+		<!--$(window).load(function () {-->
 
-			var range=$("#slider-range")
-			$("#slider-range").slider({
+			<!--var range=$("#slider-range");-->
+			<!--$("#slider-range").slider({-->
 
-				range: true,
-				min: 0,
-				max: 9000,
-				values: [50, 6000],
-				slide: function (event, ui) {
-					$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
-				}
-			});
-			$("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));
+				<!--range: true,-->
+				<!--min: 0,-->
+				<!--max: 9000,-->
+				<!--values: [50, 6000],-->
+				<!--slide: function (event, ui) {-->
+					<!--$("#amount").val("$" + ui.values[0] + " - $" + ui.values[1]);-->
+				<!--}-->
+			<!--});-->
+			<!--$("#amount").val("$" + $("#slider-range").slider("values", 0) + " - $" + $("#slider-range").slider("values", 1));-->
 
-		}); //]]>
-	</script>
+		<!--}); //]]>-->
+	<!--</script>-->
 	<!-- //price range (top products) -->
 
 
@@ -696,31 +659,169 @@
 	<!-- //end-smoth-scrolling -->
 	<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
 
-	<script src="{% static 'js/common.js' %}"></script>
-	<!--<script src="{% static 'js/jquery-1.11.3.js' %}"></script>-->
+	<!--<script src="{% static 'js/common.js' %}"></script>-->
+	<!--<script src="{% static 'js/common.js' %}"></script>-->
+	<script src="{% static 'js/jquery-1.11.3.js' %}"></script>
 	<script>
 		$(function(){
-			$('.size').click(function(){
-				console.log($(this).html())
-				var xhr=createXhr();
-				var url="/shop/query?name="+$(this).html();
-				xhr.open("get",url,true);
-                xhr.onreadystatechange=function(){
-                    if(xhr.readyState==4 && xhr.status==200){
-                    	var msg=xhr.responseText;
-                    	var foodes=msg.split("|");
-                    	for(var i=0;i<users.length;i++){
-                    		var info=foodes[i].split("_");
-							$("#img").html(info[5]);
-							$("#name").html(info[2]);
-							$("#price").html(info[3]);
-							$("#cname").html(info[2]);
-							$("#cprice").html(info[3]);
-                    	}
-                    }
-                xhr.send(null);
+			$(".text").click(function(){
+				var ctype;
+				//console.log($(this).attr("id"));
+				$.ajax({
+					url:"http://127.0.0.1:8000/shop/food_server?ctype="+$(this).attr("id"),
+					type:"get",
+					/*data:{
+						page:
+					}*/
+					dataType:"json",
+					//async:true
+					success:function(data){
+						var html="";
+						 $(data).each(function(i,obj){
+						 	console.log(obj);
+							html+=`<div class="col-md-4 product-men">
+								<div class="product-shoe-info shoe">
+									<div class="men-pro-item">
+										<div class="men-thumb-item">
+
+											<img src="${"/static"+obj.fields.pic}" alt="" id="img">
+
+											<div class="men-cart-pro">
+												<div class="inner-men-cart-pro">
+													<!--<a href="single.html" class="link-product-add-cart">快速浏览</a>-->
+													<a href="/single/new/${obj.pk}" class="link-product-add-cart">快速浏览</a>
+
+
+												</div>
+											</div>
+											<span class="product-new-top">新品</span>
+										</div>
+
+										<div class="item-info-product">
+											<h4>
+												<a href="/single?id=${obj.fields.pk}" id="name">${obj.fields.cname}</a>
+											</h4>
+											<div class="info-product-price">
+												<div class="grid_meta">
+													<div class="product_price">
+														<div class="grid-price ">
+															<span class="money" id="price">${obj.fields.cprice}</span>
+														</div>
+													</div>
+													<ul class="stars">
+														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+													</ul>
+												</div>
+
+
+												<div class="shoe single-item hvr-outline-out">
+													<form action="#" method="post">
+														<input type="hidden" name="cmd" value="_cart">
+														<input type="hidden" name="add" value="1">
+														<input type="hidden" name="shoe_item" value="${obj.fields.cname}" id="cname">
+														<input type="hidden" name="amount" value="${obj.fields.cprice}" id="cprice">
+														<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+
+														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
+													</form>
+												</div>
+
+
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</div>
+							</div>`;
+						  });
+						  $(".product-sec1").html(html);
+					},error:function(){
+						alert("获取数据失败");
+					}
+				});
 			});
-		})
+
+			//搜索功能
+			$("#btnSub").click(function(){
+				console.log($("#content").val());
+				$.ajax({
+					url:"http://127.0.0.1:8000/shop/search_server?content="+$("#content").val(),
+					type:"get",
+					dataType:"json",
+					success:function(data){
+						var html="";
+						 $(data).each(function(i,obj){
+						 	console.log(obj.fields.cname);
+
+						 	html+=`<div class="col-md-4 product-men">
+								<div class="product-shoe-info shoe">
+									<div class="men-pro-item">
+										<div class="men-thumb-item">
+
+											<img src="${"/static"+obj.fields.pic}" alt="" id="img">
+
+											<div class="men-cart-pro">
+												<div class="inner-men-cart-pro">
+													<!--<a href="single.html" class="link-product-add-cart">快速浏览</a>-->
+													<a href="/single?id=${obj.fields.pk}" class="link-product-add-cart">快速浏览</a>
+
+												</div>
+											</div>
+											<span class="product-new-top">新品</span>
+										</div>
+
+										<div class="item-info-product">
+											<h4>
+												<a href="/single?id=${obj.fields.pk}" id="name">${obj.fields.cname}</a>
+											</h4>
+											<div class="info-product-price">
+												<div class="grid_meta">
+													<div class="product_price">
+														<div class="grid-price ">
+															<span class="money" id="price">${obj.fields.cprice}</span>
+														</div>
+													</div>
+													<ul class="stars">
+														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+														<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+														<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+														<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
+													</ul>
+												</div>
+
+
+												<div class="shoe single-item hvr-outline-out">
+													<form action="#" method="post">
+														<input type="hidden" name="cmd" value="_cart">
+														<input type="hidden" name="add" value="1">
+														<input type="hidden" name="shoe_item" value="${obj.fields.cname}" id="cname">
+														<input type="hidden" name="amount" value="${obj.fields.cprice}" id="cprice">
+														<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+
+														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
+													</form>
+												</div>
+
+
+											</div>
+											<div class="clearfix"></div>
+										</div>
+									</div>
+								</div>
+							</div>`;
+						  });
+						$(".product-sec1").html(html);
+					},error:function(){
+						alert("获取数据失败");
+					}
+				});
+			});
+		});
 	</script>
 </body>
 
