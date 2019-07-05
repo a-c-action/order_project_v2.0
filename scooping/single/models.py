@@ -11,7 +11,7 @@ class Menu(models.Model):
     cmarket_price = models.DecimalField('会员价', max_digits=7,
                                        decimal_places=2,
                                        default=0)
-    pic = models.ImageField("图片",upload_to='')
+    pic = models.ImageField("图片",upload_to='dishes/')
     class Meta:
         db_table='Menu'
 
@@ -27,4 +27,4 @@ class MenuInfo(models.Model):
     class Meta:
         db_table='MenuInfo'
     def __str__(self):
-        return 'name: %s'%(self.name)
+        return 'id: %s'%(self.id)
