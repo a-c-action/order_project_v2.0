@@ -2,7 +2,7 @@ from django.contrib import admin
 from . import models
 # Register your models here.
 class Menu_set(admin.ModelAdmin):
-    list_display=['ctype','cname','cprice','cmarket_price','pic']
+    list_display=['ctype','cname','cprice','cmarket_price','pic','id']
 
 class MenuInfo_set(admin.ModelAdmin):
     list_display=['introduct','value','infor','cid']

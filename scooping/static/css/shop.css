@@ -565,7 +565,7 @@ ul.stars li a:hover {
     letter-spacing: 1px;
 }
 
-.search-hotel form input[type="submit"] {
+.search-hotel p input[type="submit"] {
     background: url(../images/index/search.png) no-repeat 7px 6px #151414;
     width: 44px;
     height: 39px;
@@ -785,6 +785,10 @@ span.item_price {
 	-moz-background-size: cover;
 	-ms-background-size: cover;
 	position: relative;
+}
+.product-sec1{
+    width:1162.640px;
+    height:1085.970px;
 }
 
 .effect-bg {

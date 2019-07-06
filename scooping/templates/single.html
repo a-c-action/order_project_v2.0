@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="zxx">
 
 <head>
 	<title>勺品-品出精彩</title>
-	<!-- custom-theme -->
+	{% load static %}
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="keywords" content="" />
@@ -18,354 +17,326 @@
 		}
 	</script>
 	<!-- //custom-theme -->
-	{% load static %}
 	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
 	<link rel="stylesheet" href="{% static 'css/shop.css' %}" type="text/css" media="screen" property="" />
 	<link href="{% static 'css/style7.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}" type="text/css" media="screen" />
+	<link href="{% static 'css/easy-responsive-tabs.css' %}" rel="stylesheet" type="text/css" />
+	<!-- Owl-carousel-CSS -->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/jquery-ui1.css' %}">
 	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
-	<link href="{% static 'css/book_text.css' %}" rel="stylesheet" type="text/css"  />
 	<!-- font-awesome-icons -->
 	<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
 	<!-- //font-awesome-icons -->
 	<link href="http://fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
 	    rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
-	<link rel="stylesheet" href="http://cache.amap.com/lbs/static/main1119.css">
-
-	<script src="{% static 'js/jquery-1.8.3.min.js' %}"></script>
-	<script src="http://cache.amap.com/lbs/static/es5.min.js"></script>
-	<script src="http://webapi.amap.com/maps?v=1.3&key=c93e1e293e5b1c3dc581f3ff633144d3&plugin=AMap.Autocomplete,AMap.PlaceSearch,AMap.Walking,AMap.Riding"></script>
-	<script type="text/javascript" src="http://cache.amap.com/lbs/static/addToolbar.js"></script>
-	<link rel="stylesheet" href="{% static 'css/style8.css' %}">
-	<script src="{% static 'js/ordertable.js' %}"></script>
 </head>
 
 <body>
 	<!-- banner -->
-	<div class="banner_top" id="home">
+	<div class="banner_top innerpage" id="home">
 		<div class="wrapper_top_w3layouts">
-
 			<div class="header_agileits">
-				<div class="logo">
-					<a class="navbar-brand" href="/"><img src="{% static 'images/index/logo.png' %}"></a>
-				</div>
-				<div id="welcome">
-					{# 判断是否已经登录 #}
-					{% if request.session.user %}
-					<label >欢迎:{{ request.session.user.uaccount }}</label>
-					<a href="/userinfo/logout"><img id="imgback" src="{% static 'images/index/back.png' %}" width="30px"></a>
-					{% endif %}
+				<div class="logo inner_page_log">
+					<a class="navbar-brand" href="index.html"><img src="{% static 'images/index/logo.png' %}"></a>
 				</div>
 				<div class="overlay overlay-contentpush">
 					<button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+
 					<nav>
 						<ul>
 							<li><a href="/" class="active">首页</a></li>
-							<li><a href="/about">关于我们</a></li>
+							<li><a href="about.html">关于我们</a></li>
 							<li><a href="/shop">点餐</a></li>
-							<li><a href="/userinfo/login">登录</a></li>
-							<li><a href="/userinfo/register">注册</a></li>
+							<li><a href="shop.html">登录</a></li>
+							<li><a href="contact.html">注册</a></li>
 						</ul>
 					</nav>
 				</div>
 				<div class="mobile-nav-button">
 					<button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
 				</div>
-				<div class="mobile-nav-button1">
-					<button id="trigger-overlay1" type="button">
-						<a href="/order"><img id="imgorder" src="{% static 'images/index/order.png' %}"></a>
-					</button>
-				</div>
-
 				<!-- cart details -->
 				<div class="top_nav_right">
-
 					<div class="shoecart shoecart2 cart cart box_1">
-
 						<form action="#" method="post" class="last">
 							<input type="hidden" name="cmd" value="_cart">
 							<input type="hidden" name="display" value="1">
 							<button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
 						</form>
 					</div>
-
 				</div>
-				<!-- //cart details -->
-				<!-- search -->
-				<div class="search_w3ls_agileinfo">
-					<div class="cd-main-header">
-						<ul class="cd-header-buttons">
-							<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-						</ul>
-					</div>
-					<div id="cd-search" class="cd-search">
-						<form action="#" method="post">
-							<input name="Search" type="search" placeholder="Click enter after typing...">
-						</form>
-					</div>
-				</div>
-				<!-- //search -->
-
-				<div class="clearfix"></div>
 			</div>
-			<!-- /slider -->
-			<div class="slider">
-				<div class="callbacks_container">
-					<ul class="rslides callbacks callbacks1" id="slider4">
+		</div>
+		<!-- //cart details -->
+		<!-- search -->
+		<div class="search_w3ls_agileinfo">
+			<div class="cd-main-header">
+				<ul class="cd-header-buttons">
+					<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+				</ul>
+			</div>
+			<div id="cd-search" class="cd-search">
+				<form action="#" method="post">
+					<input name="Search" type="search" placeholder="Click enter after typing...">
+				</form>
+			</div>
+		</div>
+		<!-- //search -->
+		<div class="clearfix"></div>
+		<!-- /banner_inner -->
+		<div class="services-breadcrumb_w3ls_agileinfo">
+			<div class="inner_breadcrumb_agileits_w3">
 
-						<li>
-							<div class="banner-top2">
+				<ul class="short">
+					<li><a href="/">首页</a><i>|</i></li>
+					<li>点餐</li>
+				</ul>
+			</div>
+		</div>
+		<!-- //banner_inner -->
+	</div>
 
-								<div class="banner-info-wthree">
+	<!-- //banner -->
+	<!-- top Products -->
+	<div class="ads-grid_shop">
+		<div class="shop_inner_inf">
+			<div class="col-md-4 single-right-left ">
+				<div class="grid images_3_of_2">
+					<div class="flexslider">
 
-									<h3>nourishing</h3>
-									<p>欲罢不能的美味</p>
+						<ul class="slides">
+							<li data-thumb="images/3.jpg">
 
+								<div class="thumb-image">
+									<form action="/single/new/{{ apic.id }}" method="post">
+										<img src="/static/{{ apic.pic }}" data-imagezoom="true" class="img-responsive">
+									</form>
 								</div>
 
-							</div>
-						</li>
-						<li>
-							<div class="banner-top3">
+							</li>
 
-								<div class="banner-info-wthree">
-									<h3>delicious</h3>
-									<p>款款而起的香气</p>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-8 single-right-left simpleCart_shelfItem">
 
-								</div>
-
-							</div>
-						</li>
-						<li>
-							<div class="banner-top">
-								<div class="banner-info-wthree">
-									<h3>tasty</h3>
-									<p>扑面而来的细腻</p>
-
-								</div>
-
-							</div>
-						</li>
-						<li>
-							<div class="banner-top1">
-								<div class="banner-info-wthree">
-									<h3>sweet</h3>
-									<p>未见其物而闻其香</p>
-
-								</div>
-
-							</div>
-						</li>
+				<h3>{{ apic.cname }}</h3>
+				<p><span class="item_price">店铺价 ¥{{ apic.cprice }}</span><br>
+					<span class="item_price">会员价 ¥{{ apic.cmarket_price }}</span>
+				</p>
+				<div class="rating1">
+					<ul class="stars">
+						<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+						<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
-				<div class="clearfix"> </div>
-			</div>
-			<!-- //slider -->
-			<ul class="top_icons">
-			</ul>
-		</div>
-	</div>
-	<!-- //banner -->
-	<div class="banner-text container" style="width:100%">
-			<h2>最实惠的价格,最美味的食物!</h2>
-			<div class="book-form">
-			<p id="bp">预定一张桌子</p>
 
-			   <div  class="book-form1">
-					{% csrf_token %}
-				   <div class="col-md-2 form-time-w3layouts">
-							<label><i class="fa fa-clock-o" aria-hidden="true"></i> Time :</label>
-							<select class="book-select" name="time" id="timepickerit">
-								<option></option>
-								<option>8:00-10:00</option>
-								<option>10:00-12:00</option>
-								<option>12:00-14:00</option>
-								<option>14:00-16:00</option>
-								<option>16:00-18:00</option>
-								<option>18:00-20:00</option>
-								<option>20:00-22:00</option>
-								<option>More</option>
-							</select>
+
+
+				<div class="occasion-cart">
+					<div class="shoe single-item single_page_b">
+						<form action="/checkout/new/{{ apic.id }}" method="post">
+							<!--{% csrf_token %}-->
+							<input type="hidden" name="cmd" value="_cart" aria-colindex="{{ apic.id }}">
+							<input type="hidden" name="add" value="1">
+							<input type="hidden" name="shoe_item" value="{{ apic.cname }}">
+							<input type="hidden" name="amount" value="{{ apic.cprice }}">
+							<input type="submit" name="submit" value="添 加 到 购 物 车" class="button add">
+							<a href="/checkout/new/{{ apic.id }}" data-toggle="modal" data-target="#myModal1"></a>
+						</form>
+
 					</div>
 
-					<div class="col-md-2 form-date-w3-agileits">
-						        <label><i class="fa fa-calendar" aria-hidden="true"></i> Date :</label>
-									<input  id="datepicker1" name="date" type="date" value="2018-07-02">
+				</div>
+				<ul class="social-nav model-3d-0 footer-social social single_page">
+					<li class="share">分 享 至 : </li>
+					<li>
+						<a href="#" class="facebook">
+							<div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+							<div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="twitter">
+							<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+							<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="instagram">
+							<div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+							<div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
+						</a>
+					</li>
+					<li>
+						<a href="#" class="pinterest">
+							<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+							<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
+						</a>
+					</li>
+				</ul>
+
+			</div>
+			<div class="clearfix"> </div>
+			<!--/tabs-->
+			<div class="responsive_tabs">
+				<div id="horizontalTab">
+					<ul class="resp-tabs-list">
+						<li>菜 品 简 介</li>
+						<li>营 养 价 值</li>
+						<li>产 地 信 息</li>
+						<li>评 论</li>
+					</ul>
+					<div class="resp-tabs-container">
+						<!--/tab_one-->
+						<div class="tab1">
+
+							<div class="single_page">
+								<h6>{{ apic.cname }}</h6>
+								<p>{{ adish.introduct }}</p>
+							</div>
+						</div>
+						<div class="tab4">
+
+							<div class="single_page">
+								<h6>营养价值</h6>
+								<p>{{ adish.value }}</p>
+							</div>
+						</div>
+						<div class="tab3">
+
+							<div class="single_page">
+								<h6>产地信息</h6>
+								<p>{{ adish.infor }}</p>
+							</div>
+						</div>
+						<!--//tab_one-->
+						<div class="tab2">
+
+							<div class="single_page">
+								<div class="bootstrap-tab-text-grids">
+									<div class="bootstrap-tab-text-grid">
+										<div class="bootstrap-tab-text-grid-left">
+											<img src="/static/{{ apic.pic }}" alt=" " class="img-responsive">
+										</div>
+										<div class="bootstrap-tab-text-grid-right">
+											<ul>
+												<li><a href="#">评 论</a></li>
+												<li><a href="#"><i class="fa fa-reply-all" aria-hidden="true"></i> Reply</a></li>
+											</ul>
+											<p>满口生香、香鲜至极、香嫩爽滑、意犹未尽、回味无穷、浓香、香味四溢、陶醉其中、如此诱人、香甜而细腻、妙不可言、欲罢不能的美味、款款而起的香气、扇动鼻翼、刺激味觉。堪称一绝、珍馐、 眼未见其物而闻其香</p>
+										</div>
+										<div class="clearfix"> </div>
+									</div>
+									<div class="add-review">
+										<h4>add a review</h4>
+										<form action="#" method="post">
+											<input type="text" name="Name" required="Name">
+											<input type="email" name="Email" required="Email">
+											<textarea name="Message" required=""></textarea>
+											<input type="submit" value="SEND">
+										</form>
+									</div>
 								</div>
-					<div class="col-md-2 form-left-agileits-w3layouts ">
-							<label><i class="fa fa-users" aria-hidden="true"></i> No.of People :</label>
-							<select class="book-select" name="person" id="personnum">
-								<option ></option>
-								<option>1 Person</option>
-								<option>2 People</option>
-								<option>3 People</option>
-								<option>4 People</option>
-								<option>5 People</option>
-								<option>More</option>
-							</select>
-					</div>
-				   	<div class="col-md-2 form-left-agileits-w3layouts ">
-							<label><i class="fa fa-users" aria-hidden="true"></i> No.of Table :</label>
-							<select class="book-select" name="table" id="tablenum">
 
-								<!--<option ></option>-->
-								<!--<option>桌号 1</option>-->
-								<!--<option>桌号 2</option>-->
-								<!--<option>桌号 3</option>-->
-								<!--<option>桌号 5</option>-->
-								<!--<option>桌号 6</option>-->
-								<!--<option>桌号 8</option>-->
-								<!--<option>桌号 9</option>-->
-								<!--<option>桌号 10</option>-->
+							</div>
 
-							</select>
+						</div>
+
 					</div>
-                    <div class="col-md-2 form-date-w3-agileits">
-						        <label> 预留手机号:</label>
-									<input  id="phone" name="phone" type="text" placeholder="请输入手机号">
+				</div>
+
+			</div>
+			<!--//tabs-->
+			<!-- /new_arrivals -->
+			<div class="new_arrivals">
+				<h3>招 牌 菜 品</h3>
+				<!-- /womens -->
+				{% for i in info %}
+				<div class="col-md-3 product-men women_two">
+					<div class="product-shoe-info shoe">
+						<div class="men-pro-item">
+							<div class="men-thumb-item">
+								<img src="/static/{{ i.pic }}" alt="">
+								<div class="men-cart-pro">
+									<div class="inner-men-cart-pro">
+										<a href="/single/new/{{ i.id }}" class="link-product-add-cart">Quick View</a>
+									</div>
 								</div>
-					<div class="col-md-2 form-left-agileits-submit">
-						  <input type="submit" value="预定" id="tablesubmit">
+								<span class="product-new-top">New</span>
+							</div>
+							<div class="item-info-product">
+								<h4>
+									<a href="/single/new/{{ i.id }}">{{ i.cname }}</a>
+								</h4>
+								<div class="info-product-price">
+									<div class="grid_meta">
+										<div class="product_price">
+											<div class="grid-price ">
+												<span class="money ">¥ {{i.cprice}}</span>
+											</div>
+										</div>
+										<ul class="stars">
+											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+
+											<li><a href="#"><i class="fa fa-star" aria-hidden="true"></i></a></li>
+											<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
+										</ul>
+									</div>
+									<div class="shoe single-item hvr-outline-out">
+										<form action="/checkout/new/{{ i.id }}" method="post">
+											<input type="hidden" name="cmd" value="_cart">
+											<input type="hidden" name="add" value="1">
+											<input type="hidden" name="shoe_item" value="{{ i.cname }}">
+											<input type="hidden" name="amount" value="{{ i.cprice }}">
+											<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+
+											<a href="/checkout/new/{{ i.id }}" data-toggle="modal" data-target="#myModal1"></a>
+										</form>
+
+									</div>
+								</div>
+								<div class="clearfix"></div>
+							</div>
+						</div>
 					</div>
 				</div>
-			</div>
-	</div>
-	<!-- /girds_bottom-->
-	<div class="grids_bottom">
-		<div class="col-md-9 style-grid style-grid-2">
-			<div class="style-image-1_info">
-				<div class="style-grid-2-text_info">
-					<h3>每一段故事都是从“你好”开始</h3>
-					<p>“你好，可以请你吃饭吗？”</p>
-					<p>“你好，可以请你喝一杯酒吗？”</p>
-					<p>勺品在2019年，成为了这个故事里的一部分，于西安这个历史性的中心地区创建</p>
-					<p>带动高端餐饮行业的一路蓬勃</p>
-					<p>不变的是，最初那份对创造的热情，以及对高度的执着。</p>
-					<div class="shop-button">
-						<a href="shop.html">Shop Now</a>
-					</div>
-				</div>
-			</div>
+				{% endfor %}
 
-		</div>
-		<div class="clearfix"></div>
-	</div>
-	<!-- //grids_bottom-->
-	<!-- /girds_bottom2-->
 
-	<div class="grids_sec_2">
-		<div class="style-grids_main">
-			<div class="col-md-6 grids_sec_2_left">
-				<div class="grid_sec_info">
-					<div class="style-grid-2-text_info">
-						<h3 id="h31">关于我们</h3>
-						<p id="p1">生活不止眼前的苟且，还有诗和远方，
-							勺品品牌餐厅极具西安十三朝古都的传统文化气息，更是站在时代潮流的前
-							沿注入了时尚、休闲、浪漫、绿色的理念。走进简约爱美食餐厅，您可以品尝
-							各地口味独特的风味小吃，也可以喝喝茶、品品咖啡、打打牌、聊聊天，是您休
-							闲、约会的浪漫之地</p>
+				<!-- //womens -->
+				<div class="clearfix"></div>
+			</div>
+			<!--//new_arrivals-->
 
-					</div>
-				</div>
-				<div class="style-image-2">
-					<img src="{% static 'images/index/a1.jpg' %}" alt="food">
-					<img src="{% static 'images/index/a2.jpg' %}" alt="food">
-				</div>
-			</div>
-			<div class="col-md-6 grids_sec_2_right">
-				<img src="{% static 'images/index/a3.jpg' %}" alt="food">
-			</div>
-			<div class="clearfix"></div>
+
 		</div>
 	</div>
-	<div class="grids_sec_3">
-		<h1>热门食谱</h1>
-		<div class="style-grids_main1">
-			<div class="col-md-6 grids_sec_2_left2">
-				<img src="{% static 'images/index/ab1.jpg' %}" >
-			</div>
-			<div class="col-md-6 grids_sec_2_right2">
-				<h3>酥椒掌中宝美食</h3>
-				<p>香辣掌中宝是一道美食，主要食材是鸡脆骨。咸鲜香辣，外酥里嫩。
-将鸡脆骨用盐、味精码入味，青、红辣椒切成小圈，干椒切成小粒，花生米炒香去皮待用。
-入味鸡脆骨加鸡蛋加生粉，入烧至七成热的油中炸至外酥里嫩，出锅滗油；
-；锅内留油，下青、红辣椒圈，盐、味精、鸡脆骨、干椒粒，撒上去皮花生、芝麻，淋香油，起锅装碟即成</p>
-			</div>
-		</div>
-		<div class="style-grids_main1">
-			<div class="col-md-6 grids_sec_2_left3">
-				<h3>夏草龙须菜美食菜肴</h3>
-				<p>龙须菜中的主要营养成分，是多糖和粗纤维，这些营养元素在龙须菜中的含量是比较高的，除此之外蛋白质氨基酸等营养元素的含量也是不低的，而且这些营养元素对于人们的身体健康来说是非常必要的。
-龙须菜脂肪的含量是比较低的，所以人们不用担心吃龙须菜会变胖的问题，而且龙须菜中的矿物质含量也是比较丰富的，人们身体健康所需要的一些特别的元素，在龙须菜中的含量都是很高的</p>
-
-			</div>
-			<div class="col-md-6 grids_sec_2_right3">
-				<img src="{% static 'images/index/ab2.jpg' %}" >
-				<h1></h1>
-			</div>
-		</div>
-		<h1>地图导览</h1>
-		<div class="mapapi" >
-			<div class="pageShow">
-				<h3>搜索地址</h3>
-				<input id="tipinput" placeholder="模糊地址搜索">
-				<h3>搜索行车路径nanxiaoxiang</h3>
-				<input id="star" placeholder="行车开始地址">
-				<span>—&nbsp;—</span>
-				<input id="end" placeholder="行车结束地址">
-				<span>—&nbsp;—</span>
-				<a id="car" href="javascript:void(0);">
-					点击搜索
-				</a>
-
-				<h3>搜索骑行路径</h3>
-				<input id="cStar" placeholder="骑行开始地址">
-				<span>—&nbsp;—</span>
-				<input id="cEnd" placeholder="骑行结束地址">
-				<span>—&nbsp;—</span>
-				<a id="riding" href="javascript:void(0);">
-					点击搜索
-				</a>
-
-				<h3>搜索步行路径</h3>
-				<input id="wStar" placeholder="步行开始地址">
-				<span>—&nbsp;—</span>
-				<input id="wEnd" placeholder="步行结束地址">
-				<span>—&nbsp;—</span>
-				<a id="walk" href="javascript:void(0);">
-					点击搜索
-				</a>
-				<div style="margin:20px 0;">
-					<a id="box" href="javascript:void(0);">
-						鼠标右键拖取选框放大地图
-					</a>nanxiaoxiang
-					<a id="meter" href="javascript:void(0);">
-						测量距离
-					</a>
-				</div>
-			</div>
-			<div id="container"></div>
-			<div id="panel"></div>
-		</div>
-	<div class="clearfix"></div>
-	</div>
-	<!-- //grids_bottom2-->
-	<!-- /Properties -->
+	<!-- //top products -->
 	<div class="mid_slider_w3lsagile">
 		<div class="col-md-3 mid_slider_text">
-			<h5>更多菜品</h5>
+			<h5>更 多 菜 品</h5>
 		</div>
 		<div class="col-md-9 mid_slider_info">
 			<div id="myCarousel" class="carousel slide" data-ride="carousel">
 				<!-- Indicators -->
 				<ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1" class=""></li>
+					<li data-target="#myCarousel" data-slide-to="0" class=""></li>
+					<li data-target="#myCarousel" data-slide-to="1" class="active"></li>
 					<li data-target="#myCarousel" data-slide-to="2" class=""></li>
 					<li data-target="#myCarousel" data-slide-to="3" class=""></li>
 				</ol>
 				<div class="carousel-inner" role="listbox">
-					<div class="item active">
+					<div class="item">
 						<div class="row">
 							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
 								<div class="thumbnail"><img src="{% static 'images/index/g1.jpg' %}" alt="Image" style="max-width:100%;"></div>
@@ -381,7 +352,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="item">
+					<div class="item active">
 						<div class="row">
 							<div class="col-md-3 col-sm-3 col-xs-3 slidering">
 								<div class="thumbnail"><img src="{% static 'images/index/g5.jpg' %}" alt="Image" style="max-width:100%;"></div>
@@ -445,12 +416,10 @@
 
 		<div class="clearfix"> </div>
 	</div>
-	<!--//banner -->
-
 	<!-- /newsletter-->
 	<div class="newsletter_w3layouts_agile">
 		<div class="col-sm-6 newsleft">
-			<h3>轻生活 轻饮食</h3>
+			<h3>Sign up for Newsletter !</h3>
 		</div>
 		<div class="col-sm-6 newsright">
 			<form action="#" method="post">
@@ -503,8 +472,8 @@
 							<li><a href="/">主页</a></li>
 							<li><a href="/about">关于我们</a></li>
 							<li><a href="/shop">点餐</a></li>
-							<li><a href="/userinfo/login">登录</a></li>
-							<li><a href="/userinfo/register">注册</a></li>
+							<li><a href="/login">登录</a></li>
+							<li><a href="/register">注册</a></li>
 						</ul>
 					</div>
 
@@ -572,14 +541,8 @@
 	<!-- js -->
 	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
 	<!-- //js -->
-	<!-- /nav -->
-	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
-	<script src="{% static 'js/classie.js' %}"></script>
-	<script src="{% static 'js/demo1.js' %}"></script>
-	<!-- //nav -->
 	<!-- cart-js -->
 	<script src="{% static 'js/minicart.js' %}"></script>
-	{% csrf_token %}
 	<script>
 		shoe.render();
 
@@ -594,28 +557,55 @@
 		});
 	</script>
 	<!-- //cart-js -->
-	<!--search-bar-->
-	<script src="{% static 'js/search.js' %}"></script>
-	<!--//search-bar-->
-	<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+
+	<!-- /nav -->
+	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
+	<script src="{% static 'js/classie.js' %}"></script>
+	<script src="{% static 'js/demo1.js' %}"></script>
+	<!-- //nav -->
+	<!-- single -->
+	<script src="{% static 'js/imagezoom.js' %}"></script>
+	<!-- single -->
+	<!-- script for responsive tabs -->
+	<script src="{% static 'js/easy-responsive-tabs.js' %}"></script>
 	<script>
-		$(function () {
-			$("#slider4").responsiveSlides({
-				auto: true,
-				pager: true,
-				nav: true,
-				speed: 1000,
-				namespace: "callbacks",
-				before: function () {
-					$('.events').append("<li>before event fired.</li>");
-				},
-				after: function () {
-					$('.events').append("<li>after event fired.</li>");
+		$(document).ready(function () {
+			$('#horizontalTab').easyResponsiveTabs({
+				type: 'default', //Types: default, vertical, accordion           
+				width: 'auto', //auto or any width like 600px
+				fit: true, // 100% fit in a container
+				closed: 'accordion', // Start closed if in accordion view
+				activate: function (event) { // Callback function if tab is switched
+					var $tab = $(this);
+					var $info = $('#tabInfo');
+					var $name = $('span', $info);
+					$name.text($tab.text());
+					$info.show();
 				}
+			});
+			$('#verticalTab').easyResponsiveTabs({
+				type: 'vertical',
+				width: 'auto',
+				fit: true
 			});
 		});
 	</script>
-	<!-- js for portfolio lightbox -->
+	<!-- FlexSlider -->
+	<script src="{% static 'js/jquery.flexslider.js' %}"></script>
+	<script>
+		// Can also be used with $(document).ready()
+		$(window).load(function () {
+			$('.flexslider').flexslider({
+				animation: "slide",
+				controlNav: "thumbnails"
+			});
+		});
+	</script>
+	<!-- //FlexSlider-->
+
+	<!--search-bar-->
+	<script src="{% static 'js/search.js' %}"></script>
+	<!--//search-bar-->
 	<!-- start-smoth-scrolling -->
 	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
 	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
@@ -630,18 +620,7 @@
 		});
 	</script>
 	<!-- //end-smoth-scrolling -->
-
 	<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
-	<script src="{% static 'js/main.js' %}"></script>
-	<!--测试-->
-	<!--<script type="text/javascript" src="http://127.0.0.1/CarAppStore/js/jquery/jquery-1.9.0.min.js"></script>-->
-	<!--<script type="text/javascript" src="http://127.0.0.1/CarAppStore/js/jquery/jquery-form.js"></script>-->
-	<!--$(document).ready(function() {-->
-	        <!--$(".book_from1").ajaxForm(function(data){-->
-	              <!--alert("恭喜您" + data);-->
-	              <!--//Alert("恭喜您");-->
-	        <!--});-->
-	 <!--});-->
 
 
 </body>

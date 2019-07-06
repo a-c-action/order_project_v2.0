@@ -89,8 +89,8 @@
 			<div class="inner_breadcrumb_agileits_w3">
 
 				<ul class="short">
-					<li><a href="index.html">Home</a><i>|</i></li>
-					<li>Order</li>
+					<li><a href="/" >首页</a><i>|</i></li>
+					<li>订单</li>
 				</ul>
 			</div>
 		</div>
@@ -126,11 +126,11 @@
 
 
 			</div>
-			{% for order in order_list %}
+			{% for key,value in orderdic.items %}
 			<div class="contentorder">
 				<div id="headorder">
-					<p>订单编号:{{order.data}}</p>
-					<p id="fdata">订单日期:{{order.orderid}}</p>
+					<p>订单编号:<label id="orderid">{{key.orderid}}</label></p>
+					<p id="fdata">订单日期:{{key.data}}</p>
 				</div>
 				<table>
 					<thead>
@@ -143,19 +143,19 @@
 							<td>商品状态</td>
 						</tr>
 					</thead>
-					{% for cpin in cpinlist %}
-						{% if order.%}
+					{% for val in value %}
+
 					<tbody>
 						<tr>
-							<td>{{cpin.cid.cname}}</td>
+							<td>{{val.cid.cname}}</td>
 							<td>
-								<img class="imgorder" src="{% static orders.cid.pic %}">
+								<img class="imgorder" src="{% static val.cid.pic %}">
 							</td>
-							<td>{{cpin.cid.cprice}}</td>
+							<td>{{val.cid.cprice}}</td>
 
-							<td>{{cpin.lcount}}</td>
-							<td>{{cpin.lmoney}}</td>
-							{% if cpin.odish %}
+							<td>{{val.lcount}}</td>
+							<td>{{val.lmoney}}</td>
+							{% if val.odish %}
 								<td>已配餐</td>
 							{% else %}
 								<td>未配餐</td>
@@ -167,11 +167,11 @@
 					{% endfor %}
 					<tfoot>
 						<tr>
-							<td colspan="6" id="footorder">总价：¥{{order.allmoney}}
-								{% if  order.otype %}
-								<button class="paymenta ordera" >删除订单</button><a class="paymenta" href="/order">已完成</a></td>
+							<td colspan="6" id="footorder">总价：¥{{key.allmoney}}
+								{% if  key.otype %}
+								<button class="paymenta" id="orderconsel">取消订单</button><a class="paymenta" href="/payment?orderid={{key.orderid}}">去付款</a></td>
 								{% else %}
-								<button class="paymenta ordera" >取消订单</button><a class="paymenta" href="/payment">去付款</a></td>
+								<button class="paymenta" id="orderdelect">删除订单</button><a class="paymenta" href="/order">已完成</a></td>
 								{% endif %}
 						</tr>
 					</tfoot>
