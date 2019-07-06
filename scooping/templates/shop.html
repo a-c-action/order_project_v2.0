@@ -289,7 +289,7 @@
 														<input type="hidden" name="add" value="1">
 														<input type="hidden" name="shoe_item" value="{{afood.cname}}" id="cname">
 														<input type="hidden" name="amount" value="{{afood.cprice}}" id="cprice">
-														<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+														<button type="submit" id='bashinfo' class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
 														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
 													</form>
@@ -596,20 +596,24 @@
 	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
 	<!-- //js -->
 	<!-- cart-js -->
+
 	<script src="{% static 'js/minicart.js' %}"></script>
+
 	<script>
 		shoe.render();
-
 		shoe.cart.on('shoe_checkout', function (evt) {
 			var items, len, i;
-
+            console.log("hdsofhs")
 			if (this.subtotal() > 0) {
-				items = this.items();
-
-				for (i = 0, len = items.length; i < len; i++) {}
+				for (i = 0, len = items.length; i < len; i++) {
+				}
 			}
 		});
+
 	</script>
+
+
+
 	<!-- //cart-js -->
 	<!-- /nav -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
@@ -826,3 +830,4 @@
 </body>
 
 </html>
+ <script src="{% static 'js/SHOPAJAX.js' %}"></script>
