@@ -31,6 +31,8 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 	<link href="{% static 'css/bootstrap1.css' %}" rel="stylesheet" type="text/css">
 	<link href="{% static 'css/style1.css' %}" rel="stylesheet" type="text/css">
+    <script src="{% static 'js/jquery-1.11.3.js' %}"></script>
+    <script src="{% static 'js/common.js' %}"></script>
 </head>
 
 <body>
@@ -89,7 +91,7 @@
 			<div class="inner_breadcrumb_agileits_w3">
 
 				<ul class="short">
-					<li><a href="index.html">首页</a><i>|</i></li>
+					<li><a href="/">首页</a><i>|</i></li>
 					<li>登录</li>
 				</ul>
 			</div>
@@ -112,37 +114,47 @@
                             <div class="loginInput">
                                 <div>
                                     <h5>账户登录：</h5>
-                                    <input type="text" value="{{ uaccount }}" name="uaccount" placeholder="用户名/邮箱/手机号" required>
+                                    <input type="text" value="{{ uaccount }}" name="uaccount" placeholder="用户名/邮箱/手机号" required id="uaccount">
+                                    <div class="inputshow">
+                                        <span id="uaccount-show"></span>
+                                    </div>
                                 </div>
                                 <div>
                                     <h5>密码：</h5>
-                                    <input type="password" value="" name="password" placeholder="密码" required>
+                                    <input type="password" value="" name="password" placeholder="密码" required id="upassword">
+                                    <div class="inputshow">
+                                        <span id="upassword-show"></span>
+                                    </div>
                                 </div>
                                 <div id="verifyInput" width="300px">
-                                    <h5>验证码：</h5>
-                                    <input type="text" value="" name="verify_code" placeholder="请输入验证码" required>
+                                    <h5>验证码:</h5>
+                                    <input type="text" value="" name="verify_code" placeholder="请输入验证码" required id="check_verify_code">
+                                    <div class="inputshow1">
+                                        <span id="verifycode-show"></span>
+                                    </div>
                                 </div>
                                 <div id="verifyimageInput" width="300px">
-                                    <img src="/verify_code" alt="正在加载" class="limVer" title="刷新一下">
-                                    <button type="button" class="laVer">刷新一下</button>
+                                    <img src="/userinfo/verify_code" alt="正在加载" class="limVer" id="imgVer">
+                                    <button type="button" class="laVer" id="aVerImg">刷新一下</button>
                                 </div>
                                 <div id="loginSubmit" width="300px" hight="50px">
                                     <div>
                                         <input type="checkbox" id="loginbox" name="remember" value="1"><label for="loginbox">自动登录</label>
                                     </div>
-                                    <input type="submit" value="登录">
-                                    <a href="/RetrievePassword">忘记密码 ？</a>
+                                    <a href="/userinfo/RetrievePassword">忘记密码 ？</a>
                                 </div>
                             </div>
 						</form>
-
+                    <div>
+                        <button id="loginbtn">登录</button>
+                    </div>
 				</div>
 
 				<div class="col-md-6 login-right">
 						<h3>注册新用户</h3>
 						<div class="strip"></div>
 						<p>通过创建帐户，您可以更快地完成结帐流程，查看和跟踪您帐户中的订单等。</p>
-						<a href="/register" class="hvr-shutter-in-horizontal button">创建一个新用户</a>
+						<a href="/userinfo/register" class="hvr-shutter-in-horizontal button">创建一个新用户</a>
 				</div>
 				<div class="clearfix"></div>
 			</div>
@@ -334,18 +346,9 @@
 			});
 		});
 	</script>
-    <script>
-        $(function () {
-           $(".limVer").click(function () {
-               this.src += "?";
-               {#src后面加问号会自动刷新验证码img的src#}
-               {#$(this).attr('src',"/verify_code"+Math.random())#}
-            });
-        })
-    </script>
 	<!-- //end-smoth-scrolling -->
 	<script type="text/javascript" src="{% static 'js/bootstrap-3.1.1.min.js' %}"></script>
-
+    <script type="text/javascript" src="{% static 'js/cart1.js' %}"></script>
 </body>
 
 </html>

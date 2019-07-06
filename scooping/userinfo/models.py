@@ -20,11 +20,10 @@ class Users_auths(models.Model):
     uphone = models.CharField(verbose_name='手机号', max_length=30,unique=True)
     uemail = models.EmailField(verbose_name='邮箱',unique=True)
     password = models.CharField(verbose_name='密码',max_length=150)
+    login_status = models.BooleanField(verbose_name='登录状态',default=0)
     userprofile = models.OneToOneField(UserProfile)
     class Meta:
         db_table = 'Users_auths'
         verbose_name_plural = "用户身份验证表"
     def __str__(self):
-        return f"id:{self.id},用户名:{self.uname},手机号:{self.uphone},邮箱:{self.uemail},密码:{self.password}"
-
-
+        return f"id:{self.id},用户名:{self.uname},手机号:{self.uphone},邮箱:{self.uemail},密码:{self.password},登录状态：{self.login_status}"
