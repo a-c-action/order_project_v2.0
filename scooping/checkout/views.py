@@ -9,7 +9,8 @@ def homepage(request):
 
 
 def new_dish_info(request):
-    id=request.GET("cname")
-    print("cname",id)
+    caipinlist=[]
+    id=request.GET["cid"]
+
     return HttpResponse("添加成功")
 
