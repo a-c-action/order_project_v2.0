@@ -37,6 +37,19 @@
 	<!--搜索提示js-->
 	<script src="{% static 'js/jquery-1.11.3.js' %}"></script>
 	<script src="{% static 'js/pay_4.js' %}"></script>
+
+	<script>
+		$(function(){
+			$(".shoe-cart").click(function(){
+					cid=$(this).parents(".item-info-product").find("h4 #name").html();
+					console.log(cid);
+					url="/checkout/new?cid="+cid;
+					$.get(url,function(data){
+								alert(data)
+				})
+			})
+		})
+	</script>
 </head>
 
 <body>
@@ -668,7 +681,8 @@
 						var html="";
 						 $(data).each(function(i,obj){
 						 	console.log(obj);
-							html+=`<div class="col-md-4 product-men">
+							html+=`
+							<div class="col-md-4 product-men">
 								<div class="product-shoe-info shoe">
 									<div class="men-pro-item">
 										<div class="men-thumb-item">
@@ -688,6 +702,9 @@
 
 										<div class="item-info-product">
 											<h4>
+
+												<!--<label id="name1">${obj.pk}</label>-->
+
 												<a href="/single/new/${obj.pk}"" id="name">${obj.fields.cname}</a>
 											</h4>
 											<div class="info-product-price">
@@ -758,6 +775,7 @@
 
 										<div class="item-info-product">
 											<h4>
+												<!--<label id="name1">${obj.pk}</label>-->
 												<a href="/single?id=${obj.fields.pk}" id="name">${obj.fields.cname}</a>
 											</h4>
 											<div class="info-product-price">
@@ -796,15 +814,16 @@
 					}
 				});
 			});
-			$(".shoe-cart").click(function(){
-				url="/checkout/new?id=${obj.pk}"
-				$.get(url,function(data){
-					alert(data)
-				})
-			})
+
+
 
 		});
 	</script>
+
 </body>
+
+
+
+
 
 </html>
