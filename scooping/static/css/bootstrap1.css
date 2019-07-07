@@ -120,9 +120,6 @@ ol {/*1405*/
   margin-right: auto;
   margin-left: auto;
 }
-#inputshow{
-
-}
 @media (min-width: 768px) {/*1580*/
   .container {
     width: 750px;

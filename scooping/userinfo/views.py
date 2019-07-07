@@ -425,6 +425,39 @@ def findpassword(request):
             return HttpResponse("3")
     else:
         return HttpResponse("5")
+
+
+def smscode1(request):
+    # !/usr/bin/env python
+    # coding=utf-8
+    phone = request.GET.get('phone', '')
+    number = random.randint(100000, 999999)
+
+    client = AcsClient('LTAIeUCNImn4yp21', 'M3Yxqxs3wOljHPn7EimdETr9PkDwdN', 'cn-hangzhou')
+
+    request = CommonRequest()
+    request.set_accept_format('json')
+    request.set_domain('dysmsapi.aliyuncs.com')
+    request.set_method('POST')
+    request.set_protocol_type('https')  # https | http
+    request.set_version('2017-05-25')
+    request.set_action_name('SendSms')
+
+    request.add_query_param('RegionId', "cn-hangzhou")
+    request.add_query_param('PhoneNumbers', phone)
+    request.add_query_param('SignName', "勺品有品")
+    request.add_query_param('TemplateCode', "SMS_169903182")
+    request.add_query_param('TemplateParam', "{'code':%s}" % number)
+
+    response = client.do_action_with_exception(request)
+    # python2:  print(response)
+    print(str(response, encoding='utf-8'))
+
+    jionStr = {
+        'number': number
+    }
+
+    return HttpResponse(json.dumps(jionStr))
     
 def RetrievePassword(request):
     return render(request,'RetrievePassword.html')
@@ -435,6 +468,8 @@ def modifyPassword(request):
     uphone = request.POST['uphone']
     upassword = request.POST['upassword']
     upassword = make_password(upassword)
+    action_code = request.POST['action_code']
+    action_code1 = request.POST['action_code1']
     if uname == '':
         return HttpResponse("用户名为空")
     else:
@@ -446,15 +481,24 @@ def modifyPassword(request):
                 if uemail != user.uemail:
                     return HttpResponse("邮箱与用户名不匹配")
                 else:
-                    if uphone != user.uphone:
-                        return HttpResponse("手机号与用户名不匹配")
+                    if uphone == '':
+                        return HttpResponse("手机号为空")
                     else:
-                        if check_password(upassword,user.password):
-                            return HttpResponse("新密码不能和旧密码一样")
+                        if uphone != user.uphone:
+                            return HttpResponse("手机号与用户名不匹配")
                         else:
-                            auser = models.Users_auths.objects.get(uname=user.uname)
-                            auser.password = upassword
-                            auser.save()
-                            return HttpResponse("修改成功")
+                            if check_password(upassword,user.password):
+                                return HttpResponse("新密码不能和旧密码一样")
+                            else:
+                                if action_code == '':
+                                    return HttpResponse("验证码为空")
+                                else:
+                                    if action_code != action_code1:
+                                        return HttpResponse("验证码错误")
+                                    else:
+                                        auser = models.Users_auths.objects.get(uname=user.uname)
+                                        auser.password = upassword
+                                        auser.save()
+                                        return HttpResponse("修改成功")
         except:
             return HttpResponse("用户名不存在")

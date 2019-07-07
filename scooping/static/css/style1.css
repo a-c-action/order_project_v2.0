@@ -280,6 +280,16 @@ p.click a{/*1268*/
     height: 38px;
     border: none;
 }
+#inputVer1{
+    color: white;
+    background-color:#2020f9e6;
+    width: 150px;
+    height: 38px;
+    border: none;
+    position: absolute;
+    margin-left: 40%;
+    margin-top: -10%;
+}
 .col-md-6 input{
     margin-top: -80px;
     margin-left: 80px;
@@ -417,6 +427,11 @@ p.click a{/*1268*/
     position: absolute;
     margin-left: 6%;
 }
+.inputshow3{
+    position: absolute;
+    margin-left: 10%;
+    margin-top: -5%;
+}
 #loginbtn{
     margin-top: 15%;
     margin-left: -40%;
@@ -435,3 +450,5 @@ p.click a{/*1268*/
     height: 40px;
     padding: 10px 10px;
 }
+
+

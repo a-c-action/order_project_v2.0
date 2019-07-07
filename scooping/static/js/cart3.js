@@ -107,10 +107,53 @@ function findpassword() {
     return ret;
 }
 
+function check_action_code(){
+    var setmsg = String($("#smscode").val());
+    var getmsg = String($("#displaysmscode").html());
+    if(setmsg.length == 0){
+        $("#uaction-show").html("激活码为空").css("color","red");
+        return true
+    }else{
+        if(setmsg == getmsg){
+            $("#displaysmscode").css('display','none');
+            return false;
+        }else {
+            $("#uaction-show").html("激活码错误").css("color","red");
+            return true;
+        }
+    }
+}
 
 $(function () {
     $("#aVerImg").click(function () {
         $("#imgVer").attr("src","/userinfo/verify_code"+Math.random())
+    });
+    $(".inputVer").click(function () {
+        // var now = new Date();
+        var i = 60;
+        var timer = setInterval(function () {
+            $(".inputVer").html(i + "s后可再获取");
+            $(".inputVer").css("background", "gray");
+            i--;
+            if (i < 0) {
+                clearInterval(timer);
+                $(".inputVer").html("获取验证码");
+                $(".inputVer").css("background", "#2020f9e6");
+                $(".inputVer").attr("disabled", false)
+            }
+        }, 1000);
+        $.ajax({
+            url:'/userinfo/smscode1',
+            data:{
+                phone:$("#ruphone").val()
+            },
+            type:"get",
+            dataType:'json',
+            success:function (data) {
+                $("#displaysmscode").html(data.number)
+            }
+        });
+        $(".inputVer").attr("disabled", true)
     });
     $("#runame").blur(function () {
         finduname();
@@ -124,6 +167,9 @@ $(function () {
     $("#rpassword").blur(function () {
         findpassword();
     });
+    $("#smscode").blur(function () {
+        check_action_code();
+    });
     $("#btnfind").click(function () {
         if(finduname()){
         alert("用户为空或不存在")
@@ -132,7 +178,9 @@ $(function () {
         }else if(finduphone()){
             alert("用户手机号为空或不存在")
         }else if(findpassword()){
-            alert("新密码为空或强度太低")  
+            alert("新密码为空或强度太低或新旧密码一致")
+        }else if(check_action_code()){
+            alert("激活码为空或错误")
         }else {
             var xhr = createXhr();
             xhr.open("post", "/userinfo/modifyPassword", true);
@@ -147,8 +195,10 @@ $(function () {
             var uemail = $("#ruemail").val();
             var uphone = $("#ruphone").val();
             var upassword = $("#rpassword").val();
+            var action_code = $("#smscode").val();
+            var action_code1 = $("#displaysmscode").html();
             var csrf = $("[name = 'csrfmiddlewaretoken']").val();
-            var params = "&uname=" + uname + "&uemail=" + uemail + "&uphone=" + uphone + "&upassword=" + upassword + "&csrfmiddlewaretoken=" + csrf;
+            var params = "&uname=" + uname + "&uemail=" + uemail + "&uphone=" + uphone + "&upassword=" + upassword + "&action_code=" + action_code + "&action_code1=" + action_code1 + "&csrfmiddlewaretoken=" + csrf;
             xhr.send(params);
         }
     })
