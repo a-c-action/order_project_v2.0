@@ -1,4 +1,5 @@
 import json
+import random
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
@@ -10,6 +11,8 @@ from . import models
 from django.contrib.auth.hashers import make_password,check_password
 from django.db.models import Q
 import time
+from aliyunsdkcore.client import AcsClient
+from aliyunsdkcore.request import CommonRequest
 
 # Create your views here.
 
@@ -229,21 +232,24 @@ def register(request):
 def checkuname(request):
     uname = request.GET['uname']
     users = models.Users_auths.objects.filter(uname = uname).all()
-    if users:
+    users1 = models.UserProfile.objects.filter(uname = uname).all()
+    if users or users1:
         return HttpResponse("1")
     return HttpResponse("0")
 
 def checkuemail(request):
     uemail = request.GET['uemail']
     users = models.Users_auths.objects.filter(uemail = uemail).all()
-    if users:
+    users1 = models.UserProfile.objects.filter(uemail = uemail).all()
+    if users or users1:
         return HttpResponse("1")
     return HttpResponse("0")
 
 def checkuphone(request):
     uphone = request.GET['uphone']
     users = models.Users_auths.objects.filter(uphone = uphone).all()
-    if users:
+    users1 = models.UserProfile.objects.filter(uphone = uphone).all()
+    if users or users1:
         return HttpResponse("1")
     return HttpResponse("0")
 
@@ -256,6 +262,38 @@ def checkverifycode(request):
             return HttpResponse("2")
     else:
         return HttpResponse("0")
+
+def smscode(request):
+    # !/usr/bin/env python
+    # coding=utf-8
+    phone = request.GET.get('phone','')
+    number = random.randint(100000,999999)
+    
+    client = AcsClient('LTAIeUCNImn4yp21', 'M3Yxqxs3wOljHPn7EimdETr9PkDwdN', 'cn-hangzhou')
+
+    request = CommonRequest()
+    request.set_accept_format('json')
+    request.set_domain('dysmsapi.aliyuncs.com')
+    request.set_method('POST')
+    request.set_protocol_type('https')  # https | http
+    request.set_version('2017-05-25')
+    request.set_action_name('SendSms')
+
+    request.add_query_param('RegionId', "cn-hangzhou")
+    request.add_query_param('PhoneNumbers', phone)
+    request.add_query_param('SignName', "勺品有品")
+    request.add_query_param('TemplateCode', "SMS_169902735")
+    request.add_query_param('TemplateParam', "{'code':%s}"%number)
+
+    response = client.do_action_with_exception(request)
+    # python2:  print(response)
+    print(str(response, encoding='utf-8'))
+    
+    jionStr = {
+        'number':number
+    }
+    
+    return HttpResponse(json.dumps(jionStr))
 
 # def checkverify_code(request):
 #     verify_code = request.session["verify_code"]
@@ -275,7 +313,8 @@ def reguser(request):
     password = make_password(password,"a",'pbkdf2_sha1')
     password2 = make_password(password2, "a", 'pbkdf2_sha1')
     verify_code = request.POST['verify_code']
-    # activation_code = request.POST.get('activation_code','')
+    action_code = request.POST['action_code']
+    action_code1 = request.POST['action_code1']
     if uname == '':
         username_error = '用户名为空'
         return render(request, 'register.html', locals())
@@ -297,8 +336,8 @@ def reguser(request):
         return render(request, 'register.html', locals())
     if verify_code.lower() != request.session['verify_code'].lower():
         return HttpResponse('验证码不正确')
-    # if activation_code != request.session['activation_code']:
-    #     return HttpResponse('激活码不正确')
+    if action_code != action_code1:
+        return HttpResponse('激活码不正确')
     try:
         user = models.UserProfile.objects.create(
             uname=uname,

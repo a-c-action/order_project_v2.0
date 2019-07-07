@@ -151,6 +151,22 @@ function checkverify_code(){
     return ret;
 }
 
+function check_action_code(){
+    var setmsg = String($("#smscode").val());
+    var getmsg = String($("#displaysmscode").html());
+    if(setmsg.length == 0){
+        $("#uaction-show").html("激活码为空").css("color","red");
+    }else{
+        if(setmsg == getmsg){
+            $("#displaysmscode").css('display','none');
+            return false;
+        }else {
+            $("#uaction-show").html("激活码错误").css("color","red");
+            return true;
+        }
+    }
+}
+
 $(function () {
     $(".togg").click(function () {
         if ($(".TeamServices").css("display") == "none") {
@@ -169,20 +185,30 @@ $(function () {
     });
 
     $(".inputVer").click(function () {
-        var now = new Date();
-        console.log(now)
+        // var now = new Date();
         var i = 60;
         var timer = setInterval(function () {
-            $(".inputVer").html(i + "s后可再获取")
-            $(".inputVer").css("background", "gray")
+            $(".inputVer").html(i + "s后可再获取");
+            $(".inputVer").css("background", "gray");
             i--;
             if (i < 0) {
                 clearInterval(timer);
-                $(".inputVer").html("获取验证码")
-                $(".inputVer").css("background", "#2020f9e6")
+                $(".inputVer").html("获取验证码");
+                $(".inputVer").css("background", "#2020f9e6");
                 $(".inputVer").attr("disabled", false)
             }
-        }, 1000)
+        }, 1000);
+        $.ajax({
+            url:'/userinfo/smscode',
+            data:{
+                phone:$("#myphone").val()
+            },
+            type:"get",
+            dataType:'json',
+            success:function (data) {
+                $("#displaysmscode").html(data.number)
+            }
+        });
         $(".inputVer").attr("disabled", true)
     });
 
@@ -286,6 +312,10 @@ $(function () {
         checkverify_code();
     });
 
+    $("#smscode").blur(function () {
+        check_action_code();
+    });
+
     /*function checkverify_code(){
         $("#check_verify_code").blur(function () {
             var verify_code = $("#check_verify_code").val();
@@ -312,7 +342,6 @@ $(function () {
                     });
                 },
                 error:function () {
-                    alert("------------");
                     verify_code1 = "";
                 }
             });
@@ -339,6 +368,8 @@ $(function () {
             alert("手机号为空或错误");
         } else if(checkverify_code()){
             alert("验证码为空或错误")
+        } else if(check_action_code()){
+            alert("激活码为空或错误")
         } else if($("#myservice[checked]").length == 0){
             alert("请阅读服务条款并勾选");
         } else {
@@ -357,8 +388,10 @@ $(function () {
             var password = $("#mypassword").val();
             var password2 = $("#mypassword2").val();
             var verify_code = $("#check_verify_code").val();
+            var action_code = $("#smscode").val();
+            var action_code1 = $("#displaysmscode").html();
             var csrf = $("[name = 'csrfmiddlewaretoken']").val();
-            var params = "uname=" + uname + "&uemail=" + uemail + "&uphone=" + uphone + "&password=" + password + "&password2=" + password2 + "&verify_code=" + verify_code + "&csrfmiddlewaretoken=" + csrf;
+            var params = "uname=" + uname + "&uemail=" + uemail + "&uphone=" + uphone + "&password=" + password + "&password2=" + password2 + "&verify_code=" + verify_code + "&action_code=" + action_code + "&action_code1=" + action_code1 +  "&csrfmiddlewaretoken=" + csrf;
             xhr.send(params);
         }
     });
