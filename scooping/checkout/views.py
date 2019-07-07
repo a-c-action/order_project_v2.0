@@ -12,3 +12,4 @@ def new_dish_info(request):
     name=request.GET
     print("msg",name)
     return HttpResponse("添加成功")
+

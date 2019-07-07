@@ -25,17 +25,18 @@
 	<link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" />
 	<!--搜索提示样式-->
 	<link rel="stylesheet" href="{% static 'css/pay_21.css' %}" type="text/css">
-	<!--搜索提示js-->
-	<script src="{% static 'js/pay_4.js' %}"></script>
+
 	<!-- font-awesome-icons -->
 	<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
 	<!-- //font-awesome-icons -->
 	<link href="http://fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
 	    rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
-	<link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">
+	<!--<link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">-->
 
 	<script src="{% static 'js/jquery-1.11.3.js' %}"></script>
+		<!--搜索提示js-->
+	<script src="{% static 'js/pay_4.js' %}"></script>
     <script src="{% static 'js/checkout.js' %}"></script>
 </head>
 
@@ -289,7 +290,7 @@
 						</form>
 					</div>
 					<div class="checkout-right-basket">
-							<a href="payment.html">提交订单 </a>
+							<a href="/payment?orderid={{ orderid }}">提交订单 </a>
 					</div>
 					<div class="clearfix"> </div>
 
@@ -517,23 +518,10 @@
 	<!-- //footer -->
     <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	<!-- js -->
-	<script type="text/javascript" src="js/jquery-2.1.4.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
 	<!-- //js -->
 	<!-- cart-js -->
-	<script src="js/minicart.js"></script>
-	<script>
-		shoe.render();
 
-		shoe.cart.on('shoe_checkout', function (evt) {
-			var items, len, i;
-
-			if (this.subtotal() > 0) {
-				items = this.items();
-
-				for (i = 0, len = items.length; i < len; i++) {}
-			}
-		});
-	</script>
 	<!-- //cart-js -->
 	<!-- /nav -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js'%}"></script>
@@ -587,8 +575,8 @@
 	</script>
 
 	<!-- start-smoth-scrolling -->
-	<script type="text/javascript" src="{% static 'js/move-top.js'%}"></script>
-	<script type="text/javascript" src="{% static 'js/easing.js'%"></script>
+	<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
 	<script type="text/javascript">
 		jQuery(document).ready(function ($) {
 			$(".scroll").click(function (event) {

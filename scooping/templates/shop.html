@@ -35,6 +35,7 @@
 	<!--搜索提示样式-->
 	<link rel="stylesheet" href="{% static 'css/pay_21.css' %}" type="text/css">
 	<!--搜索提示js-->
+	<script src="{% static 'js/jquery-1.11.3.js' %}"></script>
 	<script src="{% static 'js/pay_4.js' %}"></script>
 </head>
 
@@ -76,13 +77,11 @@
 
 				<!-- cart details -->
 				<div class="top_nav_right">
+
 					<div class="shoecart shoecart2 cart cart box_1">
-						<form action="#" method="post" class="last">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="display" value="1">
-							<button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-						</form>
+						<a href="/checkout/"> <button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
 					</div>
+
 				</div>
 
 
@@ -290,18 +289,9 @@
 													</ul>
 												</div>
 
-
-												<div class="shoe single-item hvr-outline-out">
-													<form action="#" method="post">
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="shoe_item" value="{{afood.cname}}" id="cname">
-														<input type="hidden" name="amount" value="{{afood.cprice}}" id="cprice">
-														<button type="submit" id='bashinfo' class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-
-														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-													</form>
-												</div>
+												<a href="/checkout?id={{afood.id}}">
+														<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+												</a>
 
 
 											</div>
@@ -605,20 +595,7 @@
 	<!-- //js -->
 	<!-- cart-js -->
 
-	<script src="{% static 'js/minicart.js' %}"></script>
 
-	<script>
-		shoe.render();
-		shoe.cart.on('shoe_checkout', function (evt) {
-			var items, len, i;
-            console.log("hdsofhs")
-			if (this.subtotal() > 0) {
-				for (i = 0, len = items.length; i < len; i++) {
-				}
-			}
-		});
-
-	</script>
 
 
 
@@ -711,7 +688,7 @@
 
 										<div class="item-info-product">
 											<h4>
-												<a href="/single?id=${obj.fields.pk}" id="name">${obj.fields.cname}</a>
+												<a href="/single/new/${obj.pk}"" id="name">${obj.fields.cname}</a>
 											</h4>
 											<div class="info-product-price">
 												<div class="grid_meta">
@@ -729,18 +706,11 @@
 													</ul>
 												</div>
 
+												<a href="/checkout/?id=${obj.pk}">
+														<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+												</a>
 
-												<div class="shoe single-item hvr-outline-out">
-													<form action="#" method="post">
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="shoe_item" value="${obj.fields.cname}" id="cname">
-														<input type="hidden" name="amount" value="${obj.fields.cprice}" id="cprice">
-														<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
-														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-													</form>
-												</div>
 
 
 											</div>
@@ -807,16 +777,9 @@
 												</div>
 
 
-												<div class="shoe single-item hvr-outline-out">
-													<form action="#" method="post">
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="shoe_item" value="${obj.fields.cname}" id="cname">
-														<input type="hidden" name="amount" value="${obj.fields.cprice}" id="cprice">
-														<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-
-														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-													</form>
+												<a href="/checkout?caipinid={{ obj.fields.cid }}">
+														<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+												</a>
 												</div>
 
 
@@ -838,4 +801,3 @@
 </body>
 
 </html>
- <script src="{% static 'js/SHOPAJAX.js' %}"></script>
