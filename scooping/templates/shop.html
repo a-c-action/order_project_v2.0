@@ -32,10 +32,6 @@
 
 
 	<link rel="stylesheet" href="{% static 'css/srxshop.css' %}" type="text/css">
-	<!--搜索提示样式-->
-	<link rel="stylesheet" href="{% static 'css/pay_21.css' %}" type="text/css">
-	<!--搜索提示js-->
-	<script src="{% static 'js/pay_4.js' %}"></script>
 </head>
 
 <body>
@@ -56,7 +52,7 @@
 
 					<nav>
 						<ul>
-							<li><a href="/" class="active">首页</a></li>
+							<li><a href="/scoping/booktable" class="active">首页</a></li>
 							<li><a href="/about">关于我们</a></li>
 							<li><a href="/shop/food">点餐</a></li>
 							<li><a href="/userinfo/login">登录</a></li>
@@ -98,12 +94,9 @@
 			</div>
 			<div id="cd-search" class="cd-search">
 				<form action="/payment/glob_search" method="post">
-					{% csrf_token %}
-					<input name="Search" type="search" placeholder="输入菜品或菜品关键字后按下Enter查询...">
+   					{% csrf_token %}
+   					<input name="Search" type="search" placeholder="Click enter after typing...">
 				</form>
-				<div id="prompt">
-					<span id="showFind"></span>
-				</div>
 			</div>
 		</div>
 
@@ -114,7 +107,7 @@
 			<div class="inner_breadcrumb_agileits_w3">
 
 				<ul class="short">
-					<li><a href="/">首页</a><i>|</i></li>
+					<li><a href="/scoping/booktable">首页</a><i>|</i></li>
 					<li>点餐</li>
 				</ul>
 			</div>
@@ -174,54 +167,54 @@
 				<!-- //reviews -->
 				<!-- deals -->
 				<div class="deal-leftmk left-side">
-					<h3 class="agileits-sear-head">热卖</h3>
+					<h3 class="agileits-sear-head">今日热点</h3>
 					<div class="special-sec1">
 						<div class="col-xs-4 img-deals">
-							<img src="{% static 'images/shop/s4.jpg' %}" alt="">
+							<img src="{% static 'images/dishes/p1.jpg' %}" alt="">
 						</div>
 						<div class="col-xs-8 img-deal1">
-							<h3>绝味双拼</h3>
-							<a href="single.html">$180.00</a>
+							<h3>混合披萨</h3>
+							<a href="/single/new/27">$120.00</a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
 					<div class="special-sec1">
 						<div class="col-xs-4 img-deals">
-							<img src="{% static 'images/shop/s2.jpg' %}" alt="">
+							<img src="{% static 'images/dishes/p2.jpg' %}" alt="">
 						</div>
 						<div class="col-xs-8 img-deal1">
-							<h3>奶香木瓜</h3>
-							<a href="single.html">$99.00</a>
+							<h3>鸡肉披萨</h3>
+							<a href="/single/new/28">$130.00</a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
 					<div class="special-sec1">
 						<div class="col-xs-4 img-deals">
-							<img src="{% static 'images/shop/s1.jpg' %}" alt="">
+							<img src="{% static 'images/dishes/p4.jpg' %}" alt="">
 						</div>
 						<div class="col-xs-8 img-deal1">
-							<h3>宫廷蜜枣</h3>
-							<a href="single.html">$165.00</a>
+							<h3>蓝莓披萨</h3>
+							<a href="/single/new/29">$135.00</a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
 					<div class="special-sec1">
 						<div class="col-xs-4 img-deals">
-							<img src="{% static 'images/shop/s5.jpg' %}" alt="">
+							<img src="{% static 'images/dishes/p12.jpg' %}" alt="">
 						</div>
 						<div class="col-xs-8 img-deal1">
-							<h3>千层耳片</h3>
-							<a href="single.html">$225.00</a>
+							<h3>鲜虾披萨</h3>
+							<a href="/single/new/36">$135.00</a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
 					<div class="special-sec1">
 						<div class="col-xs-4 img-deals">
-							<img src="{% static 'images/shop/s3.jpg' %}" alt="">
+							<img src="{% static 'images/dishes/p14.jpg' %}" alt="">
 						</div>
 						<div class="col-xs-8 img-deal1">
-							<h3>蓝莓马蹄</h3>
-							<a href="single.html">$169.00</a>
+							<h3>意大利披萨</h3>
+							<a href="/single/new/38">$120.00</a>
 						</div>
 						<div class="clearfix"></div>
 					</div>
@@ -253,7 +246,7 @@
 						<!-- product-sec1 -->
 						<div class="product-sec1">
 							<!--/mens-->
-							{% for afood in page %}
+							{% for afood in foods %}
 							<div class="col-md-4 product-men">
 								<div class="product-shoe-info shoe">
 									<div class="men-pro-item">
@@ -297,7 +290,7 @@
 														<input type="hidden" name="add" value="1">
 														<input type="hidden" name="shoe_item" value="{{afood.cname}}" id="cname">
 														<input type="hidden" name="amount" value="{{afood.cprice}}" id="cprice">
-														<button type="submit" id='bashinfo' class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+														<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
 														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
 													</form>
@@ -317,32 +310,32 @@
 
 					</div>
 
-					<div class="srxpag">
-					   	{# 分页功能 #}
-						{# 上一页功能 #}
-						{% if page.has_previous %}
-						<a href="{% url 'food' %}?page={{ page.previous_page_number }}">上一页</a>
-						{% else %}
-						上一页
-						{% endif %}
+					<!--<div class="srxpag">-->
+					   	<!--{# 分页功能 #}-->
+						<!--{# 上一页功能 #}-->
+						<!--{% if page.has_previous %}-->
+						<!--<a href="{% url 'food' %}?page={{ page.previous_page_number }}">上一页</a>-->
+						<!--{% else %}-->
+						<!--上一页-->
+						<!--{% endif %}-->
 
-						{# 以下增加各页的超链接 #}
-						{% for p in paginator.page_range %}
-							{# 判断p是否是当前页，如果是当前面，不加超链接#}
-							{% if p == page.number %}
-							{{ p }}
-							{% else %}
-							<a href="{% url 'food' %}?page={{ p }}">{{p}}</a>
-							{% endif %}
-						{% endfor %}
+						<!--{# 以下增加各页的超链接 #}-->
+						<!--{% for p in paginator.page_range %}-->
+							<!--{# 判断p是否是当前页，如果是当前面，不加超链接#}-->
+							<!--{% if p == page.number %}-->
+							<!--{{ p }}-->
+							<!--{% else %}-->
+							<!--<a href="{% url 'food' %}?page={{ p }}">{{p}}</a>-->
+							<!--{% endif %}-->
+						<!--{% endfor %}-->
 
-						{#下一页功能#}
-						{% if page.has_next %}
-						<a href="{% url 'food' %}?page={{ page.next_page_number }}">下一页</a>
-						{% else %}
-						下一页
-						{% endif %}
-					</div>
+						<!--{#下一页功能#}-->
+						<!--{% if page.has_next %}-->
+						<!--<a href="{% url 'food' %}?page={{ page.next_page_number }}">下一页</a>-->
+						<!--{% else %}-->
+						<!--下一页-->
+						<!--{% endif %}-->
+					<!--</div>-->
 
 					<!-- //product-sec1 -->
 
@@ -531,11 +524,11 @@
 					<div class="col-md-4 sign-gd">
 						<h4>页面信息</h4>
 						<ul>
-							<li><a href="/">主页</a></li>
-							<li><a href="/about">关于我们</a></li>
-							<li><a href="/shop">点餐</a></li>
-							<li><a href="/userinfo/login">登录</a></li>
-							<li><a href="/userinfo/register">注册</a></li>
+							<li><a href="index.html">主页</a></li>
+							<li><a href="about.html">关于我们</a></li>
+							<li><a href="shop.html">点餐</a></li>
+							<li><a href="login.html">登录</a></li>
+							<li><a href="register.html">注册</a></li>
 						</ul>
 					</div>
 
@@ -604,24 +597,20 @@
 	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
 	<!-- //js -->
 	<!-- cart-js -->
-
 	<script src="{% static 'js/minicart.js' %}"></script>
-
 	<script>
 		shoe.render();
+
 		shoe.cart.on('shoe_checkout', function (evt) {
 			var items, len, i;
-            console.log("hdsofhs")
+
 			if (this.subtotal() > 0) {
-				for (i = 0, len = items.length; i < len; i++) {
-				}
+				items = this.items();
+
+				for (i = 0, len = items.length; i < len; i++) {}
 			}
 		});
-
 	</script>
-
-
-
 	<!-- //cart-js -->
 	<!-- /nav -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
@@ -711,7 +700,7 @@
 
 										<div class="item-info-product">
 											<h4>
-												<a href="/single?id=${obj.fields.pk}" id="name">${obj.fields.cname}</a>
+												<a href="/single?id=${obj.pk}" id="name">${obj.fields.cname}</a>
 											</h4>
 											<div class="info-product-price">
 												<div class="grid_meta">
@@ -778,8 +767,8 @@
 
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
-													<!--<a href="single.html" class="link-product-add-cart">快速浏览</a>-->
-													<a href="/single?id=${obj.fields.pk}" class="link-product-add-cart">快速浏览</a>
+													//<a href="single.html" class="link-product-add-cart">快速浏览</a>
+													<a href="/single?id=${obj.pk}" class="link-product-add-cart">快速浏览</a>
 
 												</div>
 											</div>
@@ -788,7 +777,7 @@
 
 										<div class="item-info-product">
 											<h4>
-												<a href="/single?id=${obj.fields.pk}" id="name">${obj.fields.cname}</a>
+												<a href="/single?id=${obj.pk}" id="name">${obj.fields.cname}</a>
 											</h4>
 											<div class="info-product-price">
 												<div class="grid_meta">
@@ -838,4 +827,3 @@
 </body>
 
 </html>
- <script src="{% static 'js/SHOPAJAX.js' %}"></script>

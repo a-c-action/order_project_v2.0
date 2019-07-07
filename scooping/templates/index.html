@@ -89,12 +89,7 @@
 				<div class="top_nav_right">
 
 					<div class="shoecart shoecart2 cart cart box_1">
-
-						<form action="#" method="post" class="last">
-							<input type="hidden" name="cmd" value="_cart">
-							<input type="hidden" name="display" value="1">
-							<button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
-						</form>
+						<a href="/checkout/"> <button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
 					</div>
 
 				</div>
@@ -590,21 +585,7 @@
 	<script src="{% static 'js/demo1.js' %}"></script>
 	<!-- //nav -->
 	<!-- cart-js -->
-	<script src="{% static 'js/minicart.js' %}"></script>
-	{% csrf_token %}
-	<script>
-		shoe.render();
 
-		shoe.cart.on('shoe_checkout', function (evt) {
-			var items, len, i;
-
-			if (this.subtotal() > 0) {
-				items = this.items();
-
-				for (i = 0, len = items.length; i < len; i++) {}
-			}
-		});
-	</script>
 	<!-- //cart-js -->
 	<!--search-bar-->
 	<script src="{% static 'js/search.js' %}"></script>
