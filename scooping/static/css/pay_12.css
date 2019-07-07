@@ -1,0 +1,182 @@
+/*payment*/
+
+.ads-grid_shop div.pay_1,div.pay_2{
+    width:200px;
+    height:88px;
+    float:left;
+    margin-right:30px;
+
+}
+.privacy_about{
+    margin:0 auto;
+    width:90%;
+    height:88px;
+}
+div.responsive_tabs{
+    width:100%;
+    height:95px;
+    margin-top:30px;
+    border-bottom:1px solid gray;
+}
+
+/*订单信息*/
+
+.goods_info{
+    margin:0 auto;
+    width:1000px;
+}
+.type{
+    width:1000px;
+	margin-top:25px;
+	margin-bottom:20px;
+	height:36px;
+	border-top:1px solid gray;
+	background:#e6e6e5;
+	box-shadow:0 2px 3px gray;
+	color:#808080;
+	text-align:center;
+
+}
+
+
+.type div{
+	float:left;
+	text-align:center;
+	line-height:36px;
+}
+.gatter{
+	width:380px;
+}
+.gprice{
+	width:162px;
+}
+.gcount{
+	width:150px;
+}
+.address{
+	width:200px
+}
+
+/*settlement*/
+.settlement{
+    float:right;
+    background:black;
+    width:90px;
+    height:40px;
+    text-align:center;
+    margin-top:5px;
+    /*margin-right:145px;*/
+}
+.settlement .settle{
+    line-height:40px;
+    font-size:20px;
+    color:#eaf2ec;
+
+}
+
+.goods_items img.item1{
+    width:50px;
+    height:50px;
+}
+
+.goods_items{
+    border-bottom:1px solid gray;
+    overflow:hidden;
+    margin-bottom:50px;
+}
+.goods_items div{
+	float:left;
+	text-align:center;
+	line-height:36px;
+}
+.goods_items p{
+    /*line-height:79px;*/
+}
+
+/*Qr_code*/
+#qr_code1 .qr_code1{
+    width:400px;
+    height:400px;
+    text-align:center;
+}
+
+#qr_code2 .qr_code2{
+    width:450px;
+    height:400px;
+    text-align:center;
+}
+#qr_code1{
+    display:none;
+    /*display: block;*/
+    position: fixed;
+    /* z-index: 100; */
+    width: 400px;
+    height: 400px;
+    background: #fff0;
+    right: 750px;
+    bottom: 350px;
+    text-align: center;
+}
+#qr_code2{
+    display:none;
+    /*display: block;*/
+    position: fixed;
+    /* z-index: 100; */
+    width: 400px;
+    height: 400px;
+    background: #fff0;
+    right: 750px;
+    bottom: 350px;
+    text-align: center;
+}
+
+/*新增样式*/
+#orderList,#orderMenu{
+    margin:0 auto;
+    width:90%;
+    margin-bottom:40px;
+
+
+}
+#orderList{
+    margin-bottom:10px;
+}
+#orderTable{
+    width:100%;
+    border: 1px solid;
+    text-align: center;
+    color: white;
+    font-size:18px;
+}
+#orderTable thead{
+    background:black;
+}
+
+#orderTable tbody{
+    color:black;
+
+}
+
+#orderTable td{
+    border: 1px solid;
+}
+
+tfoot td{
+    border: 1px solid;
+    color:black;
+}
+
+#orderBody img{
+    width:130px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+
+}
+/*#orderFoot{
+    background:black;
+}*/
+#orderFoot td{
+    color:black;
+}
+
+
