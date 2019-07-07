@@ -289,9 +289,9 @@
 													</ul>
 												</div>
 
-												<a href="/checkout?id={{afood.id}}">
-														<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-												</a>
+
+												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+
 
 
 											</div>
@@ -706,9 +706,9 @@
 													</ul>
 												</div>
 
-												<a href="/checkout/?id=${obj.pk}">
-														<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-												</a>
+
+												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+
 
 
 
@@ -777,9 +777,9 @@
 												</div>
 
 
-												<a href="/checkout?caipinid={{ obj.fields.cid }}">
-														<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-												</a>
+
+												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+
 												</div>
 
 
@@ -796,6 +796,13 @@
 					}
 				});
 			});
+			$(".shoe-cart").click(function(){
+				url="/checkout/new?id=${obj.pk}"
+				$.get(url,function(data){
+					alert(data)
+				})
+			})
+
 		});
 	</script>
 </body>
