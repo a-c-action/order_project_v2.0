@@ -32,6 +32,10 @@
 
 
 	<link rel="stylesheet" href="{% static 'css/srxshop.css' %}" type="text/css">
+	<!--搜索提示样式-->
+	<link rel="stylesheet" href="{% static 'css/pay_21.css' %}" type="text/css">
+	<!--搜索提示js-->
+	<script src="{% static 'js/pay_4.js' %}"></script>
 </head>
 
 <body>
@@ -93,9 +97,13 @@
 				</ul>
 			</div>
 			<div id="cd-search" class="cd-search">
-				<form action="#" method="post">
-					<input name="Search" type="search" placeholder="输入完之后请按回车键...">
+				<form action="/payment/glob_search" method="post">
+					{% csrf_token %}
+					<input name="Search" type="search" placeholder="输入菜品或菜品关键字后按下Enter查询...">
 				</form>
+				<div id="prompt">
+					<span id="showFind"></span>
+				</div>
 			</div>
 		</div>
 
