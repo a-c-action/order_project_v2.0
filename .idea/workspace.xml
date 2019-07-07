@@ -1,7 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="3438dc27-7bb5-477f-bb91-51c4592afb9f" name="Default Changelist" comment="modify" />
+=======
+    <list default="true" id="3438dc27-7bb5-477f-bb91-51c4592afb9f" name="Default Changelist" comment="modify">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
+>>>>>>> 487f86bb6bedce673482f33b55c867b09c22ab18
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -9,7 +15,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
+<<<<<<< HEAD
     <leaf />
+=======
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/scooping/templates/RetrievePassword.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="765">
+              <caret line="139" column="38" lean-forward="true" selection-start-line="139" selection-start-column="38" selection-end-line="139" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
+>>>>>>> 487f86bb6bedce673482f33b55c867b09c22ab18
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -87,6 +107,7 @@
         <option value="$PROJECT_DIR$/scooping/templates/register.html" />
         <option value="$PROJECT_DIR$/scooping/userinfo/views.py" />
         <option value="$PROJECT_DIR$/scooping/static/js/cart.js" />
+        <option value="$PROJECT_DIR$/scooping/static/js/minicart.js" />
       </list>
     </option>
   </component>
@@ -118,26 +139,7 @@
               <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
               <item name="order_project_v2.0" type="462c0819:PsiDirectoryNode" />
               <item name="scooping" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="order_project_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="scooping" type="462c0819:PsiDirectoryNode" />
-              <item name="static" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="order_project_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="scooping" type="462c0819:PsiDirectoryNode" />
               <item name="templates" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="order_project_v2.0" type="b2602c69:ProjectViewProjectNode" />
-              <item name="order_project_v2.0" type="462c0819:PsiDirectoryNode" />
-              <item name="scooping" type="462c0819:PsiDirectoryNode" />
-              <item name="userinfo" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -282,7 +284,7 @@
       <workItem from="1562291645905" duration="22635000" />
       <workItem from="1562374825376" duration="23197000" />
       <workItem from="1562400123197" duration="11260000" />
-      <workItem from="1562416093956" duration="15998000" />
+      <workItem from="1562416093956" duration="17764000" />
     </task>
     <task id="LOCAL-00001" summary="修改register路径">
       <created>1561381118433</created>
@@ -414,13 +416,18 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221983000" />
+    <option name="totallyTimeSpent" value="223749000" />
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="67" y="25" width="1853" height="1055" extended-state="6" />
+=======
+    <frame x="0" y="25" width="1920" height="1004" extended-state="6" />
+    <editor active="true" />
+>>>>>>> 487f86bb6bedce673482f33b55c867b09c22ab18
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="1" weight="0.2955032" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20396146" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -528,13 +535,6 @@
     <SUITE FILE_PATH="coverage/order_project_v2_0$manage.coverage" NAME="manage Coverage Results" MODIFIED="1561945027665" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/scooping" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/scooping/templates/payment.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2490">
-          <caret line="202" column="36" lean-forward="true" selection-start-line="202" selection-start-column="36" selection-end-line="202" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scooping/userinfo/__init__.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -778,13 +778,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scooping/templates/RetrievePassword.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="139" column="38" lean-forward="true" selection-start-line="139" selection-start-column="38" selection-end-line="139" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scooping/static/js/cart3.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -826,24 +819,6 @@
           <caret line="18" column="58" selection-start-line="18" selection-start-column="58" selection-end-line="18" selection-end-column="58" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/scooping/static/js/cart1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="287" lean-forward="true" selection-start-line="287" selection-end-line="287" />
-          <folding>
-            <element signature="n#!!block;n#checkuaccount#0" />
-            <element signature="n#!!block;n#checkupassword#0" />
-            <element signature="n#!!block;n#checkverifycode#0" />
-            <element signature="e#2633#3149#0" />
-            <element signature="e#3151#4102#0" />
-            <element signature="e#4104#5093#0" />
-            <element signature="e#5095#5812#0" />
-            <element signature="e#5828#9660#0" />
-            <element signature="e#5834#5864#0" />
           </folding>
         </state>
       </provider>
@@ -927,6 +902,40 @@
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scooping/static/js/minicart.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="601">
+          <caret line="3019" column="3" lean-forward="true" selection-start-line="3019" selection-start-column="3" selection-end-line="3019" selection-end-column="3" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scooping/static/js/cart1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2700">
+          <caret line="287" lean-forward="true" selection-start-line="287" selection-end-line="287" />
+          <folding>
+            <element signature="n#!!block;n#checkuaccount#0" />
+            <element signature="n#!!block;n#checkupassword#0" />
+            <element signature="n#!!block;n#checkverifycode#0" />
+            <element signature="e#2633#3149#0" />
+            <element signature="e#3151#4102#0" />
+            <element signature="e#4104#5093#0" />
+            <element signature="e#5095#5812#0" />
+            <element signature="e#5834#5864#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/scooping/templates/RetrievePassword.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="139" column="38" lean-forward="true" selection-start-line="139" selection-start-column="38" selection-end-line="139" selection-end-column="38" />
         </state>
       </provider>
     </entry>
