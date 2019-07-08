@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'scooping.wsgi.application'
 DATABASES = {
     'default': {
                 'ENGINE': 'django.db.backends.mysql',
-                'NAME': 'shaopin',
+                'NAME': 'scooping',
                 'USER': 'scooping',
                 'PASSWORD': '123456',
                 'HOST': '176.234.8.25',

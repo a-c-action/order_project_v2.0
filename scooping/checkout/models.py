@@ -8,36 +8,12 @@ from django.db import models
 # sys.path.append('/home/tarena/PycharmProjects/order_project_v2.0/scooping/single')
 from userinfo.models import UserProfile
 
-# Create your models here.
-class Menu(models.Model):
-    ctype = models.CharField(verbose_name='类型',
-                            max_length=50, default='')
-    cname = models.CharField(verbose_name='菜名',
-                            max_length=50, default='')
-    cprice = models.DecimalField('价格', max_digits=7,
-                                decimal_places=2, default=0)
-    cmarket_price = models.DecimalField('会员价', max_digits=7,
-                                       decimal_places=2,
-                                       default=0)
-    pic = models.ImageField("图片",upload_to='dishes/')
-    class Meta:
-        db_table='Menu'
 
-    def __str__(self):
-        return  'id: %d' % self.id
-
-
-class MenuInfo(models.Model):
-    introduct = models.CharField('菜品简介', max_length=5000, default='')
-    value = models.CharField('营养价值', max_length=5000, default='')
-    infor = models.CharField('产地信息', max_length=5000, default='')
-    cid = models.OneToOneField(Menu)
-    class Meta:
-        db_table='MenuInfo'
-    def __str__(self):
-        return 'id: %s'%(self.id)
 
 # 订单表
+from single.models import Menu
+
+
 class Ordertable(models.Model):
     data=models.DateField("订单日期")
     orderid=models.CharField("订单编号",max_length=30)
@@ -49,6 +25,10 @@ class Ordertable(models.Model):
     uid = models.ForeignKey(UserProfile)
     class Meta:
         db_table='Ordertable'
+        verbose_name_plural = '订单表'
+
+    def __str__(self):
+        return f"id:{self.id},data:{self.data},orderid:{self.orderid},table:{self.table},allmoney:{self.allmoney},otype:{self.otype},odish:{self.odish}"
 
 #订单明细表
 class Orderlist(models.Model):
@@ -60,6 +40,9 @@ class Orderlist(models.Model):
     cid=models.OneToOneField(Menu)
     class Meta:
         db_table='Orderlist'
+        verbose_name_plural = '订单明细表'
+    def __str__(self):
+        return f"id:{self.id},lcount:{self.lcount},lmoney:{self.lmoney}"
 
 #外卖表
 class Takeout(models.Model):
@@ -70,6 +53,27 @@ class Takeout(models.Model):
     oid = models.OneToOneField(Ordertable)
     class Meta:
         db_table='Takeout'
+        verbose_name_plural = '外卖表'
+    def __str__(self):
+        return f"id:{self.id},name:{self.name},phone:{self.phone},addr:{self.addr},number:{self.number}"
 
+
+class Shoppingcart(models.Model):
+    """
+    购物车明细表
+    """
+    cname = models.CharField(verbose_name='菜名',
+                             max_length=50, default='')
+    cprice = models.DecimalField('价格', max_digits=7,
+                                 decimal_places=2, default=0)
+    pic = models.ImageField("图片", upload_to='dishes/')
+    number = models.CharField(verbose_name='数量',max_length=50,default='1')
+    # 一个用户可以有多条购物车记录
+    sid = models.ForeignKey(UserProfile)
+    class Meta:
+        db_table = 'Shoppingcart'
+        verbose_name_plural = '购物车明细表'
+    def __str__(self):
+        return f"id:{self.id},cname:{self.cname},cprice:{self.cprice},pic:{self.pic},number:{self.number}"
 
 
