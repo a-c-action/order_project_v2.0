@@ -88,7 +88,7 @@ function checkuemail1() {
 }
 
 function checkuphone1() {
-    var teleinput = $(".teleInput").val()
+    var teleinput = $(".teleInput").val();
     if (teleinput.length == 0) {
         $(".pass-item-error5").css("display", "inline");
         return true;
@@ -156,6 +156,7 @@ function check_action_code(){
     var getmsg = String($("#displaysmscode").html());
     if(setmsg.length == 0){
         $("#uaction-show").html("激活码为空").css("color","red");
+        return true
     }else{
         if(setmsg == getmsg){
             $("#displaysmscode").css('display','none');

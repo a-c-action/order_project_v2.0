@@ -20,6 +20,7 @@ urlpatterns = [
     url(r'^finduemail$', views.finduemail),
     url(r'^finduphone$', views.finduphone),
     url(r'^findpassword$', views.findpassword),
+    url(r'^smscode1$', views.smscode1),
     url(r'^RetrievePassword$',views.RetrievePassword),
     url(r'^modifyPassword$',views.modifyPassword),
     url(r'^logout$',views.logout)
