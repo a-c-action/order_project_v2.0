@@ -32,6 +32,26 @@
 
 
 	<link rel="stylesheet" href="{% static 'css/srxshop.css' %}" type="text/css">
+
+
+	<!--搜索提示样式-->
+	<link rel="stylesheet" href="{% static 'css/pay_21.css' %}" type="text/css">
+	<!--搜索提示js-->
+	<script src="{% static 'js/jquery-1.11.3.js' %}"></script>
+	<script src="{% static 'js/pay_4.js' %}"></script>
+
+	<script>
+		$(function(){
+			$(".shoe-cart").click(function(){
+					cname=$(this).parents(".item-info-product").find("h4 #name").html();
+					console.log(cid);
+					url="/checkout/new?cname="+cnaame;
+					$.get(url,function(data){
+								alert(data)
+				})
+			})
+		})
+	</script>
 </head>
 
 <body>
@@ -284,17 +304,7 @@
 												</div>
 
 
-												<div class="shoe single-item hvr-outline-out">
-													<form action="#" method="post">
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="shoe_item" value="{{afood.cname}}" id="cname">
-														<input type="hidden" name="amount" value="{{afood.cprice}}" id="cprice">
-														<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-
-														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-													</form>
-												</div>
+												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
 
 											</div>
@@ -700,7 +710,7 @@
 
 										<div class="item-info-product">
 											<h4>
-												<a href="/single?id=${obj.pk}" id="name">${obj.fields.cname}</a>
+												<a href="/single/new/${obj.pk}" id="name">${obj.fields.cname}</a>
 											</h4>
 											<div class="info-product-price">
 												<div class="grid_meta">
@@ -719,17 +729,7 @@
 												</div>
 
 
-												<div class="shoe single-item hvr-outline-out">
-													<form action="#" method="post">
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="shoe_item" value="${obj.fields.cname}" id="cname">
-														<input type="hidden" name="amount" value="${obj.fields.cprice}" id="cprice">
-														<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-
-														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-													</form>
-												</div>
+												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
 
 											</div>
@@ -768,7 +768,7 @@
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
 													//<a href="single.html" class="link-product-add-cart">快速浏览</a>
-													<a href="/single?id=${obj.pk}" class="link-product-add-cart">快速浏览</a>
+													<a href="/single/new/${obj.pk}" class="link-product-add-cart">快速浏览</a>
 
 												</div>
 											</div>
@@ -777,7 +777,7 @@
 
 										<div class="item-info-product">
 											<h4>
-												<a href="/single?id=${obj.pk}" id="name">${obj.fields.cname}</a>
+												<a href="/single/new/${obj.pk}" id="name">${obj.fields.cname}</a>
 											</h4>
 											<div class="info-product-price">
 												<div class="grid_meta">
@@ -796,17 +796,7 @@
 												</div>
 
 
-												<div class="shoe single-item hvr-outline-out">
-													<form action="#" method="post">
-														<input type="hidden" name="cmd" value="_cart">
-														<input type="hidden" name="add" value="1">
-														<input type="hidden" name="shoe_item" value="${obj.fields.cname}" id="cname">
-														<input type="hidden" name="amount" value="${obj.fields.cprice}" id="cprice">
-														<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-
-														<a href="#" data-toggle="modal" data-target="#myModal1"></a>
-													</form>
-												</div>
+												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
 
 											</div>
