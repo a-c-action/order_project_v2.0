@@ -151,33 +151,34 @@
 			<!--商品展示-->
 
 			<div class="content">
+				{% for obj in carts %}
 				<div class="item">
 					<div class="check">
 						<img src="{% static 'images/checkout/product_normal.png' %}" class="checkItem">
 
 					</div>
 					<div class="gname">
-						<img src="${'/static'+obj.pic}">
+						<img src="{% static obj.pic %}">
 						<p>       </p>
 						<p>{{ obj.cname }}</p>
 						<p>　　　　</p>
 					</div>
 					<div class="gprice">
 						<h3>会员专享价</h3>
-						<p>￥ {{ obj.cmarket_price }}</p>
+						<p>￥ {{ obj.cprice }}</p>
 					</div>
 					<div class="gcount">
 						<!--阻止超链接默认事件-->
 						<a href="javascript:void(0)" class="minus">-</a>
-						<input type="text" value="1">
+						<input type="text" value="{{ obj.number }}">
 						<a href="javascript:void(0)" class="add">+</a>
 
 					</div>
-					<div class="gsum">￥ {{ obj.cprice }}</div>
+					<div class="gsum">￥ {{ obj.price }}*{{ obj.number }}</div>
 					<div class="action">移除</div>
 
 				</div>
-
+				{% endfor %}
 			</div>
 
 			</div>
