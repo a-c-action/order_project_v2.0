@@ -34,12 +34,11 @@
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
 	<!--<link rel="stylesheet" href="{% static 'css/base.css' %}" type="text/css">-->
 
-	<script src="{% static 'js/checkout1.js' %}"></script>
 	<script src="{% static 'js/jquery-1.11.3.js' %}"></script>
 		<!--搜索提示js-->
 	<script src="{% static 'js/pay_4.js' %}"></script>
     <script src="{% static 'js/checkout.js' %}"></script>
-    <script src="{% static 'js/checkout1.js' %}"></script>
+    <!--<script src="{% static 'js/checkout1.js' %}"></script>-->
 </head>
 
 <body>
@@ -150,9 +149,38 @@
 
 			</div>
 			<!--商品展示-->
+
 			<div class="content">
+				<div class="item">
+					<div class="check">
+						<img src="{% static 'images/checkout/product_normal.png' %}" class="checkItem">
+
+					</div>
+					<div class="gname">
+						<img src="${'/static'+obj.pic}">
+						<p>       </p>
+						<p>{{ obj.cname }}</p>
+						<p>　　　　</p>
+					</div>
+					<div class="gprice">
+						<h3>会员专享价</h3>
+						<p>￥ {{ obj.cmarket_price }}</p>
+					</div>
+					<div class="gcount">
+						<!--阻止超链接默认事件-->
+						<a href="javascript:void(0)" class="minus">-</a>
+						<input type="text" value="1">
+						<a href="javascript:void(0)" class="add">+</a>
+
+					</div>
+					<div class="gsum">￥ {{ obj.cprice }}</div>
+					<div class="action">移除</div>
 
 				</div>
+
+			</div>
+
+			</div>
 
 
 

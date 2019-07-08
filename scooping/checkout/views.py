@@ -3,6 +3,7 @@ import json
 
 from . import models
 from single.models import Menu
+from userinfo.models import UserProfile
 from decimal import *
 
 from django.http import HttpResponse
@@ -13,30 +14,25 @@ def homepage(request):
 
 
 
-caipinlist=[]
-caipinlistinfo=[]
+
 def new_dish_info(request):
+    username = request.session["user"]["uaccount"]
+    users = UserProfile.objects.filter(uname=username)
+    print(users)
     cname=request.GET["cname"]
-    print(cname)
-    dic={}
-    if cname not in caipinlist:
-        caipinlist.append(cname)
-        caipin=Menu.objects.get(cname=cname)
-        print("price",caipin.cprice,type(caipin.cprice))
-        dic["cname"]=caipin.cname
-        dic["cprice"]=str(caipin.cprice.quantize(Decimal('0.0')))
-        dic["cmarket_price"]=str(caipin.cmarket_price.quantize(Decimal('0.0')))
-        # dic["pic"]=caipin.pic
-        caipinlistinfo.append(dic)
-    # caipinlistinfos=json.dumps(caipinlistinfo)
-    print(caipinlistinfo)
+    caipin = Menu.objects.get(cname=cname)
+    cname = caipin.cname
+    cprice = str(caipin.cprice.quantize(Decimal('0.0')))
+    cimg = caipin.pic
+    # if cname not in caipinlist:
+    #         pass
     return HttpResponse("添加成功")
 
 
-def dish_info_list(request):
-    print("新的列表", caipinlistinfo)
-    dic = {}
-    jsonStr = json.dumps(caipinlistinfo)
-    dic["infoit"] = caipinlistinfo
-    print("薪资点",dic)
-    return HttpResponse(jsonStr)
+# def dish_info_list(request):
+#     print("新的列表", caipinlistinfo)
+#     dic = {}
+#     jsonStr = json.dumps(caipinlistinfo)
+#     dic["infoit"] = caipinlistinfo
+#     print("薪资点",dic)
+#     return HttpResponse(jsonStr)
