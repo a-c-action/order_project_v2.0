@@ -32,6 +32,11 @@
 
 
 	<link rel="stylesheet" href="{% static 'css/srxshop.css' %}" type="text/css">
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 0594651c4a51d75579129e1cbc603080aa94bea9
 	<!--搜索提示样式-->
 	<link rel="stylesheet" href="{% static 'css/pay_21.css' %}" type="text/css">
 	<!--搜索提示js-->
@@ -42,8 +47,13 @@
 		$(function(){
 			$(".shoe-cart").click(function(){
 					cname=$(this).parents(".item-info-product").find("h4 #name").html();
+<<<<<<< HEAD
+					console.log(cid);
+					url="/checkout/new?cname="+cnaame;
+=======
 					console.log(cname);
 					url="/checkout/new?cname="+cname;
+>>>>>>> 0594651c4a51d75579129e1cbc603080aa94bea9
 					$.get(url,function(data){
 								alert(data)
 				})
@@ -304,7 +314,10 @@
 
 
 												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+<<<<<<< HEAD
+=======
 
+>>>>>>> 0594651c4a51d75579129e1cbc603080aa94bea9
 
 
 											</div>
@@ -702,10 +715,14 @@
 
 										<div class="item-info-product">
 											<h4>
+<<<<<<< HEAD
+												<a href="/single/new/${obj.pk}" id="name">${obj.fields.cname}</a>
+=======
 
 												<!--<label id="name1">${obj.pk}</label>-->
 
 												<a href="/single/new/${obj.pk}"" id="name">${obj.fields.cname}</a>
+>>>>>>> 0594651c4a51d75579129e1cbc603080aa94bea9
 											</h4>
 											<div class="info-product-price">
 												<div class="grid_meta">
@@ -725,9 +742,12 @@
 
 
 												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+<<<<<<< HEAD
+=======
 
 
 
+>>>>>>> 0594651c4a51d75579129e1cbc603080aa94bea9
 
 
 											</div>
@@ -765,8 +785,13 @@
 
 											<div class="men-cart-pro">
 												<div class="inner-men-cart-pro">
+<<<<<<< HEAD
+													//<a href="single.html" class="link-product-add-cart">快速浏览</a>
+													<a href="/single/new/${obj.pk}" class="link-product-add-cart">快速浏览</a>
+=======
 													<!--<a href="single.html" class="link-product-add-cart">快速浏览</a>-->
 													<a href="/single?id=${obj.fields.pk}" class="link-product-add-cart">快速浏览</a>
+>>>>>>> 0594651c4a51d75579129e1cbc603080aa94bea9
 
 												</div>
 											</div>
@@ -775,8 +800,12 @@
 
 										<div class="item-info-product">
 											<h4>
+<<<<<<< HEAD
+												<a href="/single/new/${obj.pk}" id="name">${obj.fields.cname}</a>
+=======
 												<!--<label id="name1">${obj.pk}</label>-->
 												<a href="/single?id=${obj.fields.pk}" id="name">${obj.fields.cname}</a>
+>>>>>>> 0594651c4a51d75579129e1cbc603080aa94bea9
 											</h4>
 											<div class="info-product-price">
 												<div class="grid_meta">
@@ -795,10 +824,14 @@
 												</div>
 
 
+<<<<<<< HEAD
+												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+=======
 
 												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
 												</div>
+>>>>>>> 0594651c4a51d75579129e1cbc603080aa94bea9
 
 
 											</div>

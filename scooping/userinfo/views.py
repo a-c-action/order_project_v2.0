@@ -426,7 +426,6 @@ def findpassword(request):
     else:
         return HttpResponse("5")
 
-
 def smscode1(request):
     # !/usr/bin/env python
     # coding=utf-8
@@ -498,6 +497,7 @@ def modifyPassword(request):
                                     else:
                                         auser = models.Users_auths.objects.get(uname=user.uname)
                                         auser.password = upassword
+                                        auser.login_status = False
                                         auser.save()
                                         return HttpResponse("修改成功")
         except:
