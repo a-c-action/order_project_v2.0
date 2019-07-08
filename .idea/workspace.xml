@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3438dc27-7bb5-477f-bb91-51c4592afb9f" name="Default Changelist" comment="modify">
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/static/css/bootstrap1.css" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/static/css/bootstrap1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/static/css/style1.css" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/static/css/style1.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/static/js/cart.js" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/static/js/cart.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/static/js/cart3.js" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/static/js/cart3.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/templates/RetrievePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/templates/RetrievePassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scooping/userinfo/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/userinfo/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scooping/userinfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/scooping/userinfo/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -19,23 +14,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scooping/templates/RetrievePassword.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="133" column="34" lean-forward="true" selection-start-line="133" selection-start-column="34" selection-end-line="133" selection-end-column="34" />
-              <folding>
-                <element signature="n#style#0;n#label#0;n#div#0;n#div#4;n#form#0;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/scooping/userinfo/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="601">
-              <caret line="503" column="41" lean-forward="true" selection-start-line="503" selection-start-column="41" selection-end-line="503" selection-end-column="41" />
+            <state relative-caret-position="421">
+              <caret line="498" column="41" selection-start-line="498" selection-start-column="41" selection-end-line="498" selection-end-column="41" />
               <folding>
                 <element signature="e#0#11#0" expanded="true" />
                 <element signature="e#491#2332#1" />
@@ -46,55 +29,19 @@
                 <element signature="e#5710#5981#0" />
                 <element signature="e#6017#6451#0" />
                 <element signature="e#6453#8890#1" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scooping/userinfo/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="19" column="43" selection-start-line="19" selection-start-column="43" selection-end-line="19" selection-end-column="43" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/scooping/static/js/cart.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="225">
-              <caret line="386" column="45" selection-start-line="386" selection-start-column="45" selection-end-line="386" selection-end-column="45" />
-              <folding>
-                <element signature="n#!!block;n#checkuname#0" />
-                <element signature="n#!!block;n#checkuemail#0" />
-                <element signature="n#!!block;n#checkuphone#0" />
-                <element signature="n#!!block;n#checkuname1#0" />
-                <element signature="n#!!block;n#checkuemail1#0" />
-                <element signature="n#!!block;n#checkpasswordInput#0" />
-                <element signature="n#!!block;n#checkrestartpasswordInput#0" />
-                <element signature="n#!!block;n#checkverify_code#0" />
-                <element signature="n#!!block;n#check_action_code#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/scooping/static/js/cart3.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
-              <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
-              <folding>
-                <element signature="n#!!block;n#finduname#0" />
-                <element signature="n#!!block;n#finduemail#0" />
-                <element signature="n#!!block;n#finduphone#0" />
-                <element signature="n#!!block;n#findpassword#0" />
-                <element signature="n#!!block;n#check_action_code#0" />
-                <element signature="e#4416#7185#0" />
+                <element signature="e#8988#9237#0" />
+                <element signature="e#9269#9524#0" />
+                <element signature="e#9556#9811#0" />
+                <element signature="e#9847#10120#0" />
+                <element signature="e#10148#11165#0" />
+                <element signature="e#11167#11199#0" />
+                <element signature="e#11414#13450#0" />
+                <element signature="e#13480#13741#0" />
+                <element signature="e#13772#14344#0" />
+                <element signature="e#14375#14947#0" />
+                <element signature="e#14980#15671#0" />
+                <element signature="e#15701#16711#0" />
+                <element signature="e#16752#16798#0" />
               </folding>
             </state>
           </provider>
@@ -180,12 +127,12 @@
         <option value="$PROJECT_DIR$/scooping/static/js/cart.js" />
         <option value="$PROJECT_DIR$/scooping/userinfo/urls.py" />
         <option value="$PROJECT_DIR$/scooping/templates/RetrievePassword.html" />
-        <option value="$PROJECT_DIR$/scooping/userinfo/views.py" />
         <option value="$PROJECT_DIR$/scooping/static/js/cart3.js" />
+        <option value="$PROJECT_DIR$/scooping/userinfo/views.py" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="y" value="27" />
     <option name="width" value="1018" />
     <option name="height" value="1002" />
@@ -236,7 +183,7 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/scooping" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="Errors" />
@@ -371,7 +318,7 @@
       <workItem from="1562374825376" duration="23197000" />
       <workItem from="1562400123197" duration="11260000" />
       <workItem from="1562416093956" duration="26458000" />
-      <workItem from="1562495345625" duration="3872000" />
+      <workItem from="1562495345625" duration="5188000" />
     </task>
     <task id="LOCAL-00001" summary="修改register路径">
       <created>1561381118433</created>
@@ -503,14 +450,14 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="236315000" />
+    <option name="totallyTimeSpent" value="237631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1004" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.20449679" />
+      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.15310493" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -523,7 +470,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" sideWeight="0.498394" weight="0.32906976" />
       <window_info anchor="bottom" id="DB Execution Console" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Event Log" order="11" sideWeight="0.501606" side_tool="true" visible="true" weight="0.32864866" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.501606" side_tool="true" weight="0.32906976" />
       <window_info anchor="bottom" id="Terminal" order="12" weight="0.32906976" />
       <window_info anchor="bottom" id="Python Console" order="13" />
       <window_info anchor="right" id="SciView" order="0" />
@@ -943,6 +890,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/scooping/static/js/cart3.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
+          <folding>
+            <element signature="n#!!block;n#finduname#0" />
+            <element signature="n#!!block;n#finduemail#0" />
+            <element signature="n#!!block;n#finduphone#0" />
+            <element signature="n#!!block;n#findpassword#0" />
+            <element signature="n#!!block;n#check_action_code#0" />
+            <element signature="e#4416#7185#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scooping/static/js/cart.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
@@ -971,24 +933,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scooping/userinfo/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="601">
-          <caret line="503" column="41" lean-forward="true" selection-start-line="503" selection-start-column="41" selection-end-line="503" selection-end-column="41" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-            <element signature="e#491#2332#1" />
-            <element signature="e#2427#2847#0" />
-            <element signature="e#2882#3474#0" />
-            <element signature="e#3512#3784#0" />
-            <element signature="e#3992#5683#0" />
-            <element signature="e#5710#5981#0" />
-            <element signature="e#6017#6451#0" />
-            <element signature="e#6453#8890#1" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/scooping/templates/RetrievePassword.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="172">
@@ -999,17 +943,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/scooping/static/js/cart3.js">
+    <entry file="file://$PROJECT_DIR$/scooping/userinfo/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="205" lean-forward="true" selection-start-line="205" selection-end-line="205" />
+        <state relative-caret-position="421">
+          <caret line="498" column="41" selection-start-line="498" selection-start-column="41" selection-end-line="498" selection-end-column="41" />
           <folding>
-            <element signature="n#!!block;n#finduname#0" />
-            <element signature="n#!!block;n#finduemail#0" />
-            <element signature="n#!!block;n#finduphone#0" />
-            <element signature="n#!!block;n#findpassword#0" />
-            <element signature="n#!!block;n#check_action_code#0" />
-            <element signature="e#4416#7185#0" />
+            <element signature="e#0#11#0" expanded="true" />
+            <element signature="e#491#2332#1" />
+            <element signature="e#2427#2847#0" />
+            <element signature="e#2882#3474#0" />
+            <element signature="e#3512#3784#0" />
+            <element signature="e#3992#5683#0" />
+            <element signature="e#5710#5981#0" />
+            <element signature="e#6017#6451#0" />
+            <element signature="e#6453#8890#1" />
+            <element signature="e#8988#9237#0" />
+            <element signature="e#9269#9524#0" />
+            <element signature="e#9556#9811#0" />
+            <element signature="e#9847#10120#0" />
+            <element signature="e#10148#11165#0" />
+            <element signature="e#11167#11199#0" />
+            <element signature="e#11414#13450#0" />
+            <element signature="e#13480#13741#0" />
+            <element signature="e#13772#14344#0" />
+            <element signature="e#14375#14947#0" />
+            <element signature="e#14980#15671#0" />
+            <element signature="e#15701#16711#0" />
+            <element signature="e#16752#16798#0" />
           </folding>
         </state>
       </provider>
