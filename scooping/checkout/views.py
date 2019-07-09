@@ -8,7 +8,8 @@ from userinfo.models import UserProfile
 from django.db.models import Count
 from decimal import *
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
+
 
 # Create your views here.
 def homepage(request):
@@ -51,6 +52,13 @@ def minus(request):
         cart.save()
     return HttpResponse("OK")
 
+def del_cuisine(request, cuisine_id):
+    try:
+        agreens = models.Shoppingcart.objects.get(id=cuisine_id)
+        agreens.delete()
+        return HttpResponseRedirect('/checkout')
+    except:
+        return HttpResponse("没有找到ID为" + cuisine_id + "的菜品信息,删除失败")
 
 
 

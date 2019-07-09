@@ -52,21 +52,23 @@ def server02(request):
 
 def new_dish_info(request):
     username = request.session["user"]["uaccount"]
-    users = UserProfile.objects.filter(uname=username)
+    users = UserProfile.objects.get(uname=username)
     print(users)
 
     cname=request.GET['name']
     print("fndkfn",cname)
-    food=Menu.objects.filter(cname=cname)
-
-    cart=Shoppingcart.objects.get(cname=cname,sid=users)
-    if cart:
+    food=Menu.objects.get(cname=cname)
+    carts=Shoppingcart.objects.filter(sid=users)
+    cnamelist=[]
+    for cart in carts:
+        cnamelist.append(cart.cname)
+    if cname in cnamelist:
+        cart = Shoppingcart.objects.get(sid=users,cname=cname)
         cart.number = str(int(cart.number) + 1)
         cart.save()
     else:
 
         cart=Shoppingcart.objects.create(
-            ctype=food.ctype,
             cname=food.cname,
             cprice=food.cprice,
             pic=food.pic,

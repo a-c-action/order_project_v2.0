@@ -180,7 +180,9 @@
 					<div class="gsum">￥ {{ value }}</div>
 						{% endif %}
 					{% endfor %}
-					<div class="action">移除</div>
+					<div class="action">
+   						<a href="/checkout/del/{{ obj.id }}">移除</a >
+					</div>
 
 				</div>
 				{% endfor %}
