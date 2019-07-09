@@ -164,7 +164,7 @@
 						<p>　　　　</p>
 					</div>
 					<div class="gprice">
-						<h3>会员专享价</h3>
+						<h3></h3>
 						<p>￥ {{ obj.cprice }}</p>
 					</div>
 					<div class="gcount">
@@ -174,7 +174,12 @@
 						<a href="javascript:void(0)" class="add">+</a>
 
 					</div>
-					<div class="gsum">￥ {{ obj.price }}*{{ obj.number }}</div>
+					{% for key,value in princes.items %}
+
+						{% if key is obj.cname %}
+					<div class="gsum">￥ {{ value }}</div>
+						{% endif %}
+					{% endfor %}
 					<div class="action">移除</div>
 
 				</div>
