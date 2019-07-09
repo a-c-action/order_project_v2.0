@@ -53,6 +53,11 @@ $(function () {
         $(this).prev().val(value);
         countPrice($(this), value);
         sum();
+        //添加数据库数量
+        var name=$(this).parents(".item").find(".gname #cname").html()
+        console.log(name)
+        var msg={"cname":name}
+        $.get("/checkout/add",msg)
 
     })
     $(".minus").click(function () {
@@ -63,6 +68,10 @@ $(function () {
         $(this).next().val(value);
         countPrice($(this), value)
         sum();
+        var name=$(this).parents(".item").find(".gname #cname").html()
+        console.log(name)
+        var msg={"cname":name}
+        $.get("/checkout/minus",msg)
 
     })
 

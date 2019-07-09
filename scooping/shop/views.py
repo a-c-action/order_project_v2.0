@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from single.models import Menu
 from django.core import serializers
 
+from checkout.models import Shoppingcart
+from userinfo.models import UserProfile
 from . import models
 # Create your views here.
 # def shop(request):
@@ -48,3 +50,28 @@ def server02(request):
     jsonStr = serializers.serialize("json", page)
     return HttpResponse(jsonStr)
 
+def new_dish_info(request):
+    username = request.session["user"]["uaccount"]
+    users = UserProfile.objects.filter(uname=username)
+    print(users)
+
+    cname=request.GET['name']
+    print("fndkfn",cname)
+    food=Menu.objects.filter(cname=cname)
+
+    cart=Shoppingcart.objects.get(cname=cname,sid=users)
+    if cart:
+        cart.number = str(int(cart.number) + 1)
+        cart.save()
+    else:
+
+        cart=Shoppingcart.objects.create(
+            ctype=food.ctype,
+            cname=food.cname,
+            cprice=food.cprice,
+            pic=food.pic,
+            number="1",
+            sid=users,
+        )
+
+    return HttpResponse("添加成功")

@@ -22,9 +22,16 @@ def book_table(request):
     order=models.Order_from.objects.create(check_data=data,check_time=time,check_person=person,
                                             check_phone=phone, check_table=table, uid=uid)
     # order.save()
-    html="time:"+time+"date:"+data+"person:"+person+"table:"+table+"phone:"+phone
-    print(html)
-    str=checktable(request)
+    # html="time:"+time+"date:"+data+"person:"+person+"table:"+table+"phone:"+phone
+    # print(html)
+    tableall = ['桌号1', '桌号2', '桌号3', '桌号5', '桌号6', '桌号8', '桌号9', '桌号10']
+    tables = models.Order_from.objects.filter(check_data=data, check_time=time)
+    print(tables)
+    if tables:
+        for table in tables:
+            if table.check_table in tableall:
+                tableall.remove(table.check_table)
+    str = json.dumps(tableall)
     return HttpResponse(str)
 
 

@@ -43,13 +43,14 @@
 		$(function(){
 			$(".shoe-cart").click(function(){
 					cname=$(this).parents(".item-info-product").find("h4 #name").html();
-
-					url="/checkout/new?cname="+cname;
-
 					console.log(cname);
-					url="/checkout/new?cname="+cname;
+					url="/shop/new";
+					msg={
+						"name":cname
+					}
 
-					$.get(url,function(data){
+					$.get(url,msg,function(data){
+						console.log("adfhiadfjdapjf")
 								alert(data)
 				})
 			})
@@ -607,23 +608,10 @@
 	<!-- //footer -->
 <a href="#home" id="toTop" class="scroll" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
 	<!-- js -->
-	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
+	<!--<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>-->
 	<!-- //js -->
 	<!-- cart-js -->
-	<script src="{% static 'js/minicart.js' %}"></script>
-	<script>
-		shoe.render();
 
-		shoe.cart.on('shoe_checkout', function (evt) {
-			var items, len, i;
-
-			if (this.subtotal() > 0) {
-				items = this.items();
-
-				for (i = 0, len = items.length; i < len; i++) {}
-			}
-		});
-	</script>
 	<!-- //cart-js -->
 	<!-- /nav -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
@@ -675,7 +663,7 @@
 
 	<!--<script src="{% static 'js/common.js' %}"></script>-->
 	<!--<script src="{% static 'js/common.js' %}"></script>-->
-	<script src="{% static 'js/jquery-1.11.3.js' %}"></script>
+
 	<script>
 		$(function(){
 			$(".text").click(function(){
