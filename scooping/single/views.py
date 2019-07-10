@@ -9,7 +9,8 @@ from django.db.models import F
 from django.conf import settings
 
 from .models import Menu
-
+from checkout.models import Shoppingcart
+from userinfo.models import UserProfile
 import os
 # Create your views here.
 
@@ -106,3 +107,34 @@ def new_dish_info(request, dish_id):
 #     imgs = models.Dish.objects.all()
 #     # context = {'img': imgs}
 #     return render(request,'single.html',locals())
+
+
+
+
+def dish_info(request):
+    username = request.session["user"]["uaccount"]
+    users = UserProfile.objects.get(uname=username)
+    print(users)
+
+    cname=request.GET['name']
+    print("fndkfn",cname)
+    food=Menu.objects.get(cname=cname)
+    carts=Shoppingcart.objects.filter(sid=users)
+    cnamelist=[]
+    for cart in carts:
+        cnamelist.append(cart.cname)
+    if cname in cnamelist:
+        cart = Shoppingcart.objects.get(sid=users,cname=cname)
+        cart.number = str(int(cart.number) + 1)
+        cart.save()
+    else:
+
+        cart=Shoppingcart.objects.create(
+            cname=food.cname,
+            cprice=food.cprice,
+            pic=food.pic,
+            number="1",
+            sid=users,
+        )
+
+    return HttpResponse("添加成功")

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="zxx">
 
@@ -43,7 +44,9 @@
 		$(function(){
 			$(".shoe-cart").click(function(){
 					cname=$(this).parents(".item-info-product").find("h4 #name").html();
+
 					console.log(cname);
+
 					url="/shop/new";
 					msg={
 						"name":cname
@@ -76,7 +79,7 @@
 
 					<nav>
 						<ul>
-							<li><a href="/scoping/booktable" class="active">首页</a></li>
+							<li><a href="/" class="active">首页</a></li>
 							<li><a href="/about">关于我们</a></li>
 							<li><a href="/shop/food">点餐</a></li>
 							<li><a href="/userinfo/login">登录</a></li>
@@ -97,7 +100,7 @@
 				<!-- cart details -->
 				<div class="top_nav_right">
 					<div class="shoecart shoecart2 cart cart box_1">
-						<form action="#" method="post" class="last">
+						<form action="/checkout/" method="post" class="last">
 							<input type="hidden" name="cmd" value="_cart">
 							<input type="hidden" name="display" value="1">
 							<button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
@@ -131,7 +134,7 @@
 			<div class="inner_breadcrumb_agileits_w3">
 
 				<ul class="short">
-					<li><a href="/scoping/booktable">首页</a><i>|</i></li>
+					<li><a href="/">首页</a><i>|</i></li>
 					<li>点餐</li>
 				</ul>
 			</div>
@@ -731,20 +734,21 @@
 									</div>
 								</div>
 							</div>`;
-							$(".shoe-cart").click(function(){
-					cname=$(this).parents(".item-info-product").find("h4 #name").html();
-
-					url="/checkout/new?cname="+cname;
-
-					console.log(cname);
-					url="/checkout/new?cname="+cname;
-
-					$.get(url,function(data){
-								alert(data)
-				})
-			})
 						  });
 						  $(".product-sec1").html(html);
+						  $(".shoe-cart").click(function(){
+								cname=$(this).parents(".item-info-product").find("h4 #name").html();
+								console.log(cname);
+								url="/shop/new";
+								msg={
+									"name":cname
+								}
+
+								$.get(url,msg,function(data){
+									console.log("adfhiadfjdapjf")
+										alert(data)
+								})
+							})
 					},error:function(){
 						alert("获取数据失败");
 					}
@@ -763,7 +767,8 @@
 						 $(data).each(function(i,obj){
 						 	console.log(obj.fields.cname);
 
-						 	html+=`<div class="col-md-4 product-men">
+						 	html+=`
+						 	<div class="col-md-4 product-men">
 								<div class="product-shoe-info shoe">
 									<div class="men-pro-item">
 										<div class="men-thumb-item">
@@ -804,13 +809,7 @@
 													</ul>
 												</div>
 
-
-
 												<button  class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
-
-												</div>
-
-
 
 											</div>
 											<div class="clearfix"></div>
@@ -818,27 +817,31 @@
 									</div>
 								</div>
 							</div>`;
-							$(".shoe-cart").click(function(){
-					cname=$(this).parents(".item-info-product").find("h4 #name").html();
+						  })
+						$(".product-sec1").html(html);
+						$(".shoe-cart").click(function(){
+								cname=$(this).parents(".item-info-product").find("h4 #name").html();
+								console.log(cname);
+								url="/shop/new";
+								msg={
+									"name":cname
+								}
 
-					url="/checkout/new?cname="+cname;
-
-					console.log(cname);
-					url="/checkout/new?cname="+cname;
-
-					$.get(url,function(data){
-								alert(data)
+								$.get(url,msg,function(data){
+									console.log("adfhiadfjdapjf")
+										alert(data)
+								})
+							})
+					},error:function(){
+						alert("获取数据失败")
+					}
 				})
 			})
-						  });
-						$(".product-sec1").html(html);
-					},error:function(){
-						alert("获取数据失败");
-					}
-				});
-			});
 		});
 	</script>
 </body>
 
 </html>
+
+
+
