@@ -40,8 +40,10 @@
 		$(function(){
 			$(".shoe-cart").click(function(){
 					cname=$(this).parents(".item-info-product").find("h4 #name").html();
+
 					console.log("djklf",cname);
-					url="/sigle/new1";
+
+					url="/single/newinfo";
 					msg={
 						"name":cname
 					}
@@ -298,7 +300,7 @@
 							</div>
 							<div class="item-info-product">
 								<h4>
-									<a href="/single/new/{{ i.id }}">{{ i.cname }}</a>
+									<a href="/single/new/{{ i.id }}" id="name">{{ i.cname }}</a>
 								</h4>
 								<div class="info-product-price">
 									<div class="grid_meta">
@@ -318,7 +320,7 @@
 									</div>
 									<div class="shoe single-item hvr-outline-out">
 
-											<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
+											<button type="submit" class="shoe-cart pshoe-cart" ><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
 									</div>
 								</div>
