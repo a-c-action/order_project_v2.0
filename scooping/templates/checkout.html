@@ -191,8 +191,11 @@
 
                             </div>
                             {% for key,value in princes.items %}
+                            <!--<h1>{{ key }}</h1>-->
+                            <!--<h1>{{ value }}</h1>-->
+                            <!--<h1>{{ obj.cname }}</h1>-->
+                            {% if key == obj.cname %}
 
-                            {% if key is obj.cname %}
                             <div class="gsum">￥ {{ value }}</div>
                             {% endif %}
                             {% endfor %}
