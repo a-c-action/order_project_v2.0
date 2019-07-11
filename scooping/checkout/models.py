@@ -16,7 +16,7 @@ class Ordertable(models.Model):
     orderid=models.CharField("订单编号",max_length=30)
     table = models.CharField("桌号", max_length=30)
     allmoney=models.DecimalField("订单金额",max_digits=7,decimal_places=2)
-    otype=models.IntegerField("订单状态",default="0")
+    otype=models.IntegerField("订单状态",default="1")
     odish=models.IntegerField("配餐状态",default="0")
     #一个用户可以有多个订单
     uid = models.ForeignKey(UserProfile)

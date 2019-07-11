@@ -36,8 +36,7 @@ $(function(){
             dataType:"json",
             async:true,
             success:function(data){
-                console.log(data);
-                alert(data);
+                alert("订单生成完成！");
                 var params_id = {'orderid':data};
                 $.ajax({
                     url:'/payment',
