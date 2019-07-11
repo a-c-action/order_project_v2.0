@@ -4,12 +4,10 @@ from . import models
 
 from django.http import HttpResponse
 
-from django.db.models import F
-
-from django.conf import settings
-
 from .models import Menu
 
+from userinfo.models import UserProfile
+from checkout.models import  Shoppingcart
 import os
 # Create your views here.
 
@@ -28,7 +26,7 @@ def new_dish_info(request, dish_id):
         apic = models.Menu.objects.get(id=dish_id)
 
     except:
-        return HttpResponse("没有找到ID为 " + dish_id + "的菜品")
+        return HttpResponse('该菜品已下架，请选择其他菜品')
 
     if request.method == 'GET':
 
@@ -50,6 +48,68 @@ def new_dish_info(request, dish_id):
         except:
             return HttpResponse("没有该菜品")
 
+
+def new_dish_info01(request):
+    username = request.session["user"]["uaccount"]
+    users = UserProfile.objects.get(uname=username)
+    print(users)
+
+    cname=request.GET['name']
+    print("fndkfn",cname)
+    food=Menu.objects.get(cname=cname)
+
+    carts=Shoppingcart.objects.filter(sid=users)
+    cnamelist = []
+    for cart in carts:
+        cnamelist.append(cart.cname)
+    if cname in cnamelist:
+        cart = Shoppingcart.objects.get(sid=users, cname=cname)
+        cart.number = str(int(cart.number) + 1)
+        cart.save()
+    else:
+
+        cart=Shoppingcart.objects.create(
+
+            cname=food.cname,
+            cprice=food.cprice,
+            pic=food.pic,
+            number="1",
+            sid=users,
+        )
+        cart.save()
+
+    return HttpResponse("添加成功")
+
+def new_dish_info02(request):
+    username = request.session["user"]["uaccount"]
+    users = UserProfile.objects.get(uname=username)
+    print(users)
+
+    cname = request.GET['name']
+    print("fndkfn", cname)
+    food = Menu.objects.get(cname=cname)
+
+    carts = Shoppingcart.objects.filter(sid=users)
+    cnamelist = []
+    for cart in carts:
+        cnamelist.append(cart.cname)
+    if cname in cnamelist:
+        cart = Shoppingcart.objects.get(sid=users, cname=cname)
+        cart.number = str(int(cart.number) + 1)
+        cart.save()
+    else:
+
+        cart = Shoppingcart.objects.create(
+
+            cname=food.cname,
+            cprice=food.cprice,
+            pic=food.pic,
+            number="1",
+            sid=users,
+        )
+        cart.save()
+
+    return HttpResponse("添加成功")
 # def new_dish(request):
 #     if request.method == "GET":
 #         return render(request, 'new_dish.html')

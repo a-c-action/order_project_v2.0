@@ -36,6 +36,40 @@
 	<link href="http://fonts.googleapis.com/css?family=Montserrat:100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800"
 	    rel="stylesheet">
 	<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+	<script>
+		$(function(){
+      		$(".shoe-cart").click(function(){
+            	cname=$(this).parents(".item-info-product").find("h4 #name").html();
+            	console.log(cname);
+            	url="/single/new";
+            	msg={
+               	"name":cname
+            	}
+
+            	$.get(url,msg,function(data){
+               		console.log("adfhiadfjdapjf")
+                    	alert(data)
+         		})
+      		})
+   		})
+	</script>
+	<script>
+		$(function(){
+      		$(".shoe-carts").click(function(){
+            	cname=$(this).parents(".col-md-8").find("h3 #gname").html();
+            	console.log(cname);
+            	url="/single/new";
+            	msg={
+               	"name":cname
+            	}
+
+            	$.get(url,msg,function(data){
+               		console.log("adfhiadfjdapjf")
+                    	alert(data)
+         		})
+      		})
+   		})
+	</script>
 </head>
 
 <body>
@@ -54,7 +88,7 @@
 							<li><a href="/" class="active">首页</a></li>
 							<li><a href="about.html">关于我们</a></li>
 							<li><a href="/shop">点餐</a></li>
-							<li><a href="shop.html">登录</a></li>
+							<li><a href="/userinfo/login">登录</a></li>
 							<li><a href="contact.html">注册</a></li>
 						</ul>
 					</nav>
@@ -130,10 +164,11 @@
 				</div>
 			</div>
 			<div class="col-md-8 single-right-left simpleCart_shelfItem">
-
-				<h3>{{ apic.cname }}</h3>
+				<h3>
+					<a id="gname">{{ apic.cname }}</a>
+				</h3><br>
 				<p><span class="item_price">店铺价 ¥{{ apic.cprice }}</span><br>
-					<span class="item_price">会员价 ¥{{ apic.cmarket_price }}</span>
+					<br><span class="item_price">会员价 ¥{{ apic.cmarket_price }}</span>
 				</p>
 				<div class="rating1">
 					<ul class="stars">
@@ -144,51 +179,54 @@
 						<li><a href="#"><i class="fa fa-star-o" aria-hidden="true"></i></a></li>
 					</ul>
 				</div>
+				<!--<button type="submit" class="shoe-carts pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>-->
+					<br><input type="submit" name="submit" value="添 加 到 购 物 车" class="button add">
+					<button type="submit" class="shoe-carts"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
+				<!--<div class="occasion-cart">-->
+					<!--<div class="shoe single-item single_page_b">-->
+						<!--<form action="#" method="post">-->
+							<!--&lt;!&ndash;{% csrf_token %}&ndash;&gt;-->
+							<!--<input type="hidden" name="cmd" value="_cart" aria-colindex="{{ apic.id }}">-->
+							<!--<input type="hidden" name="add" value="1">-->
+							<!--<input type="hidden" name="shoe_item" value="{{ apic.cname }}">-->
+							<!--<input type="hidden" name="amount" value="{{ apic.cprice }}">-->
+							<!--<input type="submit" name="submit" value="添 加 到 购 物 车" class="button add">-->
+							<!--<a href="#" data-toggle="modal" data-target="#myModal1"></a>-->
+							<!---->
+						<!--</form>-->
 
+					<!--</div>-->
+				<!---->
+				<!--</div>-->
 
-				<div class="occasion-cart">
-					<div class="shoe single-item single_page_b">
-						<form action="/checkout/new/{{ apic.id }}" method="post">
-							<!--{% csrf_token %}-->
-							<input type="hidden" name="cmd" value="_cart" aria-colindex="{{ apic.id }}">
-							<input type="hidden" name="add" value="1">
-							<input type="hidden" name="shoe_item" value="{{ apic.cname }}">
-							<input type="hidden" name="amount" value="{{ apic.cprice }}">
-							<input type="submit" name="submit" value="添 加 到 购 物 车" class="button add">
-							<a href="/checkout/new/{{ apic.id }}" data-toggle="modal" data-target="#myModal1"></a>
-						</form>
-
-					</div>
-
-				</div>
-				<ul class="social-nav model-3d-0 footer-social social single_page">
-					<li class="share">分 享 至 : </li>
-					<li>
-						<a href="#" class="facebook">
-							<div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="twitter">
-							<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="instagram">
-							<div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>
-						</a>
-					</li>
-					<li>
-						<a href="#" class="pinterest">
-							<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-							<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>
-						</a>
-					</li>
-				</ul>
+				<!--<ul class="social-nav model-3d-0 footer-social social single_page">-->
+					<!--<li class="share">分 享 至 : </li>-->
+					<!--<li>-->
+						<!--<a href="#" class="facebook">-->
+							<!--<div class="front"><i class="fa fa-facebook" aria-hidden="true"></i></div>-->
+							<!--<div class="back"><i class="fa fa-facebook" aria-hidden="true"></i></div>-->
+						<!--</a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<a href="#" class="twitter">-->
+							<!--<div class="front"><i class="fa fa-twitter" aria-hidden="true"></i></div>-->
+							<!--<div class="back"><i class="fa fa-twitter" aria-hidden="true"></i></div>-->
+						<!--</a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<a href="#" class="instagram">-->
+							<!--<div class="front"><i class="fa fa-instagram" aria-hidden="true"></i></div>-->
+							<!--<div class="back"><i class="fa fa-instagram" aria-hidden="true"></i></div>-->
+						<!--</a>-->
+					<!--</li>-->
+					<!--<li>-->
+						<!--<a href="#" class="pinterest">-->
+							<!--<div class="front"><i class="fa fa-linkedin" aria-hidden="true"></i></div>-->
+							<!--<div class="back"><i class="fa fa-linkedin" aria-hidden="true"></i></div>-->
+						<!--</a>-->
+					<!--</li>-->
+				<!--</ul>-->
 
 			</div>
 			<div class="clearfix"> </div>
@@ -242,15 +280,15 @@
 										</div>
 										<div class="clearfix"> </div>
 									</div>
-									<div class="add-review">
-										<h4>add a review</h4>
-										<form action="#" method="post">
-											<input type="text" name="Name" required="Name">
-											<input type="email" name="Email" required="Email">
-											<textarea name="Message" required=""></textarea>
-											<input type="submit" value="SEND">
-										</form>
-									</div>
+									<!--<div class="add-review">-->
+										<!--<h4>add a review</h4>-->
+										<!--<form action="#" method="post">-->
+											<!--<input type="text" name="Name" required="Name">-->
+											<!--<input type="email" name="Email" required="Email">-->
+											<!--<textarea name="Message" required=""></textarea>-->
+											<!--<input type="submit" value="SEND">-->
+										<!--</form>-->
+									<!--</div>-->
 								</div>
 
 							</div>
@@ -281,7 +319,7 @@
 							</div>
 							<div class="item-info-product">
 								<h4>
-									<a href="/single/new/{{ i.id }}">{{ i.cname }}</a>
+									<a href="/single/new/{{ i.id }}" id="name">{{ i.cname }}</a>
 								</h4>
 								<div class="info-product-price">
 									<div class="grid_meta">
@@ -299,18 +337,11 @@
 											<li><a href="#"><i class="fa fa-star-half-o" aria-hidden="true"></i></a></li>
 										</ul>
 									</div>
-									<div class="shoe single-item hvr-outline-out">
-										<form action="/checkout/new/{{ i.id }}" method="post">
-											<input type="hidden" name="cmd" value="_cart">
-											<input type="hidden" name="add" value="1">
-											<input type="hidden" name="shoe_item" value="{{ i.cname }}">
-											<input type="hidden" name="amount" value="{{ i.cprice }}">
-											<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
-											<a href="/checkout/new/{{ i.id }}" data-toggle="modal" data-target="#myModal1"></a>
-										</form>
+									<button type="submit" class="shoe-cart pshoe-cart"><i class="fa fa-cart-plus" aria-hidden="true"></i></button>
 
-									</div>
+
+
 								</div>
 								<div class="clearfix"></div>
 							</div>

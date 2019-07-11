@@ -69,13 +69,14 @@ $(function(){
         function(data){
                 alert("预定成功")
                 data=JSON.parse(data);
-                console.log(data,typeof(data));
+
                 var html="";
                 for(i=0;i<data.length;i++){
                     html+="<option>"+data[i]+"</option>"
                 }
                 $("#tablenum").html(html)
                 })
+                console.log(data,typeof(data));
 
     })
 })
