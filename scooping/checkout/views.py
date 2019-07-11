@@ -63,10 +63,6 @@ def generate_orders(request):
         takephone = request.POST['takephone']
         takeaddress = request.POST['takeaddress']
         takenumber = request.POST['takenumber']
-        print(takename)
-        print(takephone)
-        print(takeaddress)
-        print(takenumber)
         takeout = models.Takeout.objects.create(
             name = takename,
             phone = takephone,
@@ -74,8 +70,10 @@ def generate_orders(request):
             number = takenumber,
             oid = shopping_cart,
         )
-    print(order_number)
+    shoppingcart = models.Shoppingcart.objects.filter(sid=user)
+    shoppingcart.delete()
     return HttpResponse(order_number)
+
 def addcart(request):
     username = request.session["user"]["uaccount"]
     users = UserProfile.objects.filter(uname=username)
