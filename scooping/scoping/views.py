@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse,HttpResponseRedirect
+from django.http import HttpResponse
 from django.http import response
 from django.contrib import messages
 from . import models
@@ -12,8 +12,7 @@ import json
 
 
 def book_table(request):
-    if 'user' not in request.session:
-        return HttpResponseRedirect("/userinfo/login")
+ 
     value=request.session['user']["uaccount"]
     time = request.POST.get("timetable")
     data = request.POST.get("datatable")
