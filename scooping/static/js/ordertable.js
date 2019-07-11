@@ -67,14 +67,19 @@ $(function(){
         }
         $.post("/scoping/booktable",msg,
         function(data){
-                alert("预定成功")
-                data=JSON.parse(data);
+                if(data=="请登录后操作"){
+                    alert("请先登录再操作")
+                    location.href="/userinfo/login"
+                }else{
+                    alert("预定成功")
+                    data=JSON.parse(data);
 
                 var html="";
                 for(i=0;i<data.length;i++){
                     html+="<option>"+data[i]+"</option>"
                 }
                 $("#tablenum").html(html)
+                }
                 })
                 console.log(data,typeof(data));
 

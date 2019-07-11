@@ -47,6 +47,9 @@
             	}
 
             	$.get(url,msg,function(data){
+					if(data=="请登录后操作"){
+						location.href="/userinfo/login"
+						}
                		console.log("adfhiadfjdapjf")
                     	alert(data)
          		})

@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f260f81-01c5-4b21-ac4e-157de4ce2e43" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.idea/order_project_v2.0.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../.idea/order_project_v2.0.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkout/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkout/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/payment/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/payment/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/404.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/404.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/checkout.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/checkout.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/payment.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/payment.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/userinfo/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/userinfo/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mymiddleware/checklogin.py" beforeDir="false" afterPath="$PROJECT_DIR$/mymiddleware/checklogin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/scoping/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/scoping/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/shop/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/ordertable.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/ordertable.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/shop.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/shop.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/single.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/single.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -60,7 +54,6 @@
         <option value="$PROJECT_DIR$/templates/register.html" />
         <option value="$PROJECT_DIR$/templates/RetrievePassword.html" />
         <option value="$PROJECT_DIR$/templates/single.html" />
-        <option value="$PROJECT_DIR$/templates/shop.html" />
         <option value="$PROJECT_DIR$/checkout/urls.py" />
         <option value="$PROJECT_DIR$/scooping/settings.py" />
         <option value="$PROJECT_DIR$/static/js/checkout1.js" />
@@ -72,12 +65,14 @@
         <option value="$PROJECT_DIR$/templates/checkout.html" />
         <option value="$PROJECT_DIR$/templates/404.html" />
         <option value="$PROJECT_DIR$/templates/about.html" />
+        <option value="$PROJECT_DIR$/shop/views.py" />
+        <option value="$PROJECT_DIR$/templates/shop.html" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="y" value="27" />
-    <option name="width" value="758" />
+    <option name="y" value="25" />
+    <option name="width" value="1162" />
     <option name="height" value="1002" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -92,6 +87,16 @@
             <path>
               <item name="scooping" type="b2602c69:ProjectViewProjectNode" />
               <item name="scooping" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="scooping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scooping" type="462c0819:PsiDirectoryNode" />
+              <item name="shop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="scooping" type="b2602c69:ProjectViewProjectNode" />
+              <item name="scooping" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -165,22 +170,23 @@
       <workItem from="1562760658227" duration="11942000" />
       <workItem from="1562807205531" duration="641000" />
       <workItem from="1562822428369" duration="214000" />
+      <workItem from="1562843316984" duration="1125000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="12797000" />
+    <option name="totallyTimeSpent" value="13922000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="25" width="1920" height="1004" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49837133" visible="true" weight="0.17719486" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49837133" weight="0.3018018" />
       <window_info id="Structure" order="1" sideWeight="0.50162864" side_tool="true" weight="0.09677419" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3220339" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32983682" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.33449882" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.33372092" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32901832" />
@@ -203,7 +209,7 @@
     <option name="version" value="1" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/scooping$debug.coverage" NAME="debug Coverage Results" MODIFIED="1562806806741" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/scooping$debug.coverage" NAME="debug Coverage Results" MODIFIED="1562843369394" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/static/js/bootstrap-3.1.1.min.js">
@@ -365,13 +371,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/shop.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1530">
-          <caret line="51" column="12" selection-start-line="40" selection-end-line="51" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/static/js/checkout.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3180">
@@ -529,6 +528,23 @@
           <folding>
             <element signature="n#div#3;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" />
             <element signature="n#style#0;n#td#0;n#tr#0;n#tfoot#0;n#table#0;n#div#1;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/shop.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1844">
+          <caret line="838" column="40" selection-start-line="838" selection-start-column="40" selection-end-line="838" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/shop/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="33" column="35" selection-start-line="33" selection-start-column="29" selection-end-line="33" selection-end-column="35" />
+          <folding>
+            <element signature="e#0#35#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -12,7 +12,8 @@ import json
 
 
 def book_table(request):
- 
+    if 'user' not in request.session:
+        return HttpResponse("请登录后操作")
     value=request.session['user']["uaccount"]
     time = request.POST.get("timetable")
     data = request.POST.get("datatable")

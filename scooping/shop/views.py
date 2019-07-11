@@ -31,7 +31,7 @@ def server02(request):
 
 def new_dish_info(request):
     if 'user' not in request.session:
-        return HttpResponseRedirect("/userinfo/login")
+        return HttpResponse("请登录后操作")
     username = request.session["user"]["uaccount"]
     users = UserProfile.objects.get(uname=username)
     print(users)
