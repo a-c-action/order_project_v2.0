@@ -45,7 +45,7 @@
 
 
 <body>
-
+{{ order1 }}
 	<!-- banner  -->
 <div class="banner_top innerpage" id="home">
 		<div class="wrapper_top_w3layouts">
@@ -401,7 +401,7 @@
 
 	<!-- credit-card -->
 	<script type="text/javascript" src="{% static 'js/creditly.js' %}"></script>
-	<link rel="stylesheet" href="css/creditly.css" type="text/css" media="all" />
+	<link rel="stylesheet" href="{% static 'css/creditly.css' %}"  type="text/css" media="all" />
 
 	<script type="text/javascript">
 		$(function () {

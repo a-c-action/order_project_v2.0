@@ -192,7 +192,8 @@ def register(request):
         #     username_error = '用户名不符合要求'
         #     return render(request, 'register.html', locals())
         # if not re.findall('^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$',uemail):
-        #     uemail_error = '邮箱不符合要求'
+        #     uemaie:"json",
+            async:true,l_error = '邮箱不符合要求'
         #     return render(request, 'register.html', locals())
         if password == '':
             return HttpResponse('密码不能为空')

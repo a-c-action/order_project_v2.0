@@ -1,6 +1,5 @@
 from django.db import models
 
-
 # Create your models here.
 
 # import sys
@@ -8,19 +7,17 @@ from django.db import models
 # sys.path.append('/home/tarena/PycharmProjects/order_project_v2.0/scooping/single')
 from userinfo.models import UserProfile
 
-
-
 # 订单表
 from single.models import Menu
 
 
 class Ordertable(models.Model):
-    data=models.DateField("订单日期")
+    data=models.DateField("订单日期",auto_now_add=True)
     orderid=models.CharField("订单编号",max_length=30)
     table = models.CharField("桌号", max_length=30)
     allmoney=models.DecimalField("订单金额",max_digits=7,decimal_places=2)
-    otype=models.IntegerField("订单状态")
-    odish=models.IntegerField("配餐状态")
+    otype=models.IntegerField("订单状态",default="0")
+    odish=models.IntegerField("配餐状态",default="0")
     #一个用户可以有多个订单
     uid = models.ForeignKey(UserProfile)
     class Meta:
@@ -37,7 +34,7 @@ class Orderlist(models.Model):
     #一个订单编号可以对应多个明细
     check_id=models.ForeignKey(Ordertable,on_delete=models.CASCADE)
     #一个明细对应一个菜品
-    cid=models.OneToOneField(Menu)
+    cid=models.ForeignKey(Menu)
     class Meta:
         db_table='Orderlist'
         verbose_name_plural = '订单明细表'
