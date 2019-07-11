@@ -12,6 +12,7 @@ body a {
 #main,#checkout-left{
 	width:90%;
 	margin:0 auto;
+	position:relative;
 }
 
 /* 2.主体 */
@@ -109,7 +110,7 @@ body a {
 	border-right:1px solid #cdcdcd;
 }
 .item .gname img{
-	width:84px;
+	width:150px;
 	height:84px;
 	float:left;
 	margin-left:20px;
@@ -727,3 +728,31 @@ button.submit.check_out {
 #dshow{
 	display: none;
 }
+
+#pagenite{
+    font-size:16px;
+}
+.book-select{
+    position:absolute;
+    float:left;
+    left:12%;
+    top:10px;
+    background: #fff;
+    outline:none;
+}
+/*
+#generatebtn{
+    height: 38px;
+    width: 8%;
+    background: #000;
+    color: #fff;
+    padding: 5px 10px;
+    margin: 0 10px;
+    border:0;
+    position:absolute;
+    right:160px;
+}
+#generatebtn:hover{
+    background:#fb383b;
+}
+*/

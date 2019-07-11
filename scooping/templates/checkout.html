@@ -40,6 +40,8 @@
     <script src="{% static 'js/pay_4.js' %}"></script>
     <script src="{% static 'js/checkout.js' %}"></script>
     <script src="{% static 'js/generate.js' %}"></script>
+
+
 </head>
 
 <body>
@@ -133,6 +135,7 @@
                 <!--购物车顶部标题-->
                 <h2>
                     购物车
+                    <span style="font-size:16px">桌号:</span>
                     <p>
 				<span>
 					已选择：
@@ -164,7 +167,7 @@
                     <!--商品展示-->
 
                     <div class="content">
-                        {% for obj in carts %}
+                        {% for obj in page %}
                         <div class="item">
                             <div class="check">
                                 <img src="{% static 'images/checkout/product_normal.png' %}" class="checkItem">
@@ -202,6 +205,46 @@
                     </div>
                 </div>
             </div>
+            <nav aria-label="Page navigation">
+            <div align="center" id="pagenite">
+
+                    {% if page.has_previous %}
+                    <a href="/checkout?page={{ page.previous_page_number }}" aria-label="Previous">
+                         <span aria-hidden="true">&laquo;</span>
+                    </a>
+                    {% else %}
+                         <span aria-hidden="true">&laquo;</span>
+                    {% endif %}
+
+
+                    {% for p in paginator.page_range %}
+                        {% if p == page.number %}
+                            <span>{{ p }}</span>
+                        {% else %}
+                            {% if page_list == '...' %}
+
+                            <span>{{ p }}</span>
+                             {% else %}
+
+                             <a href="/checkout?page={{ p }}">{{ p }}</a>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+
+                {#下一页功能#}
+
+                {% if page.has_next %}
+                <a href="/checkout?page={{ page.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+                {% else %}
+                    <span aria-hidden="true">&raquo;</span>
+                {% endif %}
+
+                <!--总页数: {{ page.len }}-->
+
+            </div>
+            </nav>
         </div>
     </div>
     <div class="checkout-left">

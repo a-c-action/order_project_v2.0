@@ -23,7 +23,7 @@ urlpatterns = [
     url(r"^$",views.index),
     url(r"^scoping/",include("scoping.urls")),
     url(r"^about/",include("about.urls")),
-    url(r"^checkout/",include("checkout.urls")),
+    url(r"^checkout/",include("checkout.urls"),),
     url(r"^userinfo/",include("userinfo.urls")),
     url(r"^payment/",include("payment.urls")),
     url(r"^shop/",include("shop.urls")),
