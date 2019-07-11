@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.http import HttpResponse,HttpResponseRedirect
 from single.models import Menu
 from django.core import serializers
 
@@ -30,6 +30,8 @@ def server02(request):
     return HttpResponse(jsonStr)
 
 def new_dish_info(request):
+    if 'user' not in request.session:
+        return HttpResponseRedirect("/userinfo/login")
     username = request.session["user"]["uaccount"]
     users = UserProfile.objects.get(uname=username)
     print(users)

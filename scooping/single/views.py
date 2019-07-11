@@ -2,7 +2,7 @@ from django.shortcuts import render
 
 from . import models
 
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseRedirect
 
 from .models import Menu
 
@@ -50,6 +50,8 @@ def new_dish_info(request, dish_id):
 
 
 def new_dish_info01(request):
+    if 'user' not in request.session:
+        return HttpResponseRedirect("/userinfo/login")
     username = request.session["user"]["uaccount"]
     users = UserProfile.objects.get(uname=username)
     print(users)
@@ -81,6 +83,8 @@ def new_dish_info01(request):
     return HttpResponse("添加成功")
 
 def new_dish_info02(request):
+    if 'user' not in request.session:
+        return HttpResponseRedirect("/userinfo/login")
     username = request.session["user"]["uaccount"]
     users = UserProfile.objects.get(uname=username)
     print(users)

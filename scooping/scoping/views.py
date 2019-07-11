@@ -12,6 +12,7 @@ import json
 
 
 def book_table(request):
+ 
     value=request.session['user']["uaccount"]
     time = request.POST.get("timetable")
     data = request.POST.get("datatable")
