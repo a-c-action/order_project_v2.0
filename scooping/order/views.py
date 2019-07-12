@@ -61,7 +61,7 @@ def deleteit(request):
         try:
             order = models.Ordertable.objects.get(orderid=orderid, uid=user)
             print(order)
-            # order.delete()
+            order.delete()
             return HttpResponse("您的订单已删除")
         except:
             return HttpResponse("您的订单删除失败")
@@ -79,7 +79,8 @@ def cancelit(request):
         try:
             order=models.Ordertable.objects.get(orderid=orderid,uid=user)
             print(order)
-            # order.otype=2
+            order.otype=2
+            order.save()
             return HttpResponse("您的订单已取消")
         except:
             return HttpResponse("您的订单取消失败")

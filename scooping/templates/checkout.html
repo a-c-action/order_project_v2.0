@@ -40,6 +40,8 @@
     <script src="{% static 'js/pay_4.js' %}"></script>
     <script src="{% static 'js/checkout.js' %}"></script>
     <script src="{% static 'js/generate.js' %}"></script>
+
+
 </head>
 
 <body>
@@ -48,7 +50,7 @@
     <div class="wrapper_top_w3layouts">
         <div class="header_agileits">
             <div class="logo inner_page_log">
-                <h1><a class="navbar-brand" href="index.html"><span>勺品</span>首页</a></h1>
+                <a class="navbar-brand" href="/"><img src="{% static 'images/shop/logo1.png' %}"></a>
             </div>
             <div class="overlay overlay-contentpush">
                 <button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
@@ -133,6 +135,7 @@
                 <!--购物车顶部标题-->
                 <h2>
                     购物车
+                    <span style="font-size:16px">桌号:</span>
                     <p>
 				<span>
 					已选择：
@@ -164,7 +167,7 @@
                     <!--商品展示-->
 
                     <div class="content">
-                        {% for obj in carts %}
+                        {% for obj in page %}
                         <div class="item">
                             <div class="check">
                                 <img src="{% static 'images/checkout/product_normal.png' %}" class="checkItem">
@@ -188,8 +191,11 @@
 
                             </div>
                             {% for key,value in princes.items %}
+                            <!--<h1>{{ key }}</h1>-->
+                            <!--<h1>{{ value }}</h1>-->
+                            <!--<h1>{{ obj.cname }}</h1>-->
+                            {% if key == obj.cname %}
 
-                            {% if key is obj.cname %}
                             <div class="gsum">￥ {{ value }}</div>
                             {% endif %}
                             {% endfor %}
@@ -202,6 +208,46 @@
                     </div>
                 </div>
             </div>
+            <nav aria-label="Page navigation">
+            <div align="center" id="pagenite">
+
+                    {% if page.has_previous %}
+                    <a href="/checkout?page={{ page.previous_page_number }}" aria-label="Previous">
+                         <span aria-hidden="true">&laquo;</span>
+                    </a>
+                    {% else %}
+                         <span aria-hidden="true">&laquo;</span>
+                    {% endif %}
+
+
+                    {% for p in paginator.page_range %}
+                        {% if p == page.number %}
+                            <span>{{ p }}</span>
+                        {% else %}
+                            {% if page_list == '...' %}
+
+                            <span>{{ p }}</span>
+                             {% else %}
+
+                             <a href="/checkout?page={{ p }}">{{ p }}</a>
+                            {% endif %}
+                        {% endif %}
+                    {% endfor %}
+
+                {#下一页功能#}
+
+                {% if page.has_next %}
+                <a href="/checkout?page={{ page.next_page_number }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+                {% else %}
+                    <span aria-hidden="true">&raquo;</span>
+                {% endif %}
+
+                <!--总页数: {{ page.len }}-->
+
+            </div>
+            </nav>
         </div>
     </div>
     <div class="checkout-left">

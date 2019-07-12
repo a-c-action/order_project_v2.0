@@ -1,6 +1,6 @@
 $(function(){
-    $("#orderconsel").click(function (){
-		//移除整个商品记录
+    $(".orderconsel").click(function (){
+		//取消整个商品记录
 
         orderid=$("#orderid").html()
         console.log(orderid)
@@ -12,7 +12,7 @@ $(function(){
 		})
 		$(this).parents(".contentorder").remove();
 	})
-	$("#orderdelete").click(function (){
+	$(".orderdelete").click(function (){
 		//移除整个商品记录
 
         orderid=$("#orderid").html()

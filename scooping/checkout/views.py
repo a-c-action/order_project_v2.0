@@ -9,6 +9,7 @@ from django.db.models import Count
 from decimal import *
 
 from django.http import HttpResponse, HttpResponseRedirect
+from django.core.paginator import Paginator
 
 # Create your views here.
 def homepage(request):
@@ -16,8 +17,10 @@ def homepage(request):
     users = UserProfile.objects.filter(uname=username)
     print(users)
     carts=models.Shoppingcart.objects.filter(sid=users)
+    paginator = Paginator(carts, 5)
+    page_num = request.GET.get('page', 1)
+    page = paginator.page(page_num)
     princes={}
-
     for cart in carts:
         number=int(cart.number)
         price=cart.cprice*number
@@ -31,7 +34,6 @@ def generate_orders(request):
     cart_table = request.POST['cart_table']
     number = request.POST['number']
     order_number = str(time.strftime('%Y%m%d%H%M%S', time.localtime(time.time())))+ str(time.time()).replace('.', '')[-2:]
-    print(order_number)
     allmoney = 0
     for i in range(0,int(number)-1):
         cname = request.POST['cname%s'%i]
@@ -60,10 +62,6 @@ def generate_orders(request):
         takephone = request.POST['takephone']
         takeaddress = request.POST['takeaddress']
         takenumber = request.POST['takenumber']
-        print(takename)
-        print(takephone)
-        print(takeaddress)
-        print(takenumber)
         takeout = models.Takeout.objects.create(
             name = takename,
             phone = takephone,
@@ -71,8 +69,12 @@ def generate_orders(request):
             number = takenumber,
             oid = shopping_cart,
         )
-    print(order_number)
+    for i in range(0,int(number)-1):
+        cname = request.POST['cname%s'%i]
+        shoppingcart = models.Shoppingcart.objects.get(Q(sid=user) & Q(cname=cname))
+        shoppingcart.delete()
     return HttpResponse(order_number)
+
 def addcart(request):
     username = request.session["user"]["uaccount"]
     users = UserProfile.objects.filter(uname=username)
