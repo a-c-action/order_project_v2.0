@@ -243,7 +243,7 @@
 
 	<div class="newsletter_w3layouts_agile">
 		<div class="col-sm-6 newsleft">
-			<h3>Sign up for Newsletter !</h3>
+			<h3>轻生活  轻饮食 !</h3>
 		</div>
 		<div class="col-sm-6 newsright">
 			<form action="#" method="post">
@@ -364,9 +364,8 @@
 	<div id="qr_code1" class="qr_codeNone">
 
 		<img src="{% static 'images/payment/code3.png' %}" class="qr_code1">
-		<div>
-			<input class="isPay" type="button" value="扫码后请确认">
-		</div>
+
+		<a class="isPay" href="/payment/do_pay?orderid={{ orderid }}">扫码后请确认</a>
 	</div>
 	<div id="qr_code2" class="qr_codeNone">
 		<img src="{% static 'images/payment/code4.png' %}" class="qr_code2">
