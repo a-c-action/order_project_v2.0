@@ -9,7 +9,7 @@ $(function(){
         }
 		$.get("/order/cancel",msg,function(data){
 		    alert(data)
-//		    window.location.href=''
+
 		})
 //		$(this).parents(".contentorder").remove();
 	})
@@ -27,4 +27,5 @@ $(function(){
 		})
 		$(this).parents(".contentorder").remove();
 	})
+
 })
