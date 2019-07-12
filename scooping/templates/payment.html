@@ -128,7 +128,7 @@
 							<td>商品信息</td>
 							<td>单价</td>
 							<td>数量</td>
-							<td>就餐方式</td>
+							<!--<td>就餐方式</td>-->
 						</tr>
 					</thead>
 					{% if orderid %}
@@ -142,14 +142,31 @@
 							</td>
 
 							<td>{{ i.cprice }}元/份</td>
-							<td>1</td>
-							<td>餐厅就餐</td>
+							<td>{{ i.lcount }}</td>
+							<!--<td rowspan="4">餐厅就餐</td>-->
 						</tr>
 						{% endfor %}
 					</tbody>
 					<tfoot id="orderFoot">
+						{% if takeout_info__ %}
 						<tr>
+							<td colspan="4" style="font-size:25px">
+								<span>配送地址：</span>
+								{{ takeout_info__.name }}
+								{{ takeout_info__.phone }}
+								{{ takeout_info__.addr }}
+								{{ takeout_info__.number }}
+							</td>
+						</tr>
 
+						{% else %}
+
+						<tr>
+							<td colspan="4">餐厅就餐</td>
+						</tr>
+						{% endif %}
+
+						<tr>
 							<td colspan="4" style="text-align:-webkit-right;font-size:25px">
 								总价：{{ pay }}元&nbsp&nbsp&nbsp&nbsp&nbsp
 							</td>

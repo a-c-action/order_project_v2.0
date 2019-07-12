@@ -49,7 +49,6 @@ $(function (){
     //结算
     $(".settlement").click(function(){
         if($(".check_1").attr("checked")){
-            console.log(1)
             $('#qr_code1').css("display",'block');
             $(".qr_code1").click(function(){
             $('#qr_code1').css("display",'none');
