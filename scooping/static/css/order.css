@@ -112,7 +112,7 @@
     border-bottom:3px solid #fb383b;
 }
 
-.orderdelete,.orderconsel{
+.orderdelete,.orderconsel,.consel{
     width:120px;
     height:29px;
     border:0;
@@ -123,4 +123,15 @@
     height:29px;
     border:0;
     padding:0;
+}
+.orderconsel a{
+    color:#fff;
+}
+
+
+.orderdelete a{
+    color:#fff;
+}
+.orderdelete{
+    background:#000;
 }
