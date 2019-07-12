@@ -51,37 +51,56 @@ $(function(){
     //提交
     $("#tablesubmit").click(function(){
         var timetable=$('#timepickerit').val();
-        var datatable=$('#datepicker1').val();
-        var personnum=$('#personnum').val();
-        var tablenum=$('#tablenum').val();
-        var phone=$('#phone').val();
-//        var url="/scoping/checktable?time='+time+'&data='+data;
-        console.log(timetable,datatable)
-        var msg={
-            "timetable":timetable,
-            "datatable":datatable,
-            "personnum":personnum,
-            "tablenum":tablenum,
-            "phone":phone,
-            "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()
+        if(timetable.length==0){
+            alert("请选择时间段")
         }
-        $.post("/scoping/booktable",msg,
-        function(data){
-                if(data=="请登录后操作"){
-                    alert("请先登录再操作")
-                    location.href="/userinfo/login"
-                }else{
-                    alert("预定成功")
-                    data=JSON.parse(data);
+        var datatable=$('#datepicker1').val();
+        if(datatable.length==0){
+            alert("请选择时间")
+        }
+        var personnum=$('#personnum').val();
+        if(personnum.length==0){
+            alert("请选择人数")
+        }
+        var tablenum=$('#tablenum').val();
+        if(tablenum.length==0){
+            alert("请选择桌号")
+        }
+        var phone=$('#phone').val();
+        if(phone.length==0){
+            alert("请输入手机号")
+        }
+//        var url="/scoping/checktable?time='+time+'&data='+data;
+        if(timetable.length!=0&&datatable.length!=0&&personnum.length!=0
+        &&tablenum.length!=0&&phone.length!=0){
+            console.log(timetable,datatable)
+            var msg={
+                "timetable":timetable,
+                "datatable":datatable,
+                "personnum":personnum,
+                "tablenum":tablenum,
+                "phone":phone,
+                "csrfmiddlewaretoken":$("[name='csrfmiddlewaretoken']").val()
+            }
+            $.post("/scoping/booktable",msg,
+            function(data){
+                    if(data=="请登录后操作"){
+                        alert("请先登录再操作")
+                        location.href="/userinfo/login"
+                    }else{
+                        alert("预定成功")
+                        data=JSON.parse(data);
 
-                var html="";
-                for(i=0;i<data.length;i++){
-                    html+="<option>"+data[i]+"</option>"
-                }
-                $("#tablenum").html(html)
-                }
-                })
-                console.log(data,typeof(data));
+                    var html="";
+                    for(i=0;i<data.length;i++){
+                        html+="<option>"+data[i]+"</option>"
+                    }
+                    $("#tablenum").html(html)
+                    }
+                    })
+               
+            }
 
     })
+
 })
