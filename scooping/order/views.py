@@ -70,7 +70,7 @@ def deleteit(request):
 
 def cancelit(request):
     orderid=request.GET["orderid"]
-    print(orderid)
+    print("order",orderid)
     if hasattr(request, 'session') and 'user' in request.session:
         user_name = request.session['user']['uaccount']
         print(user_name)
