@@ -35,9 +35,9 @@ def payment_new(request):
             print('对应的菜品id', re.cid_id)
             # id和数量组成列表加入menu_list_id
             menu_list_id.append([re.cid_id, re.lcount])
-        pay1 = 0
+        pay = 0
         print('对应的菜品id：', menu_list_id)
-        menu_list1 = []
+        menu_list = []
         for i in menu_list_id:
             item = models.Menu.objects.get(id=i[0])
             menu_dic = {}
@@ -45,9 +45,9 @@ def payment_new(request):
             menu_dic['name'] = item.cname
             menu_dic['cprice'] = item.cprice
             menu_dic['lcount'] = i[1]
-            pay1 += int(item.cprice) * int(i[1])
-            menu_list1.append(menu_dic)
-    return render(request, 'payment_result.html', locals())
+            pay += int(item.cprice) * int(i[1])
+            menu_list.append(menu_dic)
+        return render(request, 'payment.html', locals())
 
 def payment(request):
     def pays(request):
