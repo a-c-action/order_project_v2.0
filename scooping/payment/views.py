@@ -36,7 +36,7 @@ def payment_new(request):
             # id和数量组成列表加入menu_list_id
             menu_list_id.append([re.cid_id, re.lcount])
         pay = 0
-        print('对应的菜品id：', menu_list_id)
+        # print('对应的菜品id：', menu_list_id)
         menu_list = []
         for i in menu_list_id:
             item = models.Menu.objects.get(id=i[0])
@@ -48,6 +48,8 @@ def payment_new(request):
             pay += int(item.cprice) * int(i[1])
             menu_list.append(menu_dic)
         return render(request, 'payment.html', locals())
+
+
 
 def payment(request):
     def pays(request):
@@ -100,6 +102,8 @@ def payment(request):
     pays(request)
     return render(request, 'payment.html', locals())
 
+
+
 def glob_search(request):
     search_info = request.POST['Search']
     try :
@@ -132,6 +136,7 @@ def do_pay(request):
             aorder = models.Ordertable.objects.get(orderid=orderid)
             print('现在的消费状态是：',aorder.otype)
             aorder.otype = 0
+            aorder.odish = 0
             aorder.save()
             result = '亲，您已经支付完成，欢迎再次就餐......'
             return render(request,'payment_result.html',locals())

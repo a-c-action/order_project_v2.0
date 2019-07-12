@@ -63,6 +63,7 @@ $(function (){
             window.alert("请先选择付款方式");
         }
 
+
     })
 
 
