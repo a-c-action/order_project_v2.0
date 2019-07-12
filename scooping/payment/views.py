@@ -7,11 +7,48 @@ import copy
 # from single.models import *
 from django.db.models import Q
 # Create your views here.
-
+#全局变量
 menu_list2 = []
 orderid2 = ''
 pay2 = 0
 takeout_info = 0
+
+def payment_new(request):
+    orderid = request.GET.get('orderid')
+    if orderid:
+        id = models.Ordertable.objects.get(orderid=orderid).id
+        # 通过id找到takeout中的信息
+        try:
+            _takeout_info = models.Takeout.objects.get(oid=id)
+        except Exception as e:
+            _takeout_info = 0
+
+        takeout_info__ = _takeout_info
+
+        # print('订单id是：'+str(id))
+        # 根据订单号对应的id找到orderlist表中的记录
+        results = models.Orderlist.objects.filter(check_id_id=id)
+
+        # 对应找到Menu中的菜品信息，并将其id组成列表
+        menu_list_id = []
+        for re in results:
+            print('对应的菜品id', re.cid_id)
+            # id和数量组成列表加入menu_list_id
+            menu_list_id.append([re.cid_id, re.lcount])
+        pay1 = 0
+        print('对应的菜品id：', menu_list_id)
+        menu_list1 = []
+        for i in menu_list_id:
+            item = models.Menu.objects.get(id=i[0])
+            menu_dic = {}
+            menu_dic['pic'] = item.pic
+            menu_dic['name'] = item.cname
+            menu_dic['cprice'] = item.cprice
+            menu_dic['lcount'] = i[1]
+            pay1 += int(item.cprice) * int(i[1])
+            menu_list1.append(menu_dic)
+    return render(request, 'payment_result.html', locals())
+
 def payment(request):
     def pays(request):
         orderid1 = request.GET.get('orderid')
