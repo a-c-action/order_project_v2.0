@@ -1,6 +1,5 @@
 function param(){
     var params_dic = {};
-    params_dic["cart_table"]=$("#cart_table").val();
     $(".checkItem[checked]").each(function(i){
         var param = $(this).parents(".item").find("#cname").html();
         params_dic["cname"+i]=param;
@@ -12,49 +11,58 @@ function param(){
 $(function(){
     $("#generatebtn").click(function(){
         params=param();
-        params["csrfmiddlewaretoken"]=$("[name='csrfmiddlewaretoken']").val();
-        var params_length = Object.keys(params).length;
-        params["number"]=params_length-1;
-        var whether = $("input[name=show]:checked").val();
-        if(whether=="是"){
-            params["whether"]=whether;
-            var takename = $("#takename").val();
-            var takephone = $("#takephone").val();
-            var takeaddress = $("#takeaddress").val();
-            var takenumber = $("#takenumber").val();
-            params["takename"] = takename;
-            params["takephone"] = takephone;
-            params["takeaddress"] = takeaddress;
-            params["takenumber"] = takenumber;
+        if(Object.keys(params).length == 0){
+            alert("请先选择产品")
         }else{
-            params["whether"]=whether;
-        }
-        $.ajax({
-            url:'/checkout/generate',
-            data:params,
-            type:"post",
-            dataType:"json",
-            async:true,
-            success:function(data){
-                alert("订单生成完成！");
-                var params_id = {'orderid':data};
+            params["cart_table"]=$("#cart_table").val();
+            if(params["cart_table"]==""){
+                alert("请先选择桌号")
+            }else{
+                params["csrfmiddlewaretoken"]=$("[name='csrfmiddlewaretoken']").val();
+                var params_length = Object.keys(params).length;
+                params["number"]=params_length-1;
+                var whether = $("input[name=show]:checked").val();
+                if(whether=="是"){
+                    params["whether"]=whether;
+                    var takename = $("#takename").val();
+                    var takephone = $("#takephone").val();
+                    var takeaddress = $("#takeaddress").val();
+                    var takenumber = $("#takenumber").val();
+                    params["takename"] = takename;
+                    params["takephone"] = takephone;
+                    params["takeaddress"] = takeaddress;
+                    params["takenumber"] = takenumber;
+                }else{
+                    params["whether"]=whether;
+                }
                 $.ajax({
-                    url:'/payment',
-                    data:params_id,
-                    type:"get",
-                    dataType:"html",
+                    url:'/checkout/generate',
+                    data:params,
+                    type:"post",
+                    dataType:"json",
                     async:true,
                     success:function(data){
-                        location.href="/payment"
+                        alert("订单生成完成！");
+                        var params_id = {'orderid':data};
+                        $.ajax({
+                            url:'/payment',
+                            data:params_id,
+                            type:"get",
+                            dataType:"html",
+                            async:true,
+                            success:function(data){
+                                location.href="/payment"
+                            },
+                            error:function(data){
+                                alert(data);
+                            }
+                        })
                     },
                     error:function(data){
                         alert(data);
                     }
                 })
-            },
-            error:function(data){
-                alert(data);
             }
-        })
+        }
     }) 
 });

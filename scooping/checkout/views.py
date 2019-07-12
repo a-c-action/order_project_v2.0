@@ -34,7 +34,6 @@ def generate_orders(request):
     cart_table = request.POST['cart_table']
     number = request.POST['number']
     order_number = str(time.strftime('%Y%m%d%H%M%S', time.localtime(time.time())))+ str(time.time()).replace('.', '')[-2:]
-    print(order_number)
     allmoney = 0
     for i in range(0,int(number)-1):
         cname = request.POST['cname%s'%i]
@@ -70,8 +69,10 @@ def generate_orders(request):
             number = takenumber,
             oid = shopping_cart,
         )
-    shoppingcart = models.Shoppingcart.objects.filter(sid=user)
-    shoppingcart.delete()
+    for i in range(0,int(number)-1):
+        cname = request.POST['cname%s'%i]
+        shoppingcart = models.Shoppingcart.objects.get(Q(sid=user) & Q(cname=cname))
+        shoppingcart.delete()
     return HttpResponse(order_number)
 
 def addcart(request):
