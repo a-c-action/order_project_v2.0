@@ -11,11 +11,20 @@ from django.db.models import Q
 menu_list2 = []
 orderid2 = ''
 pay2 = 0
+takeout_info = 0
 def payment(request):
     def pays(request):
         orderid1 = request.GET.get('orderid')
         if orderid1:
             id = models.Ordertable.objects.get(orderid=orderid1).id
+            #通过id找到takeout中的信息
+            try:
+                _takeout_info = models.Takeout.objects.get(oid=id)
+            except Exception as e:
+                _takeout_info = 0
+            global takeout_info
+            takeout_info = _takeout_info
+
             # print('订单id是：'+str(id))
             #根据订单号对应的id找到orderlist表中的记录
             results = models.Orderlist.objects.filter(check_id_id=id)
@@ -24,18 +33,21 @@ def payment(request):
             menu_list_id = []
             for re in results:
                 print('对应的菜品id',re.cid_id)
-                menu_list_id.append(re.cid_id)
+                # id和数量组成列表加入menu_list_id
+                menu_list_id.append([re.cid_id,re.lcount])
             pay1 = 0
             print('对应的菜品id：',menu_list_id)
             menu_list1 = []
             for i in menu_list_id:
-                item = models.Menu.objects.get(id=i)
+                item = models.Menu.objects.get(id=i[0])
                 menu_dic = {}
                 menu_dic['pic']=item.pic
                 menu_dic['name'] = item.cname
                 menu_dic['cprice'] = item.cprice
-                pay1 += int(item.cprice)
+                menu_dic['lcount'] = i[1]
+                pay1 += int(item.cprice)*int(i[1])
                 menu_list1.append(menu_dic)
+
             global menu_list2
             menu_list2=copy.deepcopy(menu_list1)
             print('订单列表：',menu_list2)
@@ -47,6 +59,7 @@ def payment(request):
     menu_list = menu_list2
     orderid = orderid2
     pay = pay2
+    takeout_info__ = copy.deepcopy(takeout_info)
     pays(request)
     return render(request, 'payment.html', locals())
 
@@ -54,11 +67,12 @@ def glob_search(request):
     search_info = request.POST['Search']
     try :
         id = models.Menu.objects.get(cname__contains=search_info).id
-        print('根据您输入的菜名找的的菜品id是：',id)
+        # print('根据您输入的菜名找的的菜品id是：',id)
         # return HttpResponse('找到了')
         return HttpResponseRedirect('/single/new/%d'%id)
     except:
-        return render(request,'not_find.html',locals())
+        result = '亲！Sorry，本店还未上线此菜品，敬请见谅......'
+        return render(request,'payment_result.html',locals())
 
 #提供搜索过程中的提示功能
 def search_server(request):
@@ -80,10 +94,10 @@ def do_pay(request):
         try:
             aorder = models.Ordertable.objects.get(orderid=orderid)
             print('现在的消费状态是：',aorder.otype)
-            aorder.otype = 1
+            aorder.otype = 0
             aorder.save()
-            pay_state = '亲，您已经支付完成，欢迎再次就餐......'
-            return render(request,'do_pay.html',locals())
+            result = '亲，您已经支付完成，欢迎再次就餐......'
+            return render(request,'payment_result.html',locals())
         except:
-            pay_state = '亲，支付失败，请您仔细核对订单后再操作......'
-            return render(request,'do_pay.html',locals())
+            result = '亲，支付失败，请您仔细核对订单后再操作......'
+            return render(request,'payment_result.html',locals())
