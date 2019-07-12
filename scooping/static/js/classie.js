@@ -26,6 +26,7 @@ function classReg( className ) {
 var hasClass, addClass, removeClass;
 
 if ( 'classList' in document.documentElement ) {
+
   hasClass = function( elem, c ) {
     return elem.classList.contains( c );
   };
