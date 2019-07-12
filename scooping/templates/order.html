@@ -178,14 +178,15 @@
 							<td colspan="6" id="footorder">总价：¥{{key.allmoney}}
 								{% if  key.otype == 1 %}
 								<button class="paymenta orderconsel">取消订单</button>
-								<a class="paymenta" href="/payment?orderid={{key.orderid}}">去付款</a></td>
+								<a class="paymenta" href="/payment?orderid={{key.orderid}}">去付款</a>
 								{% elif  key.otype == 2 %}
 								<button class="paymenta orderconsel">订单已取消</button>
-								<a class="paymenta" href="/payment?orderid={{key.orderid}}">去付款</a></td>
+								<a class="paymenta" href="/payment?orderid={{key.orderid}}">去付款</a>
 								{% else %}
 								<button class="paymenta orderdelete">删除订单</button>
-								<a class="paymenta" href="#">已完成</a></td>
+								<a class="paymenta" href="#">已完成</a>
 								{% endif %}
+							</td>
 						</tr>
 					</tfoot>
 				</table>
