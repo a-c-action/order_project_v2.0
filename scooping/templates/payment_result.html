@@ -73,11 +73,13 @@
 				</div>
 				<!-- cart details -->
 				<div class="top_nav_right">
-
 					<div class="shoecart shoecart2 cart cart box_1">
-						<a href="/checkout/"> <button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
+						<form action="#" method="post" class="last">
+							<input type="hidden" name="cmd" value="_cart">
+							<input type="hidden" name="display" value="1">
+							<button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+						</form>
 					</div>
-
 				</div>
 			</div>
 		</div>
@@ -115,7 +117,7 @@
     <!--未找到页面-->
     <div id="notFind">
         <a href="/">
-            <h3>亲！Sorry，本店还未上线此菜品，敬请见谅......</h3>
+            <h3>{{ result }}</h3>
         </a>
     </div>
 
@@ -260,7 +262,20 @@
 	<script type="text/javascript" src="{% static 'js/jquery-2.1.4.min.js' %}"></script>
 	<!-- //js -->
 	<!-- cart-js -->
+	<script src="{% static 'js/minicart.js' %}"></script>
+	<script>
+		shoe.render();
 
+		shoe.cart.on('shoe_checkout', function (evt) {
+			var items, len, i;
+
+			if (this.subtotal() > 0) {
+				items = this.items();
+
+				for (i = 0, len = items.length; i < len; i++) {}
+			}
+		});
+	</script>
 	<!-- //cart-js -->
 	<!-- /nav -->
 	<script src="{% static 'js/modernizr-2.6.2.min.js' %}"></script>
