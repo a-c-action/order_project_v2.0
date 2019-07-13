@@ -163,10 +163,11 @@
 
 							<td>{{val.lcount}}</td>
 							<td>{{val.lmoney}}</td>
-							{% if val.odish %}
-								<td>已配餐</td>
-							{% else %}
+							
+							{% if key.odish %}
 								<td>未配餐</td>
+							{% else %}
+								<td>已配餐</td>
 							{%  endif %}
 
 						</tr>
