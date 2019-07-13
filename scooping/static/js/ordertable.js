@@ -67,12 +67,12 @@ $(function(){
             alert("请选择桌号")
         }
         var phone=$('#phone').val();
-        if(!(/^1[3|4|5|8][0-9]\d{4,8}$/.test(phone))){
+        if(!(/^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/.test(phone))){
             alert("请正确输入手机号")
         }
 //        var url="/scoping/checktable?time='+time+'&data='+data;
         if(timetable.length!=0&&datatable.length!=0&&personnum.length!=0
-        &&tablenum.length!=0&&(/^1[3|4|5|8][0-9]\d{4,8}$/.test(phone))){
+        &&tablenum.length!=0&&(/^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/.test(phone))){
             console.log(timetable,datatable)
             var msg={
                 "timetable":timetable,
