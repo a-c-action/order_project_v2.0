@@ -1,18 +1,18 @@
 import json
 import random
+import os,re
+import time
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
+from django.contrib.auth.hashers import make_password,check_password
+from django.db.models import Q
+from aliyunsdkcore.client import AcsClient
+from aliyunsdkcore.request import CommonRequest
 from io import BytesIO
 from . import verify_code
 from django.conf import settings
-import os,re
 from . import models
-from django.contrib.auth.hashers import make_password,check_password
-from django.db.models import Q
-import time
-from aliyunsdkcore.client import AcsClient
-from aliyunsdkcore.request import CommonRequest
 
 # Create your views here.
 
