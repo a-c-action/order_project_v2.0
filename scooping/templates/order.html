@@ -155,16 +155,18 @@
 
 					<tbody>
 						<tr>
-							<td>{{val.cid.cname}}</td>
+							<td>{{ val.cid.cname }}</td>
 							<td>
 								<img class="imgorder" src="{% static val.cid.pic %}">
 							</td>
-							<td>{{val.cid.cprice}}</td>
+							<td>{{ val.cid.cprice }}</td>
+
 
 							<td>{{val.lcount}}</td>
 							<td>{{val.lmoney}}</td>
 							
 							{% if key.odish %}
+
 								<td>未配餐</td>
 							{% else %}
 								<td>已配餐</td>
