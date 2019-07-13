@@ -18,10 +18,10 @@
     </script>
     <!-- //custom-theme -->
     <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all"/>
-    <link href="{% static 'css/shop.css' %}" rel="stylesheet"  type="text/css" media="screen" property=""/>
+    <link href="{% static 'css/shop.css' %}" rel="stylesheet" type="text/css" media="screen" property=""/>
     <link href="{% static 'css/style7.css' %}" rel="stylesheet" type="text/css" media="all"/>
     <!-- Owl-carousel-CSS -->
-    <link href="{% static 'css/checkout.css' %}" rel="stylesheet" type="text/css" />
+    <link href="{% static 'css/checkout.css' %}" rel="stylesheet" type="text/css"/>
     <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all"/>
     <!--搜索提示样式-->
     <link href="{% static 'css/pay_21.css' %}" rel="stylesheet" type="text/css">
@@ -47,69 +47,72 @@
 <body>
 <!-- banner -->
 <div class="banner_top innerpage" id="home">
-		<div class="wrapper_top_w3layouts">
-			<div class="header_agileits">
-				<div class="logo inner_page_log">
-					<a class="navbar-brand" href="/"><img src="{% static 'images/order/logo1.png' %}"></a>
-				</div>
-				<div class="overlay overlay-contentpush">
-					<button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
+    <div class="wrapper_top_w3layouts">
+        <div class="header_agileits">
+            <div class="logo inner_page_log">
+                <a class="navbar-brand" href="/"><img src="{% static 'images/order/logo1.png' %}"></a>
+            </div>
+            <div class="overlay overlay-contentpush">
+                <button type="button" class="overlay-close"><i class="fa fa-times" aria-hidden="true"></i></button>
 
-					<nav>
-						<ul>
-							<li><a href="/" class="active">首页</a></li>
-							<li><a href="/about">关于我们</a></li>
-							<li><a href="/shop">点餐</a></li>
-							<li><a href="/userinfo/login">登录</a></li>
-							<li><a href="/userinfo/register">注册</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="mobile-nav-button">
-					<button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
-				</div>
-				<!-- cart details -->
-				<div class="top_nav_right">
+                <nav>
+                    <ul>
+                        <li><a href="/" class="active">首页</a></li>
+                        <li><a href="/about">关于我们</a></li>
+                        <li><a href="/shop">点餐</a></li>
+                        <li><a href="/userinfo/login">登录</a></li>
+                        <li><a href="/userinfo/register">注册</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="mobile-nav-button">
+                <button id="trigger-overlay" type="button"><i class="fa fa-bars" aria-hidden="true"></i></button>
+            </div>
+            <!-- cart details -->
+            <div class="top_nav_right">
 
-					<div class="shoecart shoecart2 cart cart box_1">
-						<a href=""> <button class="top_shoe_cart" type="submit" name="submit" value=""><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></a>
-					</div>
+                <div class="shoecart shoecart2 cart cart box_1">
+                    <a href="">
+                        <button class="top_shoe_cart" type="submit" name="submit" value=""><i
+                                class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>
+                    </a>
+                </div>
 
-				</div>
-			</div>
-		</div>
-		<!-- //cart details -->
-		<!-- search -->
-		<div class="container search_w3ls_agileinfo">
-			<div class="cd-main-header">
-				<ul class="cd-header-buttons">
-					<li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
-				</ul>
-			</div>
-			<div id="cd-search" class="cd-search">
-				<form action="/payment/glob_search" method="post">
-					{% csrf_token %}
-					<input name="Search" type="search" placeholder="输入菜品或菜品关键字后按下Enter查询...">
-				</form>
-				<div id="prompt">
-					<span id="showFind"></span>
-				</div>
-			</div>
-		</div>
-		<!-- //search -->
-		<div class="clearfix"></div>
-		<!-- /banner_inner -->
-		<div class="services-breadcrumb_w3ls_agileinfo">
-			<div class="inner_breadcrumb_agileits_w3">
+            </div>
+        </div>
+    </div>
+    <!-- //cart details -->
+    <!-- search -->
+    <div class="container search_w3ls_agileinfo">
+        <div class="cd-main-header">
+            <ul class="cd-header-buttons">
+                <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+            </ul>
+        </div>
+        <div id="cd-search" class="cd-search">
+            <form action="/payment/glob_search" method="post">
+                {% csrf_token %}
+                <input name="Search" type="search" placeholder="输入菜品或菜品关键字后按下Enter查询...">
+            </form>
+            <div id="prompt">
+                <span id="showFind"></span>
+            </div>
+        </div>
+    </div>
+    <!-- //search -->
+    <div class="clearfix"></div>
+    <!-- /banner_inner -->
+    <div class="services-breadcrumb_w3ls_agileinfo">
+        <div class="inner_breadcrumb_agileits_w3">
 
-				<ul class="short">
-					<li><a href="/" >首页</a><i>|</i></li>
-					<li>购物车</li>
-				</ul>
-			</div>
-		</div>
-		<!-- //banner_inner -->
-	</div>
+            <ul class="short">
+                <li><a href="/">首页</a><i>|</i></li>
+                <li>购物车</li>
+            </ul>
+        </div>
+    </div>
+    <!-- //banner_inner -->
+</div>
 
 <!-- //banner -->
 <!-- top Products -->
@@ -165,55 +168,55 @@
 
                     <div class="content">
                         {% for obj in page %}
-                        <div class="item">
-                            <div class="check">
-                                <img src="{% static 'images/checkout/product_normal.png' %}" class="checkItem">
+                            <div class="item">
+                                <div class="check">
+                                    <img src="{% static 'images/checkout/product_normal.png' %}" class="checkItem">
+
+                                </div>
+                                <div class="gname">
+                                    <img src="{% static obj.pic %}">
+                                    <p></p>
+                                    <p id="cname">{{ obj.cname }}</p>
+                                    <p>　　　　</p>
+                                </div>
+                                <div class="gprice">
+                                    <h3></h3>
+                                    <p>￥ {{ obj.cprice }}</p>
+                                </div>
+                                <div class="gcount">
+                                    <!--阻止超链接默认事件-->
+                                    <a href="javascript:void(0)" class="minus">-</a>
+                                    <input type="text" value="{{ obj.number }}">
+                                    <a href="javascript:void(0)" class="add">+</a>
+
+                                </div>
+                                {% for key,value in princes.items %}
+                                    <!--<h1>{{ key }}</h1>-->
+                                    <!--<h1>{{ value }}</h1>-->
+                                    <!--<h1>{{ obj.cname }}</h1>-->
+                                    {% if key == obj.cname %}
+
+                                        <div class="gsum">￥ {{ value }}</div>
+                                    {% endif %}
+                                {% endfor %}
+                                <div class="action">
+                                    <a href="/checkout/del/{{ obj.id }}">移除</a>
+                                </div>
 
                             </div>
-                            <div class="gname">
-                                <img src="{% static obj.pic %}">
-                                <p></p>
-                                <p id="cname">{{ obj.cname }}</p>
-                                <p>　　　　</p>
-                            </div>
-                            <div class="gprice">
-                                <h3></h3>
-                                <p>￥ {{ obj.cprice }}</p>
-                            </div>
-                            <div class="gcount">
-                                <!--阻止超链接默认事件-->
-                                <a href="javascript:void(0)" class="minus">-</a>
-                                <input type="text" value="{{ obj.number }}">
-                                <a href="javascript:void(0)" class="add">+</a>
-
-                            </div>
-                            {% for key,value in princes.items %}
-                            <!--<h1>{{ key }}</h1>-->
-                            <!--<h1>{{ value }}</h1>-->
-                            <!--<h1>{{ obj.cname }}</h1>-->
-                            {% if key == obj.cname %}
-
-                            <div class="gsum">￥ {{ value }}</div>
-                            {% endif %}
-                            {% endfor %}
-                            <div class="action">
-                                <a href="/checkout/del/{{ obj.id }}">移除</a >
-                            </div>
-
-                        </div>
                         {% endfor %}
                     </div>
                 </div>
             </div>
             <nav aria-label="Page navigation">
-            <div align="center" id="pagenite">
+                <div align="center" id="pagenite">
 
                     {% if page.has_previous %}
-                    <a href="/checkout?page={{ page.previous_page_number }}" aria-label="Previous">
-                         <span aria-hidden="true">&laquo;</span>
-                    </a>
+                        <a href="/checkout?page={{ page.previous_page_number }}" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
                     {% else %}
-                         <span aria-hidden="true">&laquo;</span>
+                        <span aria-hidden="true">&laquo;</span>
                     {% endif %}
 
 
@@ -223,27 +226,27 @@
                         {% else %}
                             {% if page_list == '...' %}
 
-                            <span>{{ p }}</span>
-                             {% else %}
+                                <span>{{ p }}</span>
+                            {% else %}
 
-                             <a href="/checkout?page={{ p }}">{{ p }}</a>
+                                <a href="/checkout?page={{ p }}">{{ p }}</a>
                             {% endif %}
                         {% endif %}
                     {% endfor %}
 
-                {#下一页功能#}
+                    {#下一页功能#}
 
-                {% if page.has_next %}
-                <a href="/checkout?page={{ page.next_page_number }}" aria-label="Next">
-                    <span aria-hidden="true">&raquo;</span>
-                </a>
-                {% else %}
-                    <span aria-hidden="true">&raquo;</span>
-                {% endif %}
+                    {% if page.has_next %}
+                        <a href="/checkout?page={{ page.next_page_number }}" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    {% else %}
+                        <span aria-hidden="true">&raquo;</span>
+                    {% endif %}
 
-                <!--总页数: {{ page.len }}-->
+                    <!--总页数: {{ page.len }}-->
 
-            </div>
+                </div>
             </nav>
         </div>
     </div>
