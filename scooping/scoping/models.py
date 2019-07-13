@@ -17,6 +17,7 @@ class Order_from(models.Model):
     uid=models.ForeignKey(UserProfile)
     class Meta:
         db_table='UOrder_from'
+        verbose_name_plural = '订餐表'
 
 
 
