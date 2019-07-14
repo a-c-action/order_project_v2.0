@@ -140,8 +140,10 @@ def verify_code_img(request):
     :param request:
     :return:
     """
-    img, codes = verify_code.verify_code()  # 利用verify_code模块得到img对象和验证码codes
-    buf = BytesIO()  # 直接在内存开辟一点空间存放临时生成的图片
+    # 利用verify_code模块得到img对象和验证码codes
+    img, codes = verify_code.verify_code()
+    # 直接在内存开辟一点空间存放临时生成的图片
+    buf = BytesIO()
     img.save(buf, "png")  # 写入内存
     data = buf.getvalue()  # 从内存中读出
     request.session['verify_code'] = codes
