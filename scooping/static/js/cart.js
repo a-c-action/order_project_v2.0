@@ -129,7 +129,7 @@ function checkrestartpasswordInput() {
     return false;
 }
 
-function checkverify_code(){
+function checkverify_code() {
     var ret = false;
     var xhr = createXhr();
     var url = "/userinfo/checkverifycode?verify_code=" + $("#check_verify_code").val();
@@ -139,10 +139,10 @@ function checkverify_code(){
             if (xhr.responseText == "0") {
                 ret = true;
                 $("#uverify-show").html("验证码为空").css("color", "red");
-            } else if(xhr.responseText == "1"){
+            } else if (xhr.responseText == "1") {
                 ret = true;
                 $("#uverify-show").html("验证码错误").css("color", "red");
-            }else {
+            } else {
                 $("#uverify-show").html("");
             }
         }
@@ -151,18 +151,18 @@ function checkverify_code(){
     return ret;
 }
 
-function check_action_code(){
+function check_action_code() {
     var setmsg = String($("#smscode").val());
     var getmsg = String($("#displaysmscode").html());
-    if(setmsg.length == 0){
-        $("#uaction-show").html("激活码为空").css("color","red");
+    if (setmsg.length == 0) {
+        $("#uaction-show").html("激活码为空").css("color", "red");
         return true
-    }else{
-        if(setmsg == getmsg){
-            $("#displaysmscode").css('display','none');
+    } else {
+        if (setmsg == getmsg) {
+            $("#displaysmscode").css('display', 'none');
             return false;
-        }else {
-            $("#uaction-show").html("激活码错误").css("color","red");
+        } else {
+            $("#uaction-show").html("激活码错误").css("color", "red");
             return true;
         }
     }
@@ -200,13 +200,13 @@ $(function () {
             }
         }, 1000);
         $.ajax({
-            url:'/userinfo/smscode',
-            data:{
-                phone:$("#myphone").val()
+            url: '/userinfo/smscode',
+            data: {
+                phone: $("#myphone").val()
             },
-            type:"get",
-            dataType:'json',
-            success:function (data) {
+            type: "get",
+            dataType: 'json',
+            success: function (data) {
                 $("#displaysmscode").html(data.number)
             }
         });
@@ -214,82 +214,9 @@ $(function () {
     });
 
     $("#aVerImg").click(function () {
-        $("#imgVer").attr("src","/userinfo/verify_code"+Math.random())
+        $("#imgVer").attr("src", "/userinfo/verify_code" + Math.random())
     });
 
-    /*$(".userInput").blur(function(){
-        var userinput = $(".userInput").val()
-        if(userinput.length==0){
-            $(".pass-item-error1").css("display","inline");
-            return false;
-        }
-        var regex = /^[a-zA-Z][a-zA-Z0-9_-]{3,15}$/;
-        if(!regex.test(userinput)){
-            $(".pass-item-error1").css("display","inline");
-            return false;
-        }
-        $(".pass-item-error1").css("display","none");
-        return true;
-    })*/
-
-    /*$(".emailInput").blur(function(){
-        var input=$(".emailInput").val()
-        if(input.length==0){
-            $(".pass-item-error2").css("display","inline");
-            return false;
-            }
-        //邮箱正则表达式
-        var regex = /^([a-z0-9_\.-]+)@([\da-z\.-]+)\.([a-z\.]{2,6})$/;
-        //判断
-        if(!regex.test(input)){
-            $(".pass-item-error2").css("display","inline");
-            return false;
-        }
-        $(".pass-item-error2").css("display","none");
-        return true;
-    })*/
-
-    /*$(".passwordInput").blur(function(){
-        var pswdinput=$(".passwordInput").val()
-        if(pswdinput.length==0){
-            $(".pass-item-error3").css("display","inline");
-            return false;
-            }
-        var regex = /^.*(?=.{6,})(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[!@#$%^&*? ]).*$/;
-        //最少6位，包括至少1个大写字母，1个小写字母，1个数字，1个特殊字符
-        if(!regex.test(pswdinput)){
-            $(".pass-item-error3").css("display","inline");
-            return false;
-        }
-        $(".pass-item-error3").css("display","none");
-        return true;
-    })*/
-
-    /*$(".teleInput").blur(function(){
-        var teleinput=$(".teleInput").val()
-        if(teleinput.length==0){
-            $(".pass-item-error5").css("display","inline");
-            return false;
-            }
-        var regex = /^((13[0-9])|(14[5|7])|(15([0-3]|[5-9]))|(18[0,5-9]))\d{8}$/;
-        if(!regex.test(teleinput)){
-            $(".pass-item-error5").css("display","inline");
-            return false;
-        }
-        $(".pass-item-error5").css("display","none");
-        return true;
-    })*/
-
-    /*$(".restartpasswordInput").blur(function(){
-        var restartInput = $(".restartpasswordInput").val()
-        var passwordinput = $(".passwordInput").val()
-        if(restartInput != passwordinput){
-            $(".pass-item-error4").css("display","inline");
-            return false;
-        }
-        $(".pass-item-error4").css("display","none");
-        return true;
-    })*/
 
     $("#myname").blur(function () {
         checkuname();
@@ -317,38 +244,6 @@ $(function () {
         check_action_code();
     });
 
-    /*function checkverify_code(){
-        $("#check_verify_code").blur(function () {
-            var verify_code = $("#check_verify_code").val();
-            if(verify_code.length==0){
-                return true
-            }
-            $.ajax({
-                url:"/userinfo/checkverify_code",
-                type:"get",
-                dataType:"json",
-                async:false,
-                success:function (data) {
-                    $(data).each(function (i,obj) {
-                        verify_code1 = obj.verify_code;
-                        verify_code = verify_code.toLowerCase();
-                        verify_code1 = verify_code1.toLowerCase();
-                        console.log(verify_code);
-                        console.log(verify_code1);
-                        if(verify_code != verify_code1){
-                            return true
-                        }else {
-                            return true
-                        }
-                    });
-                },
-                error:function () {
-                    verify_code1 = "";
-                }
-            });
-        });
-    }*/
-    // checkverify_code();
 
     $("#btnRegister").click(function () {
         if (checkuname()) {
@@ -367,11 +262,11 @@ $(function () {
             alert("手机号已存在,不能重复注册");
         } else if (checkuphone1()) {
             alert("手机号为空或错误");
-        } else if(checkverify_code()){
+        } else if (checkverify_code()) {
             alert("验证码为空或错误")
-        } else if(check_action_code()){
+        } else if (check_action_code()) {
             alert("激活码为空或错误")
-        } else if($("#myservice[checked]").length == 0){
+        } else if ($("#myservice[checked]").length == 0) {
             alert("请阅读服务条款并勾选");
         } else {
             var xhr = createXhr();
@@ -379,7 +274,7 @@ $(function () {
             xhr.onreadystatechange = function () {
                 if (xhr.readyState == 4 && xhr.status == 200) {
                     alert(xhr.responseText);
-                    location.href="/userinfo/login"
+                    location.href = "/userinfo/login"
                 }
             };
             xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -392,7 +287,7 @@ $(function () {
             var action_code = $("#smscode").val();
             var action_code1 = $("#displaysmscode").html();
             var csrf = $("[name = 'csrfmiddlewaretoken']").val();
-            var params = "uname=" + uname + "&uemail=" + uemail + "&uphone=" + uphone + "&password=" + password + "&password2=" + password2 + "&verify_code=" + verify_code + "&action_code=" + action_code + "&action_code1=" + action_code1 +  "&csrfmiddlewaretoken=" + csrf;
+            var params = "uname=" + uname + "&uemail=" + uemail + "&uphone=" + uphone + "&password=" + password + "&password2=" + password2 + "&verify_code=" + verify_code + "&action_code=" + action_code + "&action_code1=" + action_code1 + "&csrfmiddlewaretoken=" + csrf;
             xhr.send(params);
         }
     });
